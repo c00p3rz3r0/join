@@ -1,0 +1,38 @@
+.button-wo-icon {
+    display: flex;
+    height: 48px;
+    overflow: hidden;
+    padding: 15px 24px;
+    border-radius: 8px;
+    background: #2A3647;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    /* 25.2px */
+}
+
+.button-secondary-wo-icon {
+    display: flex;
+    height: 48px;
+    overflow: hidden;
+    padding: 15px 24px;
+    border-radius: 8px;
+    border: 1px solid var(--version-2-main-color, #2A3647);
+    background: var(--white, #FFF);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: var(--version-2-main-color, #2A3647);
+    font-family: Inter;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    /* 25.2px */
+}
