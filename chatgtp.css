@@ -1,0 +1,55 @@
+/* body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+  } */
+
+/* #loading-logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 1;
+} */
+
+#loading-logo.hidden {
+    transform: translateX(50%);
+    opacity: 0;
+}
+
+#login-container {
+    display: none;
+}
+
+/* #loading-logo img {
+    width: 100px;
+    /* Adjust the size as needed */
+/*}/**/
+
+/* Add your own styles for the login input fields here */
+
+/* Simulate a delay with animation-delay */
+@keyframes showLogin {
+    0% {
+        display: none;
+    }
+
+    99.99% {
+        display: none;
+    }
+
+    100% {
+        display: flex;
+    }
+}
