@@ -1,7 +1,20 @@
+/* general style */
+
 body {
     height: 100vh;
     background-color: #F6F7F8;
 }
+
+text {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+/* index page + login padge */
 
 .loginLogo {
     height: 100vh;
@@ -160,4 +173,75 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
+}
+
+/* Header*/
+
+.header-figma {
+    display: flex;
+    padding: 20px 40px 20px 348px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+    background: #FFF;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.frame-42 {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.group-5 {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.svg-userinit {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.frame-31 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    padding: 10px;
+    border-radius: 559px;
+    background: var(--white, #FFF);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+/* sidebar */
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 232px;
+    min-height: 100vh;   
+    overflow: hidden;
+    padding: 64px 0px;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.10);
+    background: #2A3647;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
 }
