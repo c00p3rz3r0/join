@@ -33,6 +33,7 @@
 
     <!-- customize Scripts -->
     <script src="script.js"></script>
+    <script src="js/add_task.js"></script>
 
 
 </head>
@@ -73,6 +74,26 @@
                 </svg>
         </div>
     </div>
+
+ <!-- Input Task Fields -->
+ <div class="task">
+<input id="taskTitle">
+<input type="text" id="taskDescription" placeholder="Enter a Description">
+<input type="date" name="" id="tastDueDate" placeholder="dd/mm/yyyy">
+<select name="" id="taskContact">
+        <option value="Georg">Georg</option>
+        <option value="Alex">Alex</option>
+        <option value="Jean">Jean</option>
+</select>
+<select name="" id="taskCategory">
+    <option value="To Do">To Do</option>
+    <option value="In progrss">In progrss</option>
+    <option value="Await feedback">Await feedback</option>
+</select>
+<button onclick="addTask()">Add Task</button>
+</div>
+
+
 </body>
 
 

@@ -245,3 +245,6 @@ text {
     align-items: center;
     flex-shrink: 0;
 }
+.task{
+    padding-left: 300px;
+}
