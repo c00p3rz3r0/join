@@ -16,6 +16,13 @@ function addTask(){
         'createdAt': new Date().getTime()
     }
     allTasks.push(task);
+    let allTasksAsString = JSON.stringify(allTasks);
+    localStorage.setItem('allTasks', allTasksAsString);
+}
 
-    console.log(allTasks);
+
+
+function loadAllTask(){
+    let allTasksAsString = localStorage.getItem('allTasks');
+    allTasks = JSON.parse(allTasksAsString);
 }
