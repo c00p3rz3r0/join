@@ -1,3 +1,15 @@
+.text-sm-btn {
+    height: 18px;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+
+
 .button-wo-icon {
     display: flex;
     height: 48px;
@@ -8,31 +20,79 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    color: #FFF;
-    font-family: Inter;
-    font-size: 21px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 120%;
-    /* 25.2px */
+}
+
+.button-wo-icon:hover {
+    border-radius: 8px;
+    background: var(--Ligth-blue, #29ABE2);
+    /* stronger */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.button-wo-icon:active {
+    border-radius: 8px;
+    background: #091931;
+    /* stronger */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .button-secondary-wo-icon {
-    display: flex;
     height: 48px;
+    display: inline-flex;
     overflow: hidden;
     padding: 15px 24px;
     border-radius: 8px;
     border: 1px solid var(--version-2-main-color, #2A3647);
-    background: var(--white, #FFF);
     justify-content: center;
     align-items: center;
     gap: 10px;
     color: var(--version-2-main-color, #2A3647);
-    font-family: Inter;
-    font-size: 21px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 120%;
-    /* 25.2px */
+
+    
+}
+
+.button-secondary-wo-icon:hover {
+    display: inline-flex;
+    overflow: hidden;
+    padding: 15px 24px;
+    border-radius: 8px;
+    border: 2px solid var(--Ligth-blue, #29ABE2);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: var(--Ligth-blue, #29ABE2);
+}
+
+
+.button-secondary-wo-icon:active {
+    display: inline-flex;
+    overflow: hidden;
+    padding: 15px 24px;
+    border-radius: 8px;
+    border: 1px solid #091931;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #091931;
+}
+
+
+
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+    background-color: #2374b7;
+}
+
+.custom-button:active {
+    background-color: #145492;
 }
