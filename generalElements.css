@@ -1,38 +1,74 @@
-.button-wo-icon {
-    display: flex;
-    height: 48px;
-    overflow: hidden;
-    padding: 15px 24px;
-    border-radius: 8px;
-    background: #2A3647;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+.text-sm-btn {
+    height: 18px;
     color: #FFF;
     font-family: Inter;
-    font-size: 21px;
+    font-size: 16px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 120%;
-    /* 25.2px */
+}
+
+
+
+.button-wo-icon {
+    height: 48px;
+    align-items: center;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: inline-flex;
+    gap: 10px;
+    justify-content: center;
+    overflow: hidden;
+    padding: 15px 24px;
+    position: relative;
+    background-color: #2a3647;
+}
+
+
+.button-wo-icon:hover {
+    background-color: var(--ligth-blue, #29ABE2);
+    box-shadow: var(--stronger);
+}
+
+
+.button-wo-icon:active {
+    background-color: #091931;
+    box-shadow: var(--stronger);
 }
 
 .button-secondary-wo-icon {
-    display: flex;
     height: 48px;
+    border: 1px solid;
+    border-color: var(--version-2main-color);
+    align-items: center;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: inline-flex;
+    gap: 10px;
+    justify-content: center;
     overflow: hidden;
     padding: 15px 24px;
-    border-radius: 8px;
-    border: 1px solid var(--version-2-main-color, #2A3647);
-    background: var(--white, #FFF);
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    color: var(--version-2-main-color, #2A3647);
-    font-family: Inter;
-    font-size: 21px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 120%;
-    /* 25.2px */
+    position: relative;
+    color: var(--version-2main-color);
+    
 }
+
+
+
+.button-secondary-wo-icon:hover {
+    border: 2px solid;
+    border-color: var(--ligth-blue);
+    box-shadow: var(--stronger);
+    color: var(--ligth-blue);
+    
+}
+
+.button-secondary-wo-icon:active {
+    border: 1px solid;
+    border-color: #091931;
+    box-shadow: var(--stronger);
+    color: #091931;
+    
+}
+
+
