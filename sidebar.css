@@ -1,0 +1,11 @@
+.prop-1-default {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    color: #CDCDCD;
+}
+
+
+
