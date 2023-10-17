@@ -1,16 +1,18 @@
 <div class="task">
-  <input id="taskTitle" />
-  <input type="text" id="taskDescription" placeholder="Enter a Description" />
-  <input type="date" name="" id="tastDueDate" placeholder="dd/mm/yyyy" />
-  <select name="" id="taskContact">
-    <option value="Georg">Georg</option>
-    <option value="Alex">Alex</option>
-    <option value="Jean">Jean</option>
-  </select>
-  <select name="" id="taskCategory">
-    <option value="To Do">To Do</option>
-    <option value="In progrss">In progrss</option>
-    <option value="Await feedback">Await feedback</option>
-  </select>
-  <button onclick="addTask()">Add Task</button>
+  <form onsubmit="addTask()">
+    <input required id="taskTitle" />
+    <textarea type="text" id="taskDescription" placeholder="Enter a Description"></textarea>
+    <input required type="date" name="" id="tastDueDate" placeholder="dd/mm/yyyy" />
+    <select required name="" id="taskContact" multiple>
+      <option value="Georg">Georg</option>
+      <option value="Alex">Alex</option>
+      <option value="Jean">Jean</option>
+    </select>
+    <select required name="" id="taskCategory">
+      <option value="To Do">To Do</option>
+      <option value="In progrss">In progrss</option>
+      <option value="Await feedback">Await feedback</option>
+    </select>
+    <button>Add Task</button>
+  </form>
 </div>
