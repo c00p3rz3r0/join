@@ -8,6 +8,10 @@
     left: 232px;
     background-color: green;
     overflow:scroll;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
 }
 
 .bar {
@@ -50,13 +54,18 @@
     left: 52px;
     border-radius: 10px;
     border: 1px;
-    padding: 12px, 0px, 12px, 0px;
+    padding-left: 12px;
+    padding-right: 12px;
     gap: 16px;
     background-color: #2A3647;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .add-new-contact-btn:hover {
     background-color: #091931;
+    cursor: pointer;
 }
 
 .add-new-contact-text-div {
@@ -65,5 +74,39 @@
     font: inter;
     font-weight: 700;
     font-size: 21px;
-    line-height: 25,2px;
+    line-height: 25.2px;
+    color: #ffffff;
+}
+
+.add-img {
+    width: 32px;
+    height: 32px;
+}
+
+.contact-letter-frame-119 {
+    width: 352px;
+    height: 58px;
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    padding-left: 36px;
+    background-color: red;
+}
+
+.vector-10 {
+    width: 352px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    gap: 10px;
+}
+
+.contact-name {
+    width: 352px;
+    height: 78px;
+    background-color: aquamarine;
+}
+
+.contact-name-circle {
+    width: 42px;
+    height: 42px;
 }
