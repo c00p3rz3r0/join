@@ -7,6 +7,7 @@
     top: 96px;
     left: 232px;
     background-color: green;
+    overflow:scroll;
 }
 
 .bar {
@@ -25,4 +26,44 @@
     left:17px;
     /*rotation: 180;*/
     color: #A8A8A8;
+}
+
+.vector-12 {
+    position: absolute;
+    width: 10px;
+    height: 4px;
+    top: 20px;
+    left: 8px;
+    color: #A8A8A8;
+}
+
+.btn-div {
+    width: 456px;
+    height: 101px;
+}
+
+.add-new-contact-btn {
+    position: absolute;
+    width: 352px;
+    height: 56px;
+    top: 22.5px;
+    left: 52px;
+    border-radius: 10px;
+    border: 1px;
+    padding: 12px, 0px, 12px, 0px;
+    gap: 16px;
+    background-color: #2A3647;
+}
+
+.add-new-contact-btn:hover {
+    background-color: #091931;
+}
+
+.add-new-contact-text-div {
+    width: 175px;
+    height: 25px;
+    font: inter;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 25,2px;
 }
