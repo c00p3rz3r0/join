@@ -1,3 +1,26 @@
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 232px;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 64px 0px;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.10);
+    background-color: #2A3D59;
+    ;
+    flex-direction: column;
+    gap: 30vh;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/*.task{
+    padding-left: 300px;
+}*/
+
+
 .prop-1-default {
     display: inline-flex;
     flex-direction: column;
@@ -7,20 +30,22 @@
     color: #CDCDCD;
 }
 
-.sideMenu{
+.sideMenu {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
 }
-.sideMenu:hover{
+
+.sideMenu:hover {
     background-color: #091931;
 }
-h3{
+
+h3 {
     margin: 0px !important;
     padding: 0px !important;
 }
 
-.bg-color-active{
- background-color: #091931 !important;
+.bg-color-active {
+    background-color: #091931 !important;
 }
