@@ -27,3 +27,8 @@ function includeHTML() {
       }
     }
   };
+  function loadNextSite(name){
+    let nextSite = name;
+    window.location.href=nextSite + '.html';
+  }
+  

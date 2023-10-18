@@ -1,0 +1,26 @@
+.prop-1-default {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    color: #CDCDCD;
+}
+
+.sideMenu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.sideMenu:hover{
+    background-color: #091931;
+}
+h3{
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.bg-color-active{
+ background-color: #091931 !important;
+}

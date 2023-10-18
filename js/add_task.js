@@ -1,28 +1,33 @@
-let allTasks= [];
+let allTasks = [];
 
-function addTask(){
-    let taskTitle = document.getElementById('taskTitle').value;
-    let taskDescription = document.getElementById('taskDescription').value;
-    let taskDueDate = document.getElementById('tastDueDate').value;
-    let taskContact = document.getElementById('taskContact').value;
-    let taskCategory = document.getElementById('taskCategory').value;
+function addTask() {
+    let taskTitle = document.getElementById('taskTitle');
+    let taskDescription = document.getElementById('taskDescription');
+    let taskDueDate = document.getElementById('tastDueDate');
+    let taskContact = document.getElementById('taskContact');
+    let taskCategory = document.getElementById('taskCategory');
 
-    let task ={
-        'title': taskTitle,
-        'description': taskDescription,
-        'dueDate': taskDueDate,
-        'contact': taskContact,
-        'category': taskCategory,
+    let task = {
+        'title': taskTitle.value,
+        'description': taskDescription.value,
+        'dueDate': taskDueDate.value,
+        'contact': taskContact.value,
+        'category': taskCategory.value,
         'createdAt': new Date().getTime()
     }
     allTasks.push(task);
     let allTasksAsString = JSON.stringify(allTasks);
     localStorage.setItem('allTasks', allTasksAsString);
+    taskTitle.value = '';
+    taskDescription.value = '';
+    taskDueDate.value = '';
+    taskContact.value = '';
+    taskCategory.value = '';
 }
 
 
 
-function loadAllTask(){
+function loadAllTask() {
     let allTasksAsString = localStorage.getItem('allTasks');
     allTasks = JSON.parse(allTasksAsString);
 }
