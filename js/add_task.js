@@ -17,7 +17,7 @@ function addTask() {
     }
     allTasks.push(task);
     let allTasksAsString = JSON.stringify(allTasks);
-    localStorage.setItem('allTasks', allTasksAsString);
+    setItem('allTasks', allTasksAsString);
     taskTitle.value = '';
     taskDescription.value = '';
     taskDueDate.value = '';
