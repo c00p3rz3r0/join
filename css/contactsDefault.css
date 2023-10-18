@@ -1,0 +1,28 @@
+
+
+.generalcontacts-frame97 {
+    position: absolute;
+    width: 456px;
+    height: 928px;
+    top: 96px;
+    left: 232px;
+    background-color: green;
+}
+
+.bar {
+    position: absolute;
+    width: 24px;
+    height: 928px;
+    left: 432px;
+    background-color: red;
+}
+
+.vector-13 {
+    position: absolute;
+    width: 10px;
+    height: 4px;
+    top: 908px;
+    left:17px;
+    /*rotation: 180;*/
+    color: #A8A8A8;
+}
