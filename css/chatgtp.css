@@ -1,27 +1,4 @@
-/* body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-    min-height: 100vh;
-    background-color: #f2f2f2;
-  } */
-
-/* #loading-logo {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ffffff;
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    opacity: 1;
-} */
+/* animation vom logo loginp */
 
 #loading-logo.hidden {
     transform: translateX(50%);
@@ -32,12 +9,6 @@
     display: none;
 }
 
-/* #loading-logo img {
-    width: 100px;
-    /* Adjust the size as needed */
-/*}/**/
-
-/* Add your own styles for the login input fields here */
 
 /* Simulate a delay with animation-delay */
 @keyframes showLogin {
@@ -52,4 +23,40 @@
     100% {
         display: flex;
     }
+}
+
+/* Neue Style */
+
+.priority-button {
+    border: 2px solid #fff;
+    color: #000;
+    background-color: transparent;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: box-shadow 0.3s, color 0.3s, background-color 0.3s;
+    display: inline-block;
+}
+
+.priority-button:hover {
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.priority-button:active {
+    background-color: #ff0000;
+    color: #fff;
+    border: 2px solid #ff0000;
+}
+
+.priority-button:focus {
+    background-color: #ff0000;
+    color: #fff;
+    border: 2px solid #ff0000;
+}
+
+/* Entfernen der Standard-Fokusring-Stile */
+.priority-button:focus {
+    outline: none;
 }

@@ -6,6 +6,15 @@
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.txt-nodeco {
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 
@@ -50,7 +59,7 @@
     padding: 15px 24px;
     position: relative;
     color: var(--version-2main-color);
-    
+
 }
 
 .button-secondary-wo-icon:hover {
@@ -58,7 +67,7 @@
     border-color: var(--ligth-blue);
     box-shadow: var(--stronger);
     color: var(--ligth-blue);
-    
+
 }
 
 .button-secondary-wo-icon:active {
@@ -66,7 +75,120 @@
     border-color: #091931;
     box-shadow: var(--stronger);
     color: #091931;
-    
+
+}
+
+/* priority-button s */
+
+.priority-button-group {
+    display: flex;
+    width: 440px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.priority-button-text {
+    height: 24px;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    /* 25.2px */
 }
 
 
+.priority-button, .priority-button-medium, .priority-button-low {
+    height: 48px;
+    border: 1px solid;
+    align-items: center;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;    
+    padding: 16px 10px;
+    gap: 8px;
+    flex: 1 0 0;
+    position: relative;
+    background: var(--white, #FFF);
+    color: #000;
+    transition: box-shadow 0.3s, color 0.3s, background-color 0.3s;
+    
+}
+
+.priority-button:hover {
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.priority-button:active {
+    background-color: #ff0000;
+    color: #fff;
+    border: 2px solid #ff0000;
+}
+
+.priority-button:focus {
+    background-color: #ff0000;
+    color: #fff;
+    border: 2px solid #ff0000;
+}
+
+/* Entfernen der Standard-Fokusring-Stile */
+.priority-button:focus {
+    outline: none;
+}
+
+
+
+.priority-button-medium:hover {
+    box-shadow: 0 0 12px #ffd500;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.priority-button-medium:active {
+    background-color: #ffd500;
+    color: #fff;
+    border: 2px solid #ffd500;
+}
+
+.priority-button-medium:focus {
+    background-color: #ffd500;
+    color: #fff;
+    border: 2px solid #ffd500;
+}
+
+/* Entfernen der Standard-Fokusring-Stile */
+.priority-button-low:focus {
+    outline: none;
+}
+
+.priority-button-low:hover {
+    box-shadow: 0 0 12px #00ff44;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.priority-button-low:active {
+    background-color: #00ff44;
+    color: #fff;
+    border: 2px solid #00ff44;
+}
+
+.priority-button-low:focus {
+    background-color: #00ff44;
+    color: #fff;
+    border: 2px solid #00ff44;
+}
+
+/* Entfernen der Standard-Fokusring-Stile */
+.priority-button-low:focus {
+    outline: none;
+}
