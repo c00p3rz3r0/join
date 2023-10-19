@@ -2,7 +2,7 @@ let allTasks = [];
 
 function addTask(){
     let taskTitle = document.getElementById('taskTitle').value;
-    debugger;
+
     //let taskDescription = document.getElementById('taskDescription');
     //let taskDueDate = document.getElementById('tastDueDate');
     //let taskContact = document.getElementById('taskContact');
@@ -17,10 +17,8 @@ function addTask(){
         //'createdAt': new Date().getTime()
     };
     debugger;
-    
-    allTasks.push(task);
     console.log(task);
-    debugger
+    allTasks.push(task);
     //let allTasksAsString = JSON.stringify(allTasks);
     //setItem('allTasks', allTasks);
     //taskTitle.value = '';
