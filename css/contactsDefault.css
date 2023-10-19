@@ -103,10 +103,39 @@
 .contact-name {
     width: 352px;
     height: 78px;
+    padding-left: 24px;
+    display: flex;
+    align-items: center;
     background-color: aquamarine;
 }
 
 .contact-name-circle {
     width: 42px;
     height: 42px;
+}
+
+.name-mail-div-frame81 {
+    width: 140px;
+    height: 48px;
+    gap: 5px;
+    margin-left: 35px;
+    background-color: grey;
+}
+
+.contact-name-txt {
+    font-family: inter;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    height: 24px;
+    background-color: white;
+}
+
+.contact-email {
+    font-family: inter;
+    font-weight: 400px;
+    font-size: 16px;
+    line-height: 19.2px;
+    height: 19px;
+    color: #007CEE;
 }
