@@ -2,24 +2,25 @@ let allTasks = [];
 
 function addTask(){
     let taskTitle = document.getElementById('taskTitle').value;
-    debugger;
+
     //let taskDescription = document.getElementById('taskDescription');
     //let taskDueDate = document.getElementById('tastDueDate');
     //let taskContact = document.getElementById('taskContact');
     //let taskCategory = document.getElementById('taskCategory');
 
     let task = {
-        'title': taskTitle
+        'title': taskTitle,
         //'description': taskDescription.value,
         //'dueDate': taskDueDate.value,
         //'contact': taskContact.value,
         //'category': taskCategory.value,
         //'createdAt': new Date().getTime()
     };
-    debugger;
-    console.log(task);
+
     allTasks.push(task);
-    //let allTasksAsString = JSON.stringify(allTasks);
+    console.log(allTasks);
+    let allTasksAsString = JSON.stringify(allTasks);
+    localStorage.setItem('allTasks', allTasksAsString);
     //setItem('allTasks', allTasks);
     //taskTitle.value = '';
     //taskDescription.value = '';
