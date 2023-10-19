@@ -1,0 +1,30 @@
+<div style="padding-left: 244px;">
+    <div class="container mt-4">
+        <div class="kanban-board">
+            <div class="kanban-column" id="todo-column" ondrop="drop(event, 'todo-column')"
+                ondragover="allowDrop(event)">
+                <h2>To Do</h2>
+                <div class="kanban-card" draggable="true" ondragstart="drag(event)">Task 1</div>
+                <div class="kanban-card" draggable="true" ondragstart="drag(event)">Task 2</div>
+            </div>
+            <div class="kanban-column" id="inprogress-column" ondrop="drop(event, 'inprogress-column')"
+                ondragover="allowDrop(event)">
+                <h2>In Progress</h2>
+            </div>
+            <div class="kanban-column" id="feedback-column" ondrop="drop(event, 'feedback-column')"
+                ondragover="allowDrop(event)">
+                <h2>Awaiting Feedback</h2>
+            </div>
+            <div class="kanban-column" id="done-column" ondrop="drop(event, 'done-column')"
+                ondragover="allowDrop(event)">
+                <h2>Done</h2>
+                <div class="kanban-card" draggable="true" ondragstart="drag(event)">Task 5</div>
+                <div class="kanban-card" draggable="true" ondragstart="drag(event)">Task 6</div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>

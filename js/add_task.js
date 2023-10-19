@@ -9,7 +9,7 @@ function addTask(){
     //let taskCategory = document.getElementById('taskCategory');
 
     let task = {
-        'title': taskTitle
+        'title': taskTitle,
         //'description': taskDescription.value,
         //'dueDate': taskDueDate.value,
         //'contact': taskContact.value,
@@ -17,8 +17,10 @@ function addTask(){
         //'createdAt': new Date().getTime()
     };
     debugger;
-    console.log(task);
+    
     allTasks.push(task);
+    console.log(task);
+    debugger
     //let allTasksAsString = JSON.stringify(allTasks);
     //setItem('allTasks', allTasks);
     //taskTitle.value = '';
@@ -33,4 +35,5 @@ function addTask(){
 function loadAllTask() {
     let allTasksAsString = localStorage.getItem('allTasks');
     allTasks = JSON.parse(allTasksAsString);
+    // alert("Done");
 }
