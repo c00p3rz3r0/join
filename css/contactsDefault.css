@@ -114,6 +114,15 @@
 .contact-name-circle {
     width: 42px;
     height: 42px;
+    position: relative;
+}
+
+.contact-name-circle-txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
 }
 
 .name-mail-div-frame81 {
@@ -133,7 +142,7 @@
 
 .contact-email {
     font-family: inter;
-    font-weight: 400px;
+    font-weight: 400;
     font-size: 16px;
     line-height: 19.2px;
     height: 19px;
