@@ -179,3 +179,60 @@
     line-height: 32.4px;
     color: #2A3647;
 }
+
+
+
+/* view-contact-div*/
+.view-contact-div {
+    position: absolute;
+    width: 461px;
+    height:364px;
+    top: 311px;
+    left: 750px;
+    gap: 21px;
+    background-color: yellowgreen;
+}
+
+.show-name {
+    width: 461px;
+    height: 120px;
+    background-color: red;
+}
+
+.show-name-circle {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    gap: 10px;
+}
+
+.show-name-circle-img {
+    width: 120px;
+}
+
+.show-name-circle-txt {
+    width: 80px;
+    height: 28.57px;
+    top: 45.71px;
+    left: 20px;
+    font-family: inter;
+    font-weight: 500;
+    font-size: 47px;
+    line-height: 56.4px;
+    color: #ffffff;
+    position: absolute;
+    /*top: 50%;*/
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.show-name-close {
+    width: 287px;
+    height: 88px;
+    background-color: orange;
+}
+
+
+
+
+
