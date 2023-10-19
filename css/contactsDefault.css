@@ -190,13 +190,14 @@
     top: 311px;
     left: 750px;
     gap: 21px;
-    background-color: yellowgreen;
 }
 
 .show-name {
     width: 461px;
     height: 120px;
-    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .show-name-circle {
@@ -229,7 +230,48 @@
 .show-name-close {
     width: 287px;
     height: 88px;
-    background-color: orange;
+}
+
+.name-container-frame81 {
+    width: 287px;
+    height: 56px;
+    gap: 5px;
+    font-family: inter;
+    font-weight: 500;
+    font-size: 47px;
+    line-height: 56.4px;
+}
+
+.edit-name {
+    width: 159px;
+    height: 24px;
+    margin-top: 5px;
+}
+
+.edit-name-sub {
+    width: 62px;
+    height: 24px;
+    gap: 8px;  /*originally: 13px*/
+    display: flex;
+    align-items: center;
+}
+
+.edit-name-sub:hover {
+    cursor: pointer;
+}
+
+.edit-pen-img {
+    height: 24px;
+    width: 24px;
+}
+
+.edit-txt {
+    width: 30px;
+    height: 19px;
+    font-family: inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
 }
 
 
