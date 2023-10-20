@@ -231,8 +231,6 @@ text {
     display: flex;
     flex-direction: column;
     align-items: lef;
-    padding-top: 110px;
-    padding-left: 300px;
     flex-wrap: wrap;
 }
 .summary_cards{
@@ -241,19 +239,38 @@ text {
     position: absolute;
     top: 335px;
     left: 328px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .summary_card{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 264px;
-    height: 168px;
-    padding: 30px;
     border-radius: 30px;
-    gap: 10px;
     background-color: #FFFFFF;
     box-shadow: 0px 0px 4px 0px #0000001A; 
-
+}
+.frame-65{
+    width: 264px;
+    height: 168px;
+}
+.frame-64{
+    width: 168px;
+    height: 168px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left: 25px;
+    padding-top: 0px;
+    padding-right: 25px;
+    padding-bottom: 0px;
+}
+.frame-summary{
+    width: 560px;
+    height: 168px;
 }
 .p-headline{
     font-size: 64px !important;
@@ -270,6 +287,7 @@ text {
 .flex-row-center{
     display: flex;
     justify-content: space-between;
+    gap: 15px;
 }
 
 .task{
