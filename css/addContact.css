@@ -1,0 +1,152 @@
+
+body {
+    background-color: grey;
+}
+
+
+.overlay-add-contact {
+    width: 1221px;
+    height: 592px;
+    top: -2901px;
+    left: 42px;
+    border-radius: 30px;
+    background-color: #FFFFFF;
+}
+
+.close-div {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 48px;
+    left: 1142px;
+    border-radius: 56;
+}
+
+.close-img {
+    width: 24px;
+    height: 24 px;
+    top: 4px;
+    left: 4px;
+}
+
+.person-img-group13 {
+    position: absolute;
+    width: 120px;
+    height:120px;
+    top: 204px;
+    left: 550px;
+    border-radius: 70px;
+    border: 3px;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D1D1D1;
+}
+
+.person-img {
+    width: 64px;
+    height: 64px;
+}
+
+.cancel-create-contact {
+    position: absolute;
+    width: 364px;
+    height:57px;
+    top: 400px;
+    left: 742px;
+    gap: 24px;
+    display: flex;
+}
+
+.cancel-btn {
+    display: flex;
+    width: 126px;
+    height: 56px;
+    border-radius: 10px;
+    border: 1px black solid;
+    padding: 16px;
+    gap: 4px;
+    background-color: white; 
+}
+
+/*.cancel-btn:hover {
+    cursor: pointer;
+    background-color: #2A3647;
+    color: white;
+}
+
+.cancel-btn:hover .cancel-btn-img {
+    color: white !important;
+}*/
+
+.cancel-btn-txt {
+    width: 66px;
+    height: 24px;
+    font-family: inter;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.cancel-btn-img {
+    width: 24px;
+    height: 24px;
+    top: 6.76px;
+    border: 2px;
+}
+
+.create-contact-btn {
+    width: 214px;
+    height: 57px;
+    border-radius:10px;
+    gap: 4px;
+    display: flex;
+    align-items: center;
+    background-color: #2A3647;
+}
+
+.create-contact-txt {
+    width: 154px;
+    height: 25px;
+    font-family: inter;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 25.2px;
+    color: #FFFFFF;
+}
+
+/*.create-contact-bounding-box-img {
+    width: 24px;
+    height: 24px;
+    top: 16.5px;
+    left: 174px;
+}*/
+
+.create-contact-img {
+    width: 15.49px;
+    height: 11.22px;
+    top: 22.88px;
+    /*left: 178.24px;*/
+    left: 322px;
+}
+
+
+/* Add contacts textfield */
+.add-contact-textfileds {
+    width: 422px;
+    height: 215px;
+    top: 137px;
+    left: 742px;
+    gap: 32px;
+    background-color: greenyellow;
+}
+
+
+
+
+
+
+
+
+
