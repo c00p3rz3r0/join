@@ -103,6 +103,8 @@
     padding-left: 24px;
     display: flex;
     align-items: center;
+    border-radius: 10px;
+    transition: background-color 0.2s;
 }
 
 .contact-name:hover {
@@ -246,6 +248,8 @@
     width: 159px;
     height: 24px;
     margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .edit-name-sub {
@@ -260,6 +264,15 @@
     cursor: pointer;
 }
 
+.edit-name-sub:hover .edit-pen-img {
+    transform: scale(1.2); 
+    transition: transform 0.3s; 
+}
+
+.edit-name-sub:hover .edit-txt {
+    text-decoration: underline;
+}
+
 .edit-pen-img {
     height: 24px;
     width: 24px;
@@ -272,8 +285,126 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 19.2px;
+    transition:  text-decoration 0.3s;
 }
 
+.delete-container {
+    display: flex;
+    width:81px;
+    height: 24px;
+    left: 78px;
+    gap: 8px;
+}
+
+.delete-container:hover {
+    cursor: pointer;
+}
+
+.delete-container:hover .delete-img {
+    transform: scale(1.2); 
+    transition: transform 0.3s; 
+}
+
+.delete-container:hover .delete-txt {
+    text-decoration: underline;
+    transition:  text-decoration 0.3s;
+}
+
+.delete-img {
+    width: 16px;
+    height: 18px;
+    margin-top: 3px;
+    margin-left: 4px;
+}
+
+.delete-txt {
+    width: 49px;
+    height: 19px;
+    font-family: inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+}
+
+.contact-information {
+    width: 207px;
+    height: 74px;
+    gap: 59px;
+    font-family: inter;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.information-mail-phone-div {
+    width: 140px;
+    height: 128px;
+    gap: 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mail-div {
+    width: 140px;
+    height: 53px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.email-txt {
+    font-family: inter;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19.2px;
+    color: #000000;
+}
+
+.actual-email {
+    font-family: inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+    color: #007CEE;
+}
+
+.actual-email:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: #007CEE;
+}
+
+.phone-div {
+    width: 124px;
+    height: 53px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.phone-txt {
+    font-family: inter;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19.2px;
+    color: #000000;
+}
+
+.actual-phone-number {
+    font-family: inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+    color: #000000;
+}
+
+.actual-phone-number:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: #000000;
+}
 
 
 
