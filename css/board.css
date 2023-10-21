@@ -1,0 +1,26 @@
+.frame-191 {
+
+    height: 232px;
+    overflow: hidden;
+    background: #F6F7F8;
+    flex-shrink: 0;
+}
+
+.frame-192 {
+    width: 100%;    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 79.5px 64px;
+
+}
+
+.frame-123 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 32px;
+    width: 504px;
+    height: 48px;
+
+}
