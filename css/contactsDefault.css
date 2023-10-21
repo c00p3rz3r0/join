@@ -246,6 +246,8 @@
     width: 159px;
     height: 24px;
     margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .edit-name-sub {
@@ -273,6 +275,75 @@
     font-size: 16px;
     line-height: 19.2px;
 }
+
+.delete-container {
+    display: flex;
+    width:81px;
+    height: 24px;
+    left: 78px;
+    gap: 8px;
+    background-color: yellowgreen;
+}
+
+.delete-img {
+    width: 16px;
+    height: 18px;
+    margin-top: 3px;
+    margin-left: 4px;
+}
+
+.delete-txt {
+    width: 49px;
+    height: 19px;
+    font-family: inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+}
+
+.contact-information {
+    width: 207px;
+    height: 74px;
+    gap: 59px;
+    font-family: inter;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.information-mail-phone-div {
+    width: 140px;
+    height: 128px;
+    background-color: green;
+}
+
+.mail-div {
+    width: 140px;
+    height: 53px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: orange;
+}
+
+.email-txt {
+    font-family: inter;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19.2px;
+    color: #000000;
+}
+
+.actual-email {
+    font-family: inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+    color: #007CEE;
+}
+
 
 
 
