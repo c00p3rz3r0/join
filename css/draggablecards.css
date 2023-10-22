@@ -1,7 +1,10 @@
 .kanban-board {
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    height: 688px;
+    padding: 0px 64px;
+    align-items: flex-start;
+    gap: 26px;
+    flex-shrink: 0;
 }
 
 .kanban-column {
@@ -11,14 +14,79 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     margin: 10px;
+    min-height: 50dvh;
+    gap: 16px;
 }
 
 .kanban-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 5px;
+    display: flex;
+    width: 252px;
+    padding: 16px;
+    margin-top: 16px;
+    border-radius: 24px;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.08);
+    background: var(--white, #FFF);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     cursor: grab;
     /* Hinzufügen eines Zeigers für das Ziehen */
+}
+
+.frame-119 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+    width: 220px;
+    height: 212px;
+
+}
+
+.labels-board-card-label {
+    display: flex;
+    padding: 4px 16px;
+    align-items: flex-start;
+    gap: 10px;
+
+    border-radius: 8px;
+    background: #0038FF;
+}
+
+.frame-114 {
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.progress-bar-custom-parent {
+    display: flex;
+    padding: 0px 6px 2px 0px;
+    align-items: center;
+    gap: 11px;
+}
+
+.progress-bar-custom {
+    display: flex;
+    width: 128px;
+    overflow: hidden;
+    padding-right: 0px;
+    border-radius: 8px;
+    background: #F4F4F4;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.frame-139 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
 }
