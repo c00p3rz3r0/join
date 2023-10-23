@@ -13,8 +13,10 @@ function addTask() {
         'dueDate': taskDueDate.value,
         'contact': taskContact.value,
         'category': taskCategory.value,
+        // 'pro': taskDescription.value,
         'createdAt': new Date().getTime(),
     };
+    allTasks.push(task);
     let allTasksAsString = JSON.stringify(allTasks);
     localStorage.setItem('allTasks', allTasksAsString);
     taskTitle.value = '';
@@ -25,6 +27,7 @@ function addTask() {
 }
 
 
+// getItem()
 
 function loadAllTask() {
     let allTasksAsString = localStorage.getItem('allTasks');
