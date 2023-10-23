@@ -3,7 +3,13 @@
 body {
     height: 100vh;
     background-color: #F6F7F8 !important;
+    margin: 0;
+    padding: 0;
 }
+
+/* div {
+    display: flex;
+} */
 
 text {
     color: #000;
@@ -227,13 +233,14 @@ text {
     flex-shrink: 0;
 }
 
-.summary_content{
+.summary_content {
     display: flex;
     flex-direction: column;
     align-items: lef;
     flex-wrap: wrap;
 }
-.summary_cards{
+
+.summary_cards {
     width: 560px;
     height: 562px;
     position: absolute;
@@ -243,19 +250,22 @@ text {
     flex-direction: column;
     justify-content: space-between;
 }
-.summary_card{
+
+.summary_card {
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 30px;
     background-color: #FFFFFF;
-    box-shadow: 0px 0px 4px 0px #0000001A; 
+    box-shadow: 0px 0px 4px 0px #0000001A;
 }
-.frame-65{
+
+.frame-65 {
     width: 264px;
     height: 168px;
 }
-.frame-64{
+
+.frame-64 {
     width: 168px;
     height: 168px;
     display: flex;
@@ -268,31 +278,36 @@ text {
     padding-right: 25px;
     padding-bottom: 0px;
 }
-.frame-summary{
+
+.frame-summary {
     width: 560px;
     height: 168px;
 }
-.p-headline{
+
+.p-headline {
     font-size: 64px !important;
     font-weight: 600 !important;
 }
-.p-summary{
+
+.p-summary {
     font-size: 20px;
 }
-.logos-summary{
+
+.logos-summary {
     width: 69px;
     height: 69px;
 }
 
-.flex-row-center{
+.flex-row-center {
     display: flex;
     justify-content: space-between;
     gap: 15px;
 }
 
-.task{
+.task {
     padding-left: 300px;
 }
+
 .sidebar {
     position: absolute;
     top: 0;
