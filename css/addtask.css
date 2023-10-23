@@ -68,3 +68,7 @@
     align-items: flex-start;
     gap: 8px;
 }
+
+.delete-button {
+    cursor: pointer;
+}

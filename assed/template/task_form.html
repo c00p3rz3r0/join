@@ -16,31 +16,27 @@
       </div>
       <div class="input-box">
         <label for="taskDescription" class="form-label">Description</label>
-        <textarea type="text" class="form-control" style="width: 100%;" rows="3" id="taskDescription"
+        <textarea required type="text" class="form-control" style="width: 100%;" rows="3" id="taskDescription"
           placeholder="Enter a Description"></textarea>
       </div>
-      <div class="input-box">
-       <!-- <label for="exampleDataList" class="form-label">Assigned to</label>
-        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
-        <datalist id="datalistOptions" required name="" id="taskContact" multiple>
-          <option value="Georg"></option>
-          <option value="Alex"></option>
-          <option value="Jean"></option>S
-        </datalist>-->
-
-        <!-- Ich habe hier die Liste von Bootsrapverwendet, schau malob das geht   -->
-         <label for="taskContact">Assigned to</label>
-        <select class="input-box" required name="" id="taskContact" multiple>
-          <option value="Georg">Georg</option>
-          <option value="Alex">Alex</option>
-          <option value="Jean">Jean</option>
-        </select> 
-
+      <div class="mt-4" style="width: 100%;">
+        <label for="exampleDataList" class="form-label">Assigned to</label>
+        <div class="input-group mb-3">
+          <input required class="form-control selectpicker" list="datalistOptions" id="taskContact"
+            placeholder="Type to search...">
+          <datalist id="datalistOptions">
+            <option value="Georg"></option>
+            <option value="Alex"></option>
+            <option value="Jean"></option>
+          </datalist>
+          <div class="input-group-append">
+            <button class="btn btn-primary">Add</button>
+          </div>
+        </div>
       </div>
-
     </div>
+    <!-- right side -->
     <div class="frame-39">
-      <!-- right side -->
       <div class="input-box">
         <label for="tastDueDate">due Date</label>
         <input required type="date" class="form-control border-0" name="" id="tastDueDate" placeholder="dd/mm/yyyy" />
@@ -73,19 +69,68 @@
         </select>
       </div>
 
-      <div class="input-box">
+      <!-- <div class="input-box">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Add new subtask" aria-label="Recipient's username"
-            aria-describedby="button-addon2">
+          <input type="text" class="form-control" id="addsubtask" placeholder="Add new subtask"
+            aria-label="Recipient's username" aria-describedby="button-addon2">
           <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
         </div>
-      </div>
+      </div> -->
 
+      <div class="mt-4" style="width: 100%;">
+        <div class="input-group mb-3">
+          <input required type="text" id="task-input" class="form-control" placeholder="Add a subtask">
+          <div class="input-group-append">
+            <button class="btn btn-primary" onclick="addSubTask()">Add</button>
+          </div>
+        </div>
+        <div id="task-list">
+          <!-- Existing tasks will go here -->
+        </div>
+      </div>
     </div>
     <div class="frame-29">
       <button class="button-secondary-wo-icon text-sm-btn">Clear</button>
       <button class="button-wo-icon text-sm-btn" onclick="addTask()">Add Task</button>
     </div>
-
   </form>
 </div>
+
+
+<!-- <div class="container mt-4">
+    <h1>Task List</h1>
+    <div class="input-group mb-3">
+      <input type="text" id="task-input" class="form-control" placeholder="Add a subtask">
+      <div class="input-group-append">
+        <button class="btn btn-primary" onclick="addSubTask()">Add</button>
+      </div>
+    </div>
+    <div id="task-list">      
+      Existing tasks will go here
+    </div>
+  </div> -->
+
+
+
+</div>
+
+<form style="padding-left: 242px;">
+  <div class="input-group">
+    <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+
+    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+      data-bs-toggle="dropdown" aria-expanded="false">
+      <span class="visually-hidden">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+      <li><a class="dropdown-item" href="#">Action</a></li>
+      <li><a class="dropdown-item" href="#">Another action</a></li>
+      <li><a class="dropdown-item" href="#">Something else here</a></li>
+      <li>
+        <hr class="dropdown-divider">
+      </li>
+      <li><a class="dropdown-item" href="#">Separated link</a></li>
+    </ul>
+    <button type="button" class="btn btn-outline-secondary">Action</button>
+  </div>
+</form>
