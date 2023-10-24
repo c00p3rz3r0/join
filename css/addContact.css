@@ -270,9 +270,17 @@ body {
 }
 
 .contact-sidebar-graphic-img {
-    height: 90px;
+    /*height: 90px;*/
     border: 3px;
-    rotation: -90;
+    /*rotation: -90;*/
+}
+
+.contact-sidebar-logo-div {
+    position: absolute;
+    top: 175px;
+    width: 55.6px;
+    height: 66.48px;
+    background-color: orange;
 }
 
 
