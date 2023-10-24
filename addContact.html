@@ -29,6 +29,11 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 
+    
+    <!-- JS-functions -->
+    <script src="js/addContact.js"></script>
+    <script src="js/storage.js"></script>
+
 
 
 
@@ -53,7 +58,7 @@
                 <img src="assed/svg/contact-imgs/close.svg" alt="" class="cancel-btn-img">
             </button>
 
-            <button class="create-contact-btn">
+            <button onclick="addContact()" class="create-contact-btn">
                 <div class="create-contact-txt">Create contact</div>
                 <div class="create-contact-bounding-box-img">
                     <img src="assed/svg/contact-imgs/check.svg" alt="" class="create-contact-img">
@@ -65,7 +70,7 @@
         <!--Input-Section-->
         <form class="add-contact-textfileds">
             <div class="inputfield-1-around">
-                <input type="text" class="inputfield-1" placeholder="Name">
+                <input id="nameInputField" type="text" class="inputfield-1" placeholder="Name">
 
 
                 <div class="inputfield-img-div">
@@ -74,7 +79,7 @@
             </div>
 
             <div class="inputfield-1-around">
-                <input required type="text" class="inputfield-1" placeholder="Email">
+                <input id="mailInputField" required type="text" class="inputfield-1" placeholder="Email">
 
 
                 <div class="inputfield-img-div">
@@ -83,7 +88,7 @@
             </div>
 
             <div class="inputfield-1-around">
-                <input type="text" class="inputfield-1" placeholder="Phone">
+                <input id="phoneInputField" type="text" class="inputfield-1" placeholder="Phone">
 
 
                 <div class="inputfield-img-div">
@@ -104,7 +109,7 @@
             </div>
 
             <div class="contact-sidebar-logo-div">
-                
+
             </div>
         </div>
         
