@@ -38,6 +38,7 @@
     <!-- customize Scripts -->
     <script src="script.js"></script>
     <script src="js/storage.js"></script>
+    <script src="js/user.js"></script>
 
     <!-- draggable libary -->
 
@@ -51,7 +52,7 @@
 
 </head>
 
-<body>
+<body onload="init()">
     <div class="loginLogo">
         <div class="logoJoin" id="login-container-overlay">
             <div style="width: 274px; height: 334.07px; position: relative" id="loading-logo">
@@ -68,14 +69,14 @@
                     <div class="log-in-frigma">
                         <div class="frame-14">
                             <div class="frame-157">
-                                <input value="" type="email" class="form-control border-0" placeholder="Email"
+                                <input id="userEmail" type="email" class="form-control border-0" placeholder="Email"
                                     style="border: none; box-shadow: none;">
                                 <img src="/assed/svg/emailicon.svg" alt="" srcset="">
                             </div>
                         </div>
                         <div class="frame-14">
                             <div class="frame-157">
-                                <input value="" type="password" class="form-control border-0" placeholder="Password"
+                                <input id="userpassword" type="password" class="form-control border-0" placeholder="Password"
                                     style="border: none; box-shadow: none;">
                                 <img src="/assed/svg/passwordicon.svg" alt="">
                             </div>
@@ -91,7 +92,7 @@
                     </div>
                 </div>
                 <div class="frame-176">
-                    <button class="button-wo-icon text-sm-btn" type="button">Log in</button>
+                    <button onclick="loginUser()" class="button-wo-icon text-sm-btn" type="button">Log in</button>
                     <button class="button-secondary-wo-icon text-sm-btn" onclick="window.location.href='Summary.html'"
                         type="button">Gust Log in</button>
                 </div>
@@ -99,7 +100,11 @@
         </div>
         <div class="frame-156" id="login-signup" style="display: none;">
             <p class="frame-156-text">Not a Join user?</p>
-            <button class="button-wo-icon text-sm-btn"> Sign up</button>
+            <form onsubmit="register(); return false;">
+                <input type="email" placeholder="Email" id="email">
+                <input type="password" placeholder="Password" id="password">
+            <button class="button-wo-icon text-sm-btn" id="registerBtn"> Sign up</button>
+            </form>
         </div>
     </div>
 
