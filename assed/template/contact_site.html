@@ -12,19 +12,20 @@
     </div>  -->
 
   <div class="btn-div">
-    <button class="add-new-contact-btn">
+    <button class="add-new-contact-btn" onclick="initAddContact()">
       <div class="add-new-contact-text-div">Add new contact</div>
 
       <img src="assed/svg/contact-imgs/person_add.svg" alt="" class="add-img" />
     </button>
+    
   </div>
 
   <div class="contact-letter-frame-119">A</div>
 
   <img src="assed/svg/contact-imgs/Vector 10.svg" alt="" class="vector-10" />
 
-  <div class="contact-name">
-    <div class="contact-name-circle">
+  <div id="contacts">
+    <!--<div class="contact-name-circle">
       <img src="assed/svg/contact-imgs/Ellipse 5.svg" alt="" />
       <div class="contact-name-circle-txt">AM</div>
     </div>
@@ -32,7 +33,7 @@
     <div class="name-mail-div-frame81">
       <div class="contact-name-txt">Anton Mayer</div>
       <div class="contact-email">antom@gmail.com</div>
-    </div>
+    </div>-->
   </div>
 </div>
 
@@ -51,11 +52,11 @@
         alt=""
         class="show-name-circle-img"
       />
-      <div class="show-name-circle-txt">AM</div>
+      <div class="show-name-circle-txt" id="iconDetail">AM</div>
     </div>
 
     <div class="show-name-close">
-      <div class="name-container-frame81">Anton Mayer</div>
+      <div class="name-container-frame81" id="nameContact">Anton Mayer</div>
       <div class="edit-name">
         <div class="edit-name-sub">
           <img
@@ -82,11 +83,11 @@
   <div class="information-mail-phone-div">
     <div class="mail-div">
       <div class="email-txt">Email</div>
-      <div class="actual-email">antom@gmail.com</div>
+      <div class="actual-email" id="emailContact">antom@gmail.com</div>
     </div>
     <div class="phone-div">
       <div class="phone-txt">Phone</div>
-      <div class="actual-phone-number">+49 7345 5324</div>
+      <div class="actual-phone-number" id="phoneNumer">+49 7345 5324</div>
     </div>
   </div>
 </div>

@@ -282,7 +282,12 @@ body {
     height: 66.48px;
     background-color: orange;
 }
-
+.newContact{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
 
 
 
