@@ -1,5 +1,7 @@
 let allContacts = [];
 
+
+    // Close addContactsOverlay and show contact-window
 function closeAddContactOverlay() {
     let contactDiv = document.getElementById('overlay-add-contact');
     let headerTemplate = document.getElementById('header-figma');

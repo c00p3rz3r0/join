@@ -134,13 +134,14 @@ body {
 
 /* Add contacts textfield */
 .add-contact-textfileds {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     width: 422px;
     height: 215px;
     top: 137px;
     left: 742px;
     gap: 32px;
-    background-color: greenyellow;
 }
 
 .inputfield-1-around {
@@ -212,6 +213,35 @@ body {
     /* top: 4px; 
     left: 360px;
     margin-left: 21px;*/
+}
+
+
+/* Contact-Sidebar*/
+.contact-sidebar {
+    width: 467px;
+    height: 594px;
+    gap: 12px;
+    background-color: #2A3647;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 48px;
+}
+
+.contact-sidebar-txt-div {
+    width: 371px;
+    height: 129px;
+    gap: 16px;
+    position: absolute;
+}
+
+.contact-sidebar-txt-1 {
+    width:366px;
+    height: 73px;
+    font-family: inter;
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 73.2px;
+    color: white;
 }
 
 
