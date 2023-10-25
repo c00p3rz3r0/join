@@ -44,7 +44,7 @@
 <body>
 
     <div id="overlay-add-contact" class="overlay-add-contact d-none">
-        <div class="close-div">
+        <div onclick="closeAddContactOverlay()" class="close-div">
             <img src="assed/svg/contact-imgs/close.svg" alt="" class="close-img">
         </div>
 
@@ -53,7 +53,7 @@
         </div>
 
         <div class="cancel-create-contact">
-            <button class="cancel-btn">
+            <button onclick="closeAddContactOverlay()" class="cancel-btn">
                 <div class="cancel-btn-txt">Cancel</div>
                 <img src="assed/svg/contact-imgs/close.svg" alt="" class="cancel-btn-img">
             </button>
