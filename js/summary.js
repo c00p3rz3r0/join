@@ -20,7 +20,6 @@ function loadSum(index){
         if(element['category'] == index){
             sum++;
         }
-        
     }
     return sum;
 }

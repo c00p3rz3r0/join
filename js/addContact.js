@@ -117,7 +117,7 @@ async function loadAllContacts() {
  function getShortIcon(index){
     element = allContacts[index];
     let firstName = element['firstname'];
-    let lastname = element['lastname'];
+    //et lastname = element['lastname'];
     let nameIcon = `${firstName.at(0)}`;
     return nameIcon;
  }
