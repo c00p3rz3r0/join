@@ -1,5 +1,18 @@
 let allContacts = [];
 
+function closeAddContactOverlay() {
+    let contactDiv = document.getElementById('overlay-add-contact');
+    let headerTemplate = document.getElementById('header-figma');
+    let sidebarTemplate = document.getElementById('sidebar');
+    let generalContacts = document.getElementById('generalcontacts');
+    /*let allContactDiv = document.getElementById('allContact');*/
+    contactDiv.classList.add('d-none');
+    headerTemplate.classList.remove('d-none');
+    sidebarTemplate.classList.remove('d-none');
+    generalContacts.classList.remove('d-none');
+    /*allContactDiv.classList.add('d-none');*/
+}
+
 async function initContact(){
     await loadAllContacts();
     loadgeneralContacts();
@@ -35,6 +48,7 @@ async function addContact() {
     /*cancleNewContact();*/
     initContact();
     deleteInputFields(firstName, email, phone);
+    console.log(allContacts);
 }
 
 
@@ -64,9 +78,11 @@ async function loadAllContacts() {
     contactDiv.classList.add('d-none');
     allContactDiv.classList.remove('d-none');
  }
+
  function loadgeneralContacts(){
+    console.log('generalConatacts loaded');
     let contactsDiv = document.getElementById('contacts');
-    /*contactsDiv.innerHTML = ``;*/
+    contactsDiv.innerHTML = ``;
     for (let index = 0; index < allContacts.length; index++) {
         const element = allContacts[index];
             let firstName = element['firstname'];
