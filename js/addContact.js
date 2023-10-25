@@ -39,7 +39,6 @@ async function addContact() {
     /*let lastName = document.getElementById('lastnameInputField');*/
     let email = document.getElementById('mailInputField');
     let phone = document.getElementById('phoneInputField');
-
     allContacts.push({
         firstname: firstName.value,
         /*lastname: lastName.value,*/
@@ -88,7 +87,7 @@ async function loadAllContacts() {
     for (let index = 0; index < allContacts.length; index++) {
         const element = allContacts[index];
             let firstName = element['firstname'];
-            let lastname = element['lastname'];
+            //let lastname = element['lastname'];
             let email = element['mail'];
             let nameIcon = getShortIcon(index);
         contactsDiv.innerHTML += /*html*/`
@@ -98,7 +97,7 @@ async function loadAllContacts() {
             <div class="contact-name-circle-txt" id="nameIcons${index}" >${nameIcon}</div>
         </div>
         <div class="name-mail-div-frame81">
-             <div class="contact-name-txt">${firstName} ${lastname}</div>
+             <div class="contact-name-txt">${firstName}</div>
              <div class="contact-email">${email}</div>
         </div>
         </div>
@@ -108,10 +107,11 @@ async function loadAllContacts() {
 
  function loadDetail(index){
     element = allContacts[index];
-    document.getElementById('nameContact').innerHTML = `${element['firstname']} ${element['lastname']}`;
+    document.getElementById('nameContact').innerHTML = `${element['firstname']}`;
     document.getElementById('emailContact').innerHTML = element['mail'];
     document.getElementById('phoneNumer').innerHTML = element['phone'];
     document.getElementById('iconDetail').innerHTML = getShortIcon(index);
+    document.getElementById('contactNumber').innerHTML = index;
  }
 
  function getShortIcon(index){
@@ -123,3 +123,10 @@ async function loadAllContacts() {
  }
 
  /*${lastname.at(0)}*/
+
+ async function removeContact(){
+    let IDnumber = document.getElementById('contactNumber').innerHTML;
+    allContacts.splice(IDnumber,1);
+    await setItem('contact', JSON.stringify(allContacts));
+    initContact();
+ }

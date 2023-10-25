@@ -37,13 +37,16 @@
     <!-- customize Scripts -->
     <script src="script.js"></script>
     <script src="js/storage.js"></script>
+    <script src="js/summary.js"></script>
+    <script src="js/add_task.js"></script>
+
 
     <!-- Favivon -->
 
     <link rel="shortcut icon" href="/assed/svg/join_logo.svg" type="image/svg+xml">
 </head>
 
-<body>
+<body onload="initSummary()">
     <div w3-include-html="assed/template/header.html"></div>
     <div w3-include-html="assed/template/sidebar.html"></div>
     <!--Content DIV-->
@@ -58,14 +61,14 @@
                 <div class="summary_card frame-65">
                     <img class="logos-summary" src="/assed/svg/edit.svg" alt="">
                     <div>
-                        <p class="p-headline">1</p>
+                        <p class="p-headline" id="totalToDo"></p>
                         <p class="p-summary">To-do</p>
                     </div>
                 </div>
                 <div class="summary_card frame-65">
                     <img class="logos-summary" src="/assed/svg/checkbutton_icon.svg" alt="">
                     <div>
-                        <p class="p-headline">1</p>
+                        <p class="p-headline" id="totalDone"></p>
                         <p class="p-summary">Done</p>
                     </div>
                 </div>
@@ -87,19 +90,19 @@
             <div class="flex-row-center">
                 <div class="summary_card">
                     <div class="frame-64">
-                        <p class="p-headline">5</p>
+                        <p class="p-headline" id="totalTask"></p>
                         <p class="p-summary">Tasks in Board</p>
                     </div>
                 </div>
                 <div class="summary_card">
                     <div class="frame-64">
-                        <p class="p-headline">2</p>
+                        <p class="p-headline" id="taskInProgress"></p>
                         <p class="p-summary">Tasks in Progress</p>
                     </div>
                 </div>
                 <div class="summary_card">
                     <div class="frame-64">
-                        <p class="p-headline">2</p>
+                        <p class="p-headline" id="taskFeedback"></p>
                         <p class="p-summary">Awaiting Feedback</p>
                     </div>
                 </div>
