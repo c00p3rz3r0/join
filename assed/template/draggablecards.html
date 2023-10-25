@@ -13,58 +13,46 @@
 
                     </div>
                     <button class="add-new-task-btn">
-                        <p class="add-new-task-text-div">Add Task</p>
+                        <p class="add-new-task-text-div" onclick="updateHTML()">Add Task</p>
                         <img src="/assed/svg/add.svg" alt="">
                     </button>
                 </div>
             </div>
         </div>
 
-        <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75"
-                aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-
         <div class="kanban-board">
-            <div class="kanban-column" id="todo-column" ondrop="drop(event, 'todo-column')"
-                ondragover="allowDrop(event)">
+            <div class="kanban-column" id="todo-column" ondrop="drop('To Do')" ondragover="allowDrop(event)">
                 <div class="frame-136 column-title-text ">
                     <p>To Do</p>
                     <div class="plus-button"><img src="/assed/svg/capa-1.svg" alt="" onclick="alert('opentask')"></div>
                 </div>
-                <div class="kanban-card" draggable="true" ondragstart="drag(event)">
-                    <p class="labels-board-card-label">User Story</p>
-                    <div class="frame-114">discriptionfromtask</div>
-                    <div class="progress progress-bar-custom ">
-                        <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <div class="frame-139">badges</div>
+                <div style="all: unset;" id="todo-tasks">                    
                 </div>
-                <div class="kanban-card" draggable="true" ondragstart="drag(event)">Task 2</div>
             </div>
-            <div class="kanban-column" id="inprogress-column" ondrop="drop(event, 'inprogress-column')"
+            <div class="kanban-column" id="inprogress-column" ondrop="drop('In progress')"
                 ondragover="allowDrop(event)">
                 <div class="frame-136 column-title-text ">
                     <p>In Progress</p>
                     <div class="plus-button"><img src="/assed/svg/capa-1.svg" alt=""></div>
                 </div>
+                <div style="all: unset;" id="inprogress-tasks">                   
+                </div>
             </div>
-            <div class="kanban-column" id="feedback-column" ondrop="drop(event, 'feedback-column')"
+            <div class="kanban-column" id="feedback-column" ondrop="drop('Await feedback')"
                 ondragover="allowDrop(event)">
                 <div class="frame-136 column-title-text ">
                     <p>Awaiting Feedback</p>
                     <div class="plus-button"><img src="/assed/svg/capa-1.svg" alt=""></div>
                 </div>
+                <dir style="all: unset;" id="Feedback-tasks"></dir>
             </div>
-            <div class="kanban-column" id="done-column" ondrop="drop(event, 'done-column')"
-                ondragover="allowDrop(event)">
+            <div class="kanban-column" id="done-column" ondrop="drop('Done')" ondragover="allowDrop(event)">
                 <div class="frame-136 column-title-text ">
                     <p>Done</p>
 
                 </div>
-                <div class="kanban-card" draggable="true" ondragstart="drag(event)">Task 5</div>
-                <div class="kanban-card" draggable="true" ondragstart="drag(event)">Task 6</div>
+                <div style="all: unset;" id="done-tasks">                   
+                </div>
             </div>
         </div>
     </div>
