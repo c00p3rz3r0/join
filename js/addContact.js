@@ -69,6 +69,7 @@ async function loadAllContacts() {
     }
     
 }
+
  function cancleNewContact(){
     let contactDiv = document.getElementById('newContact');
     let allContactDiv = document.getElementById('allContact');
@@ -81,6 +82,7 @@ async function loadAllContacts() {
  }
 
  function loadgeneralContacts(){
+    sortFirstnames();
     console.log('generalConatacts loaded');
     let contactsDiv = document.getElementById('contacts');
     contactsDiv.innerHTML = ``;
@@ -104,6 +106,21 @@ async function loadAllContacts() {
         `;
     }
  }
+
+ function sortFirstnames() {
+    allContacts.sort((a, b) => {
+        const nameA = a.firstname.toUpperCase(); // den Namen in Großbuchstaben umwandeln
+        const nameB = b.firstname.toUpperCase();
+
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+        return 0;
+    }); 
+}
 
  function loadDetail(index){
     element = allContacts[index];
