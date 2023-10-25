@@ -7,34 +7,41 @@ async function initContact(){
 }
 
 function initAddContact(){
-    let contactDiv = document.getElementById('newContact');
-    let allContactDiv = document.getElementById('allContact');
+    let contactDiv = document.getElementById('overlay-add-contact');
+    let headerTemplate = document.getElementById('header-figma');
+    let sidebarTemplate = document.getElementById('sidebar');
+    let generalContacts = document.getElementById('generalcontacts');
+    /*let allContactDiv = document.getElementById('allContact');*/
     contactDiv.classList.remove('d-none');
-    allContactDiv.classList.add('d-none');
+    headerTemplate.classList.add('d-none');
+    sidebarTemplate.classList.add('d-none');
+    generalContacts.classList.add('d-none');
+    /*allContactDiv.classList.add('d-none');*/
 }
 
 async function addContact() {
-    let firstName = document.getElementById('firstnameInputField');
-    let lastName = document.getElementById('lastnameInputField');
+    let firstName = document.getElementById('nameInputField');
+    /*let lastName = document.getElementById('lastnameInputField');*/
     let email = document.getElementById('mailInputField');
     let phone = document.getElementById('phoneInputField');
 
     allContacts.push({
         firstname: firstName.value,
-        lastname: lastName.value,
+        /*lastname: lastName.value,*/
         mail: email.value,
         phone: phone.value,
     })
     await setItem('contact', JSON.stringify(allContacts));
-    cancleNewContact();
+    /*cancleNewContact();*/
     initContact();
+    deleteInputFields(firstName, email, phone);
 }
 
 
-function deleteInputFields(contactName, contactMail, contactPhone) {
-    contactName.value = ``;
-    contactMail.value = ``;
-    contactPhone.value = ``;
+function deleteInputFields(firstName, email, phone) {
+    firstName.value = ``;
+    email.value = ``;
+    phone.value = ``;
 }
 
 
@@ -59,17 +66,17 @@ async function loadAllContacts() {
  }
  function loadgeneralContacts(){
     let contactsDiv = document.getElementById('contacts');
-    contactsDiv.innerHTML = '';
+    /*contactsDiv.innerHTML = ``;*/
     for (let index = 0; index < allContacts.length; index++) {
         const element = allContacts[index];
             let firstName = element['firstname'];
             let lastname = element['lastname'];
             let email = element['mail'];
             let nameIcon = getShortIcon(index);
-        contactsDiv.innerHTML += `
+        contactsDiv.innerHTML += /*html*/`
         <div onClick="loadDetail(${index})" class="contact-name">
         <div class="contact-name-circle" id="nameIcon${index}">
-            <img src="assed/svg/contact-imgs/Ellipse 5.svg" alt="" />
+            <img class="contact-circle" src="assed/svg/contact-imgs/Ellipse 5.svg" alt="" />
             <div class="contact-name-circle-txt" id="nameIcons${index}" >${nameIcon}</div>
         </div>
         <div class="name-mail-div-frame81">
@@ -93,6 +100,8 @@ async function loadAllContacts() {
     element = allContacts[index];
     let firstName = element['firstname'];
     let lastname = element['lastname'];
-    let nameIcon = `${firstName.at(0)}${lastname.at(0)}`;
+    let nameIcon = `${firstName.at(0)}`;
     return nameIcon;
  }
+
+ /*${lastname.at(0)}*/
