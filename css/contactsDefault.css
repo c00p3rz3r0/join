@@ -16,6 +16,17 @@
     overflow-x: hidden;
 }
 
+.generalcontacts-frame97::-webkit-scrollbar {
+    width: 24px !important;
+    background-color: yellow;
+}
+
+.generalcontacts-frame97::-webkit-scrollbar-thumb {
+    background-color: #A8A8A8;
+    width: 8px;
+    border-radius: 6px;
+}
+
 .contacts {
     margin-top: 113px;
 }
@@ -48,6 +59,7 @@
 
 .btn-div {
     width: 456px;
+    /*width: 437px*/
     height: 101px;
     z-index: 1;
     position: fixed;
