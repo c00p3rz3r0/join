@@ -87,7 +87,7 @@ function loadgeneralContacts() {
     getFirstLetters();
     createLetterDivs();
     loadNames();
-    displayLetters();
+    //displayLetters();
 }
 
 function getFirstLetters() {
@@ -147,6 +147,7 @@ function loadNames() {
                 </div>
             </div>
         `;
+        document.getElementById(`div${letterIndex}`).classList.remove('d-none');
     }
 }
 
