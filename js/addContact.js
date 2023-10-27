@@ -87,7 +87,6 @@ function loadgeneralContacts() {
     getFirstLetters();
     createLetterDivs();
     loadNames();
-    //displayLetters();
 }
 
 function getFirstLetters() {
@@ -103,7 +102,7 @@ function getFirstLetters() {
 
 function createLetterDivs() {
     let contactsDiv = document.getElementById('contacts');
-    //contactsDiv.innerHTML = ``;
+    contactsDiv.innerHTML = ``;
     for (let letterIndex = 0; letterIndex < alphabet.length; letterIndex++) {
         const letter = alphabet[letterIndex];
 
@@ -131,15 +130,15 @@ function loadNames() {
         const firstLetter = name.charAt(0).toUpperCase(); // Get the first letter of the name
 
         // Find the index of the corresponding letter in the 'letters' array
-        const letterIndex = alphabet.indexOf(firstLetter);
+        let letterIndex = alphabet.indexOf(firstLetter);
         console.log(letterIndex);
 
         // Append the name to the corresponding 'namedivs' element
         document.getElementById(`namedivs${letterIndex}`).innerHTML += /*html*/`
-            <div onClick="loadDetail(${letterIndex})" class="contact-name">
-                <div class="contact-name-circle" id="nameIcon${letterIndex}">
+            <div onClick="loadDetail(${index})" class="contact-name">
+                <div class="contact-name-circle" id="nameIcon${index}">
                     <img class="contact-circle" src="assed/svg/contact-imgs/Ellipse 5.svg" alt="" />
-                    <div class="contact-name-circle-txt" id="nameIcons${letterIndex}" >${nameIcon}</div>
+                    <div class="contact-name-circle-txt" id="nameIcons${index}" >${nameIcon}</div>
                 </div>
                 <div class="name-mail-div-frame81">
                     <div class="contact-name-txt">${name}</div>
@@ -151,62 +150,8 @@ function loadNames() {
     }
 }
 
-function displayLetters() {
-    for (let letterIndex = 0; letterIndex < alphabet.length; letterIndex++) {
-        const letter = alphabet[letterIndex];
-        // Show the corresponding letter div
-        document.getElementById(`div${letterIndex}`).classList.remove('d-none');
-    }
-}
-
-
-
-
-
-
-/*
-function aA() { }    //sortFirstnames();
-console.log('generalConatacts loaded');
-let contactsDiv = document.getElementById('contacts');
-contactsDiv.innerHTML = ``;
-for (let index = 0; index < allContacts.length; index++) {
-    const element = allContacts[index];
-    let firstName = element['firstname'];
-    //let lastname = element['lastname'];
-    let email = element['mail'];
-    let nameIcon = getShortIcon(index);
-    contactsDiv.innerHTML += `
-        <div onClick="loadDetail(${index})" class="contact-name">
-        <div class="contact-name-circle" id="nameIcon${index}">
-            <img class="contact-circle" src="assed/svg/contact-imgs/Ellipse 5.svg" alt="" />
-            <div class="contact-name-circle-txt" id="nameIcons${index}" >${nameIcon}</div>
-        </div>
-        <div class="name-mail-div-frame81">
-             <div class="contact-name-txt">${firstName}</div>
-             <div class="contact-email">${email}</div>
-        </div>
-        </div>
-        `;
-}*/
-
-
-
-function sortFirstnames() {
-    allContacts.sort((a, b) => {
-        const nameA = a.firstname.toUpperCase(); // den Namen in Großbuchstaben umwandeln
-        const nameB = b.firstname.toUpperCase();
-
-        if (nameA < nameB) {
-            return -1;
-        }
-        if (nameA > nameB) {
-            return 1;
-        }
-        return 0;
-    });
-}
-
 function loadDetail(index) {
+    console.log(index);
     element = allContacts[index];
     document.getElementById('nameContact').innerHTML = `${element['firstname']}`;
     document.getElementById('emailContact').innerHTML = element['mail'];
@@ -227,6 +172,7 @@ function getShortIcon(index) {
 
 async function removeContact() {
     let IDnumber = document.getElementById('contactNumber').innerHTML;
+    console.log(IDnumber);
     allContacts.splice(IDnumber, 1);
     await setItem('contact', JSON.stringify(allContacts));
     initContact();
