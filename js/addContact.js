@@ -121,6 +121,14 @@ function createLetterDivs() {
 }
 
 function loadNames() {
+    allContacts.sort((a, b) => {
+        const nameA = a.firstname.toUpperCase();
+        const nameB = b.firstname.toUpperCase();
+        if (nameA < nameB) return -1;
+        if (nameA > nameB) return 1;
+        return 0;
+    });
+
     for (let index = 0; index < allContacts.length; index++) {
         const element = allContacts[index];
         const name = element['firstname'];
