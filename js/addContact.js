@@ -110,6 +110,7 @@ function createLetterDivs() {
         document.getElementById('contacts').innerHTML += /*html*/`
             <div id="div${letterIndex}" class="d-none">
             <div class="contact-letter-frame-119"> ${letter} </div>
+            <img src="assed/svg/contact-imgs/Vector 10.svg" alt="" class="vector-10">
 
                 <div id="namedivs${letterIndex}"></div>
 
