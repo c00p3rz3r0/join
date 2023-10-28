@@ -27,8 +27,12 @@ function drag(id) {
 
 
 function generateTodoHTML(element) {
-    return `<div class="kanban-card" draggable="true" ondragstart="drag(${element['id']})" id="">
+    return /*html*/`
+    <div class="kanban-card" draggable="true" ondragstart="drag(${element['createdAt']})" id="">
     <p class="labels-board-card-label">${element['title']}</p>
+    <button onclick="clearTask(${element['createdAt']})">
+    <span class="delete-button" >❌</span>
+</button>
     <div class="frame-114">${element['description']}</div>
     <div class="progress progress-bar-custom ">
         <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75"
@@ -47,7 +51,7 @@ function allowDrop(ev) {
 async function drop(updatedcat) {
     console.log(updatedcat);
 
-    allTasks.find(task => task.id === currentDraggedElement).category = updatedcat;
+    allTasks.find(task => task.createdAt === currentDraggedElement).category = updatedcat;
     await setItem('task', JSON.stringify(allTasks));
     updateHTML();
 }
