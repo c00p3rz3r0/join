@@ -164,18 +164,15 @@ function addAssigned() {
 }
 
 async function clearTask(clearID) {
-    var clearTask = document.getElementById(clearID);
-    if (clearTask) {
-        // Find and remove the subtask from the array
-        allTasks.forEach((task, index) => {
-            if (task.id === clearTask) {
-                allTasks.splice(index, 1);
-                return;
-            }
-        });
+    for (let i = 0; i < allTasks.length; i++) {
+        const element = allTasks[i];
+        if (element['createdAt'] == clearID) {
+            allTasks.splice(i,1);
+            await setItem('task', JSON.stringify(allTasks));
+            updateHTML();
+        }
     }
-    await setItem('task', JSON.stringify(allTasks));
-    updateHTML();
+
 }
 
 
