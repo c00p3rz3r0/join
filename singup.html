@@ -77,7 +77,7 @@
                     <div class="frame-160">
                         <div class="frame-157">
                             <div class="frame-14">
-                                <input id="userEmail" type="email" class="form-control border-0 color-input" placeholder="Name"
+                                <input id="userName" type="email" class="form-control border-0 color-input" placeholder="Name"
                                     style="border: none; box-shadow: none;">
                                 <img src="/assed/svg/emailicon.svg" alt="" srcset="">
                             </div>
@@ -98,7 +98,7 @@
                         </div>
                         <div class="frame-157">
                             <div class="frame-14">
-                                <input id="userpassword" type="password" class="form-control border-0 color-input" placeholder="Confirm Password"
+                                <input id="userpasswordconfirm" type="password" class="form-control border-0 color-input" placeholder="Confirm Password"
                                     style="border: none; box-shadow: none;">
                                 <img src="/assed/svg/passwordicon.svg" alt="">
                             </div>
@@ -111,7 +111,7 @@
                     </div>
                 </div>
                 <div class="singupbtn">
-                    <button onclick="loginUser()" class="button-wo-icon text-sm-btn" type="button">Sing Up</button>
+                    <button onclick="register()" class="button-wo-icon text-sm-btn" type="button">Sing Up</button>
                 </div>
             </div>
 
@@ -120,22 +120,6 @@
 
 
     <!-- Loading anmation script -->
-    <script>
-        setTimeout(function () {
-            var logo = document.getElementById('loading-logo');
-            var login = document.getElementById('login-container');
-            var loginOverlay = document.getElementById('login-container-overlay');
-            var loginsignup = document.getElementById('login-signup')
-            logo.style.transition = 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out';
-            logo.style.transform = 'translate(-100%, -100%) scale(0.25)';
-            login.style.transition = 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out';
-            login.style.display = 'flex';
-            loginOverlay.style.width = '0px';
-            loginsignup.style.display = 'flex';
-            loginsignup.style.transition = 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out';
-            loginsignup.style.transform = 'opacity(1.0)';
-        }, 1500); // 2-second delay
-    </script>
 
 </body>
 
