@@ -17,8 +17,8 @@
 }
 
 .generalcontacts-frame97::-webkit-scrollbar {
-    width: 24px !important;
-    background-color: yellow;
+    width: 8px !important;
+    /*background-color: yellow;*/
 }
 
 .generalcontacts-frame97::-webkit-scrollbar-thumb {
@@ -26,6 +26,26 @@
     width: 8px;
     border-radius: 6px;
 }
+
+.generalcontacts-frame97::-webkit-scrollbar-button {
+    background-color: green;
+    height: 10px;
+}
+
+/*.generalcontacts-frame97::-webkit-scrollbar-corner {
+    background-color: red;
+}
+
+.generalcontacts-frame97::before {
+    content: '';
+    background-image: url('assed/svg/contact-imgs/Vector 13.svg');
+    background-size: cover;
+    position: absolute;
+    top: 908px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+}*/
 
 .contacts {
     margin-top: 113px;
