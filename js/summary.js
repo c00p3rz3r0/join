@@ -1,5 +1,6 @@
 
 async function initSummary(){
+    actUser();
     await loadAllTask();
     let todo = loadSum('To Do'); //ToDo
     let done = loadSum('Done');//Done

@@ -1,10 +1,8 @@
 .text-sm-btn {
     height: 18px;
     color: #FFF;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
-    font-weight: 400;
     line-height: 120%;
     text-align: center;
     text-decoration: none;
@@ -21,44 +19,47 @@
 
 .button-wo-icon {
     height: 48px;
+    width: 110px;
+    display: flex;
     align-items: center;
-    border-radius: 8px;
-    box-sizing: border-box;
-    display: inline-flex;
-    gap: 10px;
     justify-content: center;
-    overflow: hidden;
-    padding: 15px 24px;
-    position: relative;
+    border-radius: 8px;
     background-color: #2a3647;
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 25.2px;
+    font-family: 'Inter', sans-serif;
 }
 
 
 .button-wo-icon:hover {
-    background-color: var(--ligth-blue, #29ABE2);
+    background-color: #2a3647c4;
     box-shadow: var(--stronger);
 }
 
 
 .button-wo-icon:active {
-    background-color: #091931;
+    background-color: #2a3647c4;
     box-shadow: var(--stronger);
 }
 
 .button-secondary-wo-icon {
     height: 48px;
-    border: 1px solid;
-    border-color: var(--version-2main-color);
+    width: 177px;
+    display: flex;
     align-items: center;
-    border-radius: 8px;
-    box-sizing: border-box;
-    display: inline-flex;
-    gap: 10px;
     justify-content: center;
-    overflow: hidden;
-    padding: 15px 24px;
-    position: relative;
-    color: var(--version-2main-color);
+    border: 1px solid #2A3647;
+    border-radius: 8px;
+    gap: 10px;
+    background-color: white;
+    color: #2a3647;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 25.2px;
+
+
 
 }
 
