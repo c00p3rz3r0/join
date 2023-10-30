@@ -58,7 +58,7 @@
         </div>
 
         <div id="cancel-create-contact" class="cancel-create-contact">
-            <button onclick="closeAddContactOverlay()" class="cancel-btn">
+            <button onclick="emptyInputfields() ,closeAddContactOverlay()" class="cancel-btn">
                 <div class="cancel-btn-txt">Cancel</div>
                 <img src="assed/svg/contact-imgs/close.svg" alt="" class="cancel-btn-img">
             </button>
@@ -74,7 +74,7 @@
 
         <!-- Buttons for edit contact option -->
         <div id="edit-contact" class="cancel-create-contact d-none">
-            <button onclick="closeAddContactOverlay(), removeContact()" class="cancel-btn">
+            <button onclick="emptyInputfields() ,closeAddContactOverlay(), removeContact()" class="cancel-btn">
                 <div class="cancel-btn-txt">Delete</div>
                 <img src="assed/svg/contact-imgs/close.svg" alt="" class="cancel-btn-img">
             </button>
