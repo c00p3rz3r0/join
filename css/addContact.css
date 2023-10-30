@@ -3,6 +3,9 @@ body {
     background-color: grey;
 }
 
+.d-none {
+    display: none;
+}
 
 .overlay-add-contact {
     width: 1221px;

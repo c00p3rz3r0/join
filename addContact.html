@@ -37,6 +37,7 @@
     <!-- JS-functions -->
     <script src="js/addContact.js"></script>
     <script src="js/storage.js"></script>
+    <script src="js/editContact.js"></script>
 
 
 
@@ -48,7 +49,7 @@
 <body>
 
     <div id="overlay-add-contact" class="overlay-add-contact d-none">
-        <div onclick="closeAddContactOverlay()" class="close-div">
+        <div onclick=" emptyInputfields(),closeAddContactOverlay(), showCreateContactBtns()" class="close-div">
             <img src="assed/svg/contact-imgs/close.svg" alt="" class="close-img">
         </div>
 
@@ -56,7 +57,7 @@
             <img src="assed/svg/\contact-imgs/person.svg" alt="" class="person-img">
         </div>
 
-        <div class="cancel-create-contact">
+        <div id="cancel-create-contact" class="cancel-create-contact">
             <button onclick="closeAddContactOverlay()" class="cancel-btn">
                 <div class="cancel-btn-txt">Cancel</div>
                 <img src="assed/svg/contact-imgs/close.svg" alt="" class="cancel-btn-img">
@@ -69,6 +70,23 @@
                 </div>
             </button>
         </div>
+
+
+        <!-- Buttons for edit contact option -->
+        <div id="edit-contact" class="cancel-create-contact d-none">
+            <button onclick="closeAddContactOverlay(), removeContact()" class="cancel-btn">
+                <div class="cancel-btn-txt">Delete</div>
+                <img src="assed/svg/contact-imgs/close.svg" alt="" class="cancel-btn-img">
+            </button>
+
+            <button onclick="removeContact(), addContact(), closeAddContactOverlay()" class="create-contact-btn">
+                <div class="create-contact-txt">Save</div>
+                <div class="create-contact-bounding-box-img">
+                    <img src="assed/svg/contact-imgs/check.svg" alt="" class="create-contact-img">
+                </div>
+            </button>
+        </div>
+
 
 
         <!--Input-Section-->
@@ -105,7 +123,8 @@
         <!--Add-Contact-Sidebar-->
         <div class="contact-sidebar">
             <div class="contact-sidebar-txt-div">
-                <div class="contact-sidebar-txt-1">Add Contact</div>
+                <div id="contact-sidebar-txt-add" class="contact-sidebar-txt-1">Add Contact</div>
+                <div id="contact-sidebar-txt-edit" class="contact-sidebar-txt-1 d-none">Edit Contact</div>  <!--edit-contact-text-->
                 <div class="contact-sidebar-txt-2">Tasks are better whith a team</div>
                 <div class="contact-sidebar-graphic">
                     <img src="assed/svg/contact-imgs/Vector 5(2).svg" alt="" class="contact-sidebar-graphic-img">

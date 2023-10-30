@@ -2,6 +2,8 @@ let allContacts = [];
 
 let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
+let globalIndexVariable;  // Variable, um global auf den aktuellen Index zugreigen zu können. ie wird in der Funktion "loadDetail()" aktualisiert
+
 
 // Close addContactsOverlay and show contact-window
 function closeAddContactOverlay() {
@@ -166,6 +168,10 @@ function loadDetail(index) {
     document.getElementById('phoneNumer').innerHTML = element['phone'];
     document.getElementById('iconDetail').innerHTML = getShortIcon(index);
     document.getElementById('contactNumber').innerHTML = index;
+    globalIndexVariable = index;
+    /*let deleteDiv = document.getElementById('edit-name-sub');
+    let deleteVariable = index;
+    deleteDiv.textContent = deleteVariable;*/
 }
 
 function getShortIcon(index) {
