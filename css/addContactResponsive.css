@@ -1,0 +1,121 @@
+@media (max-width: 700px) {
+
+    .overlay-add-contact {
+        width: 396px;
+        height: 760px;
+        border-radius: 30px;
+    }
+
+    .close-div {
+        position: absolute;
+        top: 24px;
+        left: 348px;
+    }
+
+    .close-img {
+        position: absolute;
+        width: 13.15px;
+        height: 13.15px;
+        top: 9.43px;
+        left: 9.42px;
+    }
+
+    .person-img-group13 {
+        top: 292px;
+        left: 138px;
+    }
+
+    .create-contact-btn {
+        width: 202px;
+        height: 51px;
+        position: absolute;
+        top: 629px;
+        left: 97px;
+    }
+
+    .create-contact-img {
+        left: 172.26px;
+        position: absolute;
+        top: 19.88px;
+    }
+
+    .add-contact-textfileds {
+        width: 364px;
+        height: 153px;
+        top: 444px;
+        left: 16px;
+        gap: 15px;
+    }
+
+    .inputfield-1-around {
+        width: 364px;
+        height: 41px;
+        gap: 8px;
+    }
+
+    .inputfield-1 {
+        width: 322px;
+        height: 24px;
+    }
+
+    .inputfield-img-div {
+        left: 297px;
+    }
+
+    .inputfield-img {
+        width: 16px;
+        height: 16px;
+        /*top: 4px;
+        left: 302px;*/
+    }
+
+
+    /* Contact-Sidebar */
+
+    .contact-sidebar {
+        width: 396px;
+        height: 352px;
+        gap: 12px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 0px;
+        /* padding is missing */
+        /*padding-top: 66px;
+        padding-left: 24px;*/
+    }
+
+    .contact-sidebar-txt-div {
+        position: absolute;
+        top: 130px;
+        left: 24px;
+        width: 282px;
+        height: 104px;
+        gap: 8px;
+    }
+
+    .contact-sidebar-txt-1 {
+        width: 282px;
+        height: 56px;
+        /*font-size: 47px;*/
+        font-size: 45.8px;
+        line-height: 56.4px;
+    }
+
+    .contact-sidebar-txt-2 {
+        width: 275px;
+        height: 24px;
+        font-weight: 400;
+        /*font-size: 20px;*/
+        font-size: 19.5px;
+        line-height: 24px;
+    }
+
+    .contact-sidebar-logo-div {
+        display: none;
+    }
+
+
+
+
+
+
+}
