@@ -32,7 +32,48 @@
         left: 97px;
     }
 
+    .edit-contact {
+        width: 201px;
+        height: 51px;
+        top: 647px;
+        left: 97.5px;
+        gap: 20px;
+    }
+
+    .save-edits-contact-btn {
+        width: 99px;
+        height: 51px;
+        gap: 4px;
+    }
+
+    .save-edits-contact-img {
+        top: 13.5px;
+        left: 65px;
+    }
+
+    .delete-btn {
+        width: 82px;
+        height: 51px;
+        /* padding: 18px, 10px, 18px, 10px */
+        gap: 10px;
+        color: #2A3647;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cancel-btn-txt {
+        width: 62px;
+        height: 24px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+    }
+
     .cancel-btn {
+        display: none;
+    }
+
+    .cancel-btn-img {
         display: none;
     }
 

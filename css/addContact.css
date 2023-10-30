@@ -73,7 +73,28 @@ body {
     display: flex;
 }
 
+.edit-contact {
+    position: absolute;
+    width: 364px;
+    height:57px;
+    top: 400px;
+    left: 742px;
+    gap: 24px;
+    display: flex;
+}
+
 .cancel-btn {
+    display: flex;
+    width: 126px;
+    height: 56px;
+    border-radius: 10px;
+    border: 1px black solid;
+    padding: 16px;
+    gap: 4px;
+    background-color: white; 
+}
+
+.delete-btn {
     display: flex;
     width: 126px;
     height: 56px;
@@ -148,6 +169,14 @@ body {
 }*/
 
 .create-contact-img {
+    width: 15.49px;
+    height: 11.22px;
+    top: 22.88px;
+    /*left: 178.24px;*/
+    left: 322px;
+}
+
+.save-edits-contact-img {
     width: 15.49px;
     height: 11.22px;
     top: 22.88px;
