@@ -46,20 +46,26 @@
     <div class="input-box">
       <label for="prio-btngroup">Prio</label>
       <div class="priority-button-group" id="prio-btngroup">
-        <button type="checkbox" class="priority-button priority-button-text txt-nodeco" tabindex="0">
+        <button type="button" class="priority-button priority-button-text txt-nodeco " tabindex="0" id="urgentBtn"
+          onclick="selectPriority(id)">
           <a style="text-decoration: none; color: black;">Urgent</a>
           <img src="/assed/svg/Prio alta.svg" alt="">
         </button>
-        <div class="priority-button-medium priority-button-text txt-nodeco" tabindex="0">
+        <button type="button" class="priority-button priority-button-medium priority-button-text txt-nodeco" tabindex="1"
+          id="mediumBtn" onclick="selectPriority(id)">
           <a style="text-decoration: none; color: black;">Medium</a>
           <img src="/assed/svg/Prio media.svg" alt="">
-        </div>
-        <div class="priority-button-low priority-button-text txt-nodeco" tabindex="0">
-          <a style="text-decoration: none; color: black;">Urgent</a>
+        </button>
+        <button type="button" class="priority-button priority-button-low priority-button-text txt-nodeco" tabindex="2" id="lowBtn"
+          onclick="selectPriority(id)">
+          <a style="text-decoration: none; color: black;">Low</a>
           <img src="/assed/svg/Prio baja.svg" alt="">
-        </div>
+        </button>
       </div>
     </div>
+
+    <!-- Add a hidden input to store the selected priority -->
+    <input type="hidden" name="priority" id="priority-input">
 
     <div class="input-box">
       <label for="taskCategory">Category</label>

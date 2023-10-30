@@ -101,7 +101,7 @@
 }
 
 
-.priority-button, .priority-button-medium, .priority-button-low {
+.priority-button {
     height: 48px;
     border: 1px solid;
     align-items: center;
@@ -109,7 +109,7 @@
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-    overflow: hidden;    
+    overflow: hidden;
     padding: 16px 10px;
     gap: 8px;
     flex: 1 0 0;
@@ -117,7 +117,7 @@
     background: var(--white, #FFF);
     color: #000;
     transition: box-shadow 0.3s, color 0.3s, background-color 0.3s;
-    
+
 }
 
 .priority-button:hover {
@@ -127,7 +127,7 @@
     cursor: pointer;
 }
 
-.priority-button:active {
+.priority-button.active {
     background-color: #ff0000;
     color: #fff;
     border: 2px solid #ff0000;
@@ -153,7 +153,7 @@
     cursor: pointer;
 }
 
-.priority-button-medium:active {
+.priority-button-medium.active {
     background-color: #ffd500;
     color: #fff;
     border: 2px solid #ffd500;
@@ -177,7 +177,7 @@
     cursor: pointer;
 }
 
-.priority-button-low:active {
+.priority-button-low.active {
     background-color: #00ff44;
     color: #fff;
     border: 2px solid #00ff44;

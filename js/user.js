@@ -32,7 +32,7 @@ async function register() {
 
 }
 function resetForm() {
-    windowlocation.href='Summary.html';
+    window.location.href='Summary.html';
 }
 function loginUser(){
     let useremail = document.getElementById('userEmail');

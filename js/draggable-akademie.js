@@ -25,22 +25,49 @@ function drag(id) {
 }
 
 
-
 function generateTodoHTML(element) {
+    const hasAssignedUser = element.assigned && element.assigned.length > 0;
+    const hasSubTasks = element.subTasks && element.subTasks.length > 0;
+
+    // Count finished and total subtasks
+    const totalSubTasks = element.subTasks.length;
+    const finishedSubTasks = element.subTasks.filter(subtask => subtask.done === 1).length;
+
+    // Map priority names to their corresponding SVG URLs
+    const priorityIcons = {
+        'urgentBtn': '/assed/svg/Prio alta.svg',
+        'mediumBtn': '/assed/svg/Prio media.svg',
+        'lowBtn': '/assed/svg/Prio baja.svg'
+    };
+
+    // Get the URL for the priority icon based on the priority value
+    const priorityIconUrl = priorityIcons[element.prio];
+
     return /*html*/`
-    <div class="kanban-card" draggable="true" ondragstart="drag(${element['createdAt']})" id="">
-    <p class="labels-board-card-label">${element['title']}</p>
-    <button onclick="clearTask(${element['createdAt']})">
-    <span class="delete-button" >❌</span>
-</button>
-    <div class="frame-114">${element['description']}</div>
-    <div class="progress progress-bar-custom ">
-        <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75"
-            aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-    <div class="frame-139">Due Date: ${element['dueDate']}</div>
-</div>`;
+      <div class="kanban-card" draggable="true" ondragstart="drag(${element['createdAt']})" id="">
+          <p class="labels-board-card-label">${element['title']}</p>
+          <button class="delete-button" onclick="clearTask(${element['createdAt']})">
+              ❌
+          </button>
+          <div class="frame-114">${element['description']}</div>
+          <div class="progress progress-bar-custom">
+              <div class="progress-bar" role="progressbar" style="width: ${(finishedSubTasks / totalSubTasks * 100)}%" aria-valuenow="${finishedSubTasks}" aria-valuemin="0" aria-valuemax="${totalSubTasks}"></div>
+          </div>
+          <div class="frame-139">Due Date: ${element['dueDate']}</div>
+          ${hasAssignedUser ? `<div class="frame-139">Assigned: ${element['assigned'][0]}</div>` : `<div class="frame-139">No user assigned.</div>`}
+          ${hasSubTasks ? `<div class="frame-139">Subtasks: ${finishedSubTasks}/${totalSubTasks}</div>` : `<div class="frame-139">No subtasks.</div>`}
+          <img src="${priorityIconUrl}" alt="Priority Icon">
+      </div>
+    `;
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -56,10 +83,3 @@ async function drop(updatedcat) {
     updateHTML();
 }
 
-function highlight(id) {
-    document.getElementById(id).classList.add('drag-area-highlight');
-}
-
-function removeHighlight(id) {
-    document.getElementById(id).classList.remove('drag-area-highlight');
-}

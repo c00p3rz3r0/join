@@ -30,6 +30,7 @@ async function addTask() {
     let taskDescription = document.getElementById('taskDescription');
     let taskDueDate = document.getElementById('tastDueDate');
     let taskCategory = document.getElementById('taskCategory');
+    let taskPrio = document.getElementById('priority-input');
 
 
 
@@ -39,7 +40,7 @@ async function addTask() {
         dueDate: taskDueDate.value,
         assigned: assinedPersons,
         category: taskCategory.value,
-        // 'pro': taskDescription.value,
+        prio: taskPrio.value,
         subTasks: subTasks,
         createdAt: new Date().getTime(),
     });
@@ -48,7 +49,7 @@ async function addTask() {
     loadAllTask();
 }
 
-const inputFileds = ['taskTitle', 'taskDescription', 'taskContact', 'assinedPersons', 'tastDueDate', 'taskCategory', 'task-list'];
+const inputFileds = ['taskTitle', 'taskDescription', 'taskContact', 'assinedPersons', 'tastDueDate', 'taskCategory', 'task-list', 'priority-input'];
 const htmlfields = ['assinedPersons', 'task-list'];
 
 function clearinputs() {
@@ -59,6 +60,13 @@ function clearinputs() {
 
     htmlfields.forEach(element => {
         document.getElementById(element).innerHTML = '';
+    });
+
+    const buttons = document.querySelectorAll('.priority-button');
+
+    // Remove the 'active' class from all buttons
+    buttons.forEach((button) => {
+        button.classList.remove('active');
     });
 }
 
@@ -93,8 +101,12 @@ function addSubTask() {
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.classList.add('form-check-input', 'mt-0');
-        checkbox.value = '';
         checkbox.setAttribute('aria-label', 'Checkbox for following text input');
+
+        checkbox.addEventListener('change', function () {
+            const isChecked = this.checked ? 1 : 0;
+            updateSubTaskStatus(this, isChecked);
+        });
 
         const taskInputField = document.createElement('input');
         taskInputField.type = 'text';
@@ -118,12 +130,11 @@ function addSubTask() {
         taskList.appendChild(taskItem);
         taskInput.value = '';
 
-        // Store the subtask description and initial done status (0) in the array
-        subTasks.push({ id: taskItem.id, description: taskText, done: 0 });
+        // Store the subtask description and checkbox status in the array
+        subTasks.push({ id: taskItem.id, description: taskText, done: checkbox.checked });
 
         // Increment the task ID counter
         taskIdCounter++;
-        console.log(subTasks);
     }
 }
 
@@ -167,12 +178,47 @@ async function clearTask(clearID) {
     for (let i = 0; i < allTasks.length; i++) {
         const element = allTasks[i];
         if (element['createdAt'] == clearID) {
-            allTasks.splice(i,1);
+            allTasks.splice(i, 1);
             await setItem('task', JSON.stringify(allTasks));
             updateHTML();
         }
     }
 
 }
+
+// prioritybuttons with ChatGTP
+
+let selectedPrio = '';
+
+// Function to select a priority and update the display
+function selectPriority(buttonId) {
+    const buttons = document.querySelectorAll('.priority-button');
+
+    // Remove the 'active' class from all buttons
+    buttons.forEach((button) => {
+        button.classList.remove('active');
+    });
+
+    // Add the 'active' class to the selected button
+    document.getElementById(buttonId).classList.add('active');
+
+    // Update the selected priority
+    selectedPrio = buttonId;
+    document.getElementById('priority-input').value = selectedPrio;
+    console.log(selectedPrio);
+}
+
+function updateSubTaskStatus(checkbox, isChecked) {
+    const taskId = checkbox.closest('div').id;
+    const task = subTasks.find((task) => task.id === taskId);
+
+    if (task) {
+        task.done = isChecked;
+    }
+}
+
+
+
+
 
 
