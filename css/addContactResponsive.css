@@ -10,6 +10,7 @@
         position: absolute;
         top: 24px;
         left: 348px;
+        z-index: 5 !important;
     }
 
     .close-img {
@@ -25,12 +26,19 @@
         left: 138px;
     }
 
-    .create-contact-btn {
-        width: 202px;
-        height: 51px;
+    .cancel-create-contact {
         position: absolute;
         top: 629px;
         left: 97px;
+    }
+
+    .cancel-btn {
+        display: none;
+    }
+
+    .create-contact-btn {
+        width: 202px;
+        height: 51px;
     }
 
     .create-contact-img {
