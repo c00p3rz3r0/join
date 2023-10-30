@@ -3,6 +3,9 @@ body {
     background-color: grey;
 }
 
+.d-none {
+    display: none;
+}
 
 .overlay-add-contact {
     width: 1221px;
@@ -125,6 +128,16 @@ body {
     font-size: 21px;
     line-height: 25.2px;
     color: #FFFFFF;
+}
+
+.save-edits-contact-btn {
+    width: 111px;
+    height: 57px;
+    border-radius:10px;
+    gap: 4px;
+    display: flex;
+    align-items: center;
+    background-color: #2A3647;
 }
 
 /*.create-contact-bounding-box-img {
