@@ -2,7 +2,7 @@ let currentDraggedElement;
 
 async function updateHTML() {
 
-    await loadAllTask(); //denke das muss hier hin, bin mir aber nicht sicher
+    await loadAllTask(); //Task loading from Backend =>
 
     const column = ['todo-tasks', 'inprogress-tasks', 'Feedback-tasks', 'done-tasks'];
     const category = ['To Do', 'In progress', 'Await feedback', 'Done'];
@@ -61,19 +61,13 @@ function generateTodoHTML(element) {
     `;
 }
 
-
-
-
-
-
-
-
-
-
+// Standrad after W3 for dragable elements
 
 function allowDrop(ev) {
     ev.preventDefault();
 }
+
+// Update the Catrgory of the task
 
 async function drop(updatedcat) {
     console.log(updatedcat);
@@ -82,4 +76,24 @@ async function drop(updatedcat) {
     await setItem('task', JSON.stringify(allTasks));
     updateHTML();
 }
+
+const addTaskPopUpIds = ['taskAddFormInBaord', 'addTaskPopCanclBtn'];
+
+function addTaskPopUp(id) {   
+    
+    addTaskPopUpIds.forEach(element => {
+        let param = document.getElementById(element)
+        param.classList.remove('d-none');
+    });
+}
+
+function addTaskPopUpCls(id) { 
+    
+    addTaskPopUpIds.forEach(element => {
+        let param = document.getElementById(element)
+        param.classList.add('d-none');
+    });
+}
+
+function 
 

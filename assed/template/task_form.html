@@ -3,6 +3,9 @@
 
 <div class="frame-40">
   <h2 class="text-t1">Add Task</h2>
+  <div onclick=" addTaskPopUpCls(id)" class="close-div d-none" id="addTaskPopCanclBtn">
+    <img src="assed/svg/contact-imgs/close.svg" alt="" class="close-img">
+  </div>
 </div>
 
 
@@ -51,13 +54,13 @@
           <a style="text-decoration: none; color: black;">Urgent</a>
           <img src="/assed/svg/Prio alta.svg" alt="">
         </button>
-        <button type="button" class="priority-button priority-button-medium priority-button-text txt-nodeco" tabindex="1"
-          id="mediumBtn" onclick="selectPriority(id)">
+        <button type="button" class="priority-button priority-button-medium priority-button-text txt-nodeco"
+          tabindex="1" id="mediumBtn" onclick="selectPriority(id)">
           <a style="text-decoration: none; color: black;">Medium</a>
           <img src="/assed/svg/Prio media.svg" alt="">
         </button>
-        <button type="button" class="priority-button priority-button-low priority-button-text txt-nodeco" tabindex="2" id="lowBtn"
-          onclick="selectPriority(id)">
+        <button type="button" class="priority-button priority-button-low priority-button-text txt-nodeco" tabindex="2"
+          id="lowBtn" onclick="selectPriority(id)">
           <a style="text-decoration: none; color: black;">Low</a>
           <img src="/assed/svg/Prio baja.svg" alt="">
         </button>
@@ -96,42 +99,3 @@
   </div>
   <!-- </form> -->
 </div>
-
-
-<!-- <div class="container mt-4">
-  <h1>Task List</h1>
-  <div class="input-group mb-3">
-    <input type="text" id="task-input" class="form-control" placeholder="Add a subtask">
-    <div class="input-group-append">
-      <button class="btn btn-primary" onclick="addSubTask()">Add</button>
-    </div>
-  </div>
-  <div id="task-list">
-    Existing tasks will go here
-  </div>
-</div> -->
-
-
-
-<!-- </div>
-
-<form style="padding-left: 242px;">
-  <div class="input-group">
-    <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
-
-    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
-      data-bs-toggle="dropdown" aria-expanded="false">
-      <span class="visually-hidden">Toggle Dropdown</span>
-    </button>
-    <ul class="dropdown-menu dropdown-menu-end">
-      <li><a class="dropdown-item" href="#">Action</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
-      <li>
-        <hr class="dropdown-divider">
-      </li>
-      <li><a class="dropdown-item" href="#">Separated link</a></li>
-    </ul>
-    <button type="button" class="btn btn-outline-secondary">Action</button>
-  </div>
-</form> -->
