@@ -1,5 +1,29 @@
 let allPages =['summary-content', 'contact-content', 'task-content', 'board-content','datenschutz-content'];
 
+function init(){
+  initSummary();
+  initusers();
+  initBoard();
+  initContact();
+  initTask();
+}
+
+function loadNextSite(name) {
+  for (let i = 0; i < allPages.length; i++) {
+    const element = allPages[i];
+    if(element == name){
+      document.getElementById(name).classList.remove('d-none');
+    }else{
+      document.getElementById(element).classList.add('d-none');
+    }
+  }
+}
+
+function actUser(){
+  let name = localStorage.getItem('user');
+  document.getElementById('actUser').innerHTML = name.charAt(0).toUpperCase();
+}
+
 //On Load function to load HTML Templates
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
@@ -28,28 +52,3 @@ function includeHTML() {
     }
   }
 };
-
-
-function loadNextSite(name) {
-  for (let i = 0; i < allPages.length; i++) {
-    const element = allPages[i];
-    if(element == name){
-      document.getElementById(name).classList.remove('d-none');
-    }else{
-      document.getElementById(element).classList.add('d-none');
-    }
-  }
-}
-
-function actUser(){
-  let name = localStorage.getItem('user');
-  document.getElementById('actUser').innerHTML = name.charAt(0).toUpperCase();
-}
-
-function init(){
-  initSummary();
-  initusers();
-  initBoard();
-  initContact();
-  initTask();
-}
