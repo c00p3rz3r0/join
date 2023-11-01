@@ -1,4 +1,4 @@
-
+let allPages =['summary-content', 'contact-content', 'task-content', 'board-content','datenschutz-content'];
 
 //On Load function to load HTML Templates
 function includeHTML() {
@@ -31,8 +31,14 @@ function includeHTML() {
 
 
 function loadNextSite(name) {
-  let nextSite = name;
-  window.location.href = nextSite + '.html';
+  for (let i = 0; i < allPages.length; i++) {
+    const element = allPages[i];
+    if(element == name){
+      document.getElementById(name).classList.remove('d-none');
+    }else{
+      document.getElementById(element).classList.add('d-none');
+    }
+  }
 }
 
 function actUser(){
@@ -40,3 +46,10 @@ function actUser(){
   document.getElementById('actUser').innerHTML = name.charAt(0).toUpperCase();
 }
 
+function init(){
+  initSummary();
+  initusers();
+  initBoard();
+  initContact();
+  initTask();
+}

@@ -1,6 +1,6 @@
 let currentDraggedElement;
 
-async function updateHTML() {
+async function initBoard() {
 
     await loadAllTask(); //Task loading from Backend =>
 
@@ -74,7 +74,7 @@ async function drop(updatedcat) {
 
     allTasks.find(task => task.createdAt === currentDraggedElement).category = updatedcat;
     await setItem('task', JSON.stringify(allTasks));
-    updateHTML();
+    initBoard();
 }
 
 const addTaskPopUpIds = ['taskAddFormInBaord', 'addTaskPopCanclBtn'];
@@ -94,6 +94,3 @@ function addTaskPopUpCls(id) {
         param.classList.add('d-none');
     });
 }
-
-function 
-

@@ -2,7 +2,7 @@ let users = [];
 let actualUser = [];
 
 
-async function init(){
+async function initusers(){
     loadUsers();
 }
 async function loadUsers(){
