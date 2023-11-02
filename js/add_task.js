@@ -1,7 +1,7 @@
 let allTasks = [];
 let allAssigned = [];
 
-async function initTask() {
+async function initnewTask() {
     await loadContacts();
     loadAssigned();
     await loadAllTask();
@@ -180,7 +180,7 @@ async function clearTask(clearID) {
         if (element['createdAt'] == clearID) {
             allTasks.splice(i, 1);
             await setItem('task', JSON.stringify(allTasks));
-            initBoard();
+            updateHTML();
         }
     }
 

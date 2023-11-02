@@ -1,7 +1,5 @@
 /* general style */
-.d-none{
-    display: none;
-}
+
 body {
     height: 100vh;
     background-color: #F6F7F8 !important;
