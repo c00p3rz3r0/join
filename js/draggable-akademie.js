@@ -79,7 +79,8 @@ async function drop(updatedcat) {
 
 const addTaskPopUpIds = ['taskAddFormInBaord', 'addTaskPopCanclBtn'];
 
-function addTaskPopUp(id) {   
+function addTaskPopUp(id) {  
+     
     
     addTaskPopUpIds.forEach(element => {
         let param = document.getElementById(element)
@@ -95,5 +96,5 @@ function addTaskPopUpCls(id) {
     });
 }
 
-function 
+
 
