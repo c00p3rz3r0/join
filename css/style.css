@@ -411,3 +411,12 @@ text {
     padding: 15px 24px;
     gap: 10px;
 }
+input::placeholder{
+    color: #d1d1d1 !important;
+}
+input{
+    color: black !important;
+}
+button{
+    
+}
