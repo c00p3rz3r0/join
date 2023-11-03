@@ -84,7 +84,8 @@ async function loadAllTask() {
 let taskIdCounter = 0;
 const subTasks = [];
 
-function addSubTask() {
+function addSubTask(event) {
+    event.preventDefault();
     const taskInput = document.getElementById('task-input');
     const taskText = taskInput.value.trim();
 
@@ -102,11 +103,7 @@ function addSubTask() {
         checkbox.type = 'checkbox';
         checkbox.classList.add('form-check-input', 'mt-0');
         checkbox.setAttribute('aria-label', 'Checkbox for following text input');
-
-        checkbox.addEventListener('change', function () {
-            const isChecked = this.checked ? 1 : 0;
-            updateSubTaskStatus(this, isChecked);
-        });
+        checkbox.onclick = "updateSubTaskStatus(this)";
 
         const taskInputField = document.createElement('input');
         taskInputField.type = 'text';
@@ -135,8 +132,18 @@ function addSubTask() {
 
         // Increment the task ID counter
         taskIdCounter++;
+    };
+}
+
+function updateSubTaskStatus(checkbox) {
+    const taskId = checkbox.closest('div').id;
+    const task = subTasks.find((task) => task.id === taskId);
+
+    if (task) {
+        task.done = checkbox.checked ? 1 : 0;
     }
 }
+
 
 function removeTask(taskId) {
     const taskList = document.getElementById('task-list');
@@ -157,21 +164,22 @@ function removeTask(taskId) {
 
 var assinedPersons = [];
 
-function addAssigned() {
+function addAssigned(event) {
+    event.preventDefault();
     let assinedPerson = document.getElementById('taskContact').value;
 
     var firstLetter = assinedPerson.charAt(0).toUpperCase(); // Get the first letter of the name
 
     document.getElementById(`assinedPersons`).innerHTML += /*html*/`           
-                <div class="contact-name">
-                <div class="contact-name-circle" id="">
-                    <img class="contact-circle" src="assed/svg/contact-imgs/Ellipse 5.svg" alt="" />
-                    <div class="contact-name-circle-txt" id="" >${firstLetter}</div>
-                </div>                
-            </div>              
-           `;
+    <div class="contact-name-circle" id="nameIcon0">
+                    <img class="contact-circle" src="assed/svg/contact-imgs/Ellipse 5.svg" alt="">
+                    <div class="contact-name-circle-txt" id="nameIcons0">${firstLetter}</div>
+    </div>`;
+
+
     assinedPersons.push(assinedPerson);
-    console.log(assinedPersons);;
+    document.getElementById('taskContact').value = '';
+    console.log(assinedPersons);
 }
 
 async function clearTask(clearID) {
@@ -208,15 +216,14 @@ function selectPriority(buttonId) {
     console.log(selectedPrio);
 }
 
-function updateSubTaskStatus(checkbox, isChecked) {
-    const taskId = checkbox.closest('div').id;
-    const task = subTasks.find((task) => task.id === taskId);
+// function updateSubTaskStatus(checkbox, isChecked) {
+//     const taskId = checkbox.closest('div').id;
+//     const task = subTasks.find((task) => task.id === taskId);
 
-    if (task) {
-        task.done = isChecked;
-    }
-}
-
+//     if (task) {
+//         task.done = isChecked;
+//     }
+// }
 
 
 
