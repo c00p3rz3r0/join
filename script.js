@@ -40,3 +40,7 @@ function actUser(){
   document.getElementById('actUser').innerHTML = name.charAt(0).toUpperCase();
 }
 
+function loadSubMenu(){
+    document.getElementById('subMenu').classList.remove('d-none');
+}
+
