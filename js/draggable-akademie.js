@@ -45,20 +45,29 @@ function generateTodoHTML(element) {
 
     return /*html*/`
       <div class="kanban-card" draggable="true" ondragstart="drag(${element['createdAt']})" id="">
-          <p class="labels-board-card-label">${element['topic']}</p>
-          <button class="delete-button" onclick="clearTask(${element['createdAt']})">
-              ❌
-          </button>
-          <label for="taskDescription">${element['title']}</label>
-          <div class="frame-114" name="taskDescription">${element['description']}</div>
-          <div class="progress progress-bar-custom">
-              <div class="progress-bar" role="progressbar" style="width: ${(finishedSubTasks / totalSubTasks * 100)}%" aria-valuenow="${finishedSubTasks}" aria-valuemin="0" aria-valuemax="${totalSubTasks}"></div>
-          </div>
-          <div class="frame-139">Due Date: ${element['dueDate']}</div>
-          ${hasAssignedUser ? `<div class="frame-139">Assigned: ${element['assigned'][0]}</div>` : `<div class="frame-139">No user assigned.</div>`}
-          ${hasSubTasks ? `<div class="frame-139">Subtasks: ${finishedSubTasks}/${totalSubTasks}</div>` : `<div class="frame-139">No subtasks.</div>`}
-          <img src="${priorityIconUrl}" alt="Priority Icon">
-      </div>
+    <div class="cardTopic">
+        <p class="labels-board-card-label">${element['topic']}</p>
+        <button class="delete-button" onclick="clearTask(${element['createdAt']})">
+            <img src="assed/svg/contact-imgs/close.svg" alt="" class="close-img" />
+        </button>
+    </div>
+    <label class="cardTitle" for="taskDescription">${element['title']}</label>
+    <div class="frame-114 cradDescrip" name="taskDescription">${element['description']}</div>
+    <div class="cardProgress">
+        <div class="progress progress-bar-custom" role="progressbar" aria-label="Example with label" aria-valuenow="${(finishedSubTasks / totalSubTasks * 100)}" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="width: ${(finishedSubTasks / totalSubTasks * 100)}%"
+                >${(finishedSubTasks / totalSubTasks * 100)}%</div>
+        </div>
+        ${hasSubTasks ? `<div class="frame-139">Subtasks: ${finishedSubTasks}/${totalSubTasks}</div>` : `<div
+            class="frame-139">No subtasks.</div>`}
+    </div>
+    <div class="frame-139 d-none">Due Date: ${element['dueDate']}</div>
+    <div class="frame-139">
+        ${hasAssignedUser ? `<div class="frame-139">Assigned: ${element['assigned'][0]}</div>` : `<div
+            class="frame-139">No user assigned.</div>`}
+        <img src="${priorityIconUrl}" alt="Priority Icon">
+    </div>
+</div>
     `;
 }
 
@@ -86,16 +95,16 @@ async function drop(updatedcat) {
 
 const addTaskPopUpIds = ['taskAddFormInBaord', 'addTaskPopCanclBtn'];
 
-function addTaskPopUp(id) {       
-    
+function addTaskPopUp(id) {
+
     addTaskPopUpIds.forEach(element => {
         let param = document.getElementById(element)
         param.classList.remove('d-none');
     });
 }
 
-function addTaskPopUpCls(id) { 
-    
+function addTaskPopUpCls(id) {
+
     addTaskPopUpIds.forEach(element => {
         let param = document.getElementById(element)
         param.classList.add('d-none');

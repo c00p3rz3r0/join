@@ -16,11 +16,12 @@
     margin: 10px;
     min-height: 50dvh;
     gap: 16px;
+    min-width: 280px;
 }
 
 .kanban-card {
     display: flex;
-    width: 252px;
+    width: 280px;
     padding: 16px;
     margin-top: 16px;
     border-radius: 24px;
@@ -89,4 +90,40 @@
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
+}
+
+.cardTopic {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    
+}
+
+.cardTitle{
+    align-self: stretch;
+    color: var(--version-2-main-color, #2A3647);
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+.cradDescrip {
+    align-self: stretch;
+    color: var(--icon, #A8A8A8);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.cardProgress {
+    display: flex;
+    padding: 0px 8px 2px 0px;
+    align-items: center;
+    gap: 11px;
 }

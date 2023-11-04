@@ -2,8 +2,7 @@
     display: flex;
     flex-direction: column;
     align-content: center;
-    align-items: center;
-    width: 100vw;
+    align-items: center;    
     padding-top: 8px;
     padding-left: 234px;
     padding-right: 8px;
@@ -76,9 +75,9 @@
 
 .frame-136 {
     display: flex;
-    width: 244px;
+    width: 100%;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     flex-shrink: 0;
 }
 
@@ -153,7 +152,7 @@
 }
 
 .add-new-task-text-div {
-    width: 92px;
+    width: 100px;
     height: 25px;
     font-family: Inter;
     font-weight: 700;
