@@ -66,8 +66,10 @@
     <div w3-include-html="assed/template/sidebar.html"></div>
     <div w3-include-html="assed/template/draggablecards.html"></div>
     <div class="floating-add-task-backlog-v-1 d-none" id="taskAddFormInBaord">
-        <div w3-include-html="assed/template/task_form.html"></div>
-
+        <div style="all: unset;" w3-include-html="assed/template/task_form.html"></div>
+        <div class="closeDivTask d-none" id="addTaskPopCanclBtn" onclick="addTaskPopUpCls(id)">
+            <img src="assed/svg/contact-imgs/close.svg" alt="" class="close-img" />
+        </div>
     </div>
 
 

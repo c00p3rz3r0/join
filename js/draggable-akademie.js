@@ -45,11 +45,12 @@ function generateTodoHTML(element) {
 
     return /*html*/`
       <div class="kanban-card" draggable="true" ondragstart="drag(${element['createdAt']})" id="">
-          <p class="labels-board-card-label">${element['title']}</p>
+          <p class="labels-board-card-label">${element['topic']}</p>
           <button class="delete-button" onclick="clearTask(${element['createdAt']})">
               ❌
           </button>
-          <div class="frame-114">${element['description']}</div>
+          <label for="taskDescription">${element['title']}</label>
+          <div class="frame-114" name="taskDescription">${element['description']}</div>
           <div class="progress progress-bar-custom">
               <div class="progress-bar" role="progressbar" style="width: ${(finishedSubTasks / totalSubTasks * 100)}%" aria-valuenow="${finishedSubTasks}" aria-valuemin="0" aria-valuemax="${totalSubTasks}"></div>
           </div>
@@ -85,8 +86,7 @@ async function drop(updatedcat) {
 
 const addTaskPopUpIds = ['taskAddFormInBaord', 'addTaskPopCanclBtn'];
 
-function addTaskPopUp(id) {  
-     
+function addTaskPopUp(id) {       
     
     addTaskPopUpIds.forEach(element => {
         let param = document.getElementById(element)

@@ -26,6 +26,7 @@ async function loadAssigned() {
 }
 
 async function addTask() {
+    let taskTopic = document.getElementById('taskTopic');
     let taskTitle = document.getElementById('taskTitle');
     let taskDescription = document.getElementById('taskDescription');
     let taskDueDate = document.getElementById('tastDueDate');
@@ -35,6 +36,7 @@ async function addTask() {
 
 
     allTasks.push({
+        topic: taskTopic.value,
         title: taskTitle.value,
         description: taskDescription.value,
         dueDate: taskDueDate.value,
@@ -49,7 +51,7 @@ async function addTask() {
     loadAllTask();
 }
 
-const inputFileds = ['taskTitle', 'taskDescription', 'taskContact', 'assinedPersons', 'tastDueDate', 'taskCategory', 'task-list', 'priority-input'];
+const inputFileds = ['taskTopic', 'taskTitle', 'taskDescription', 'taskContact', 'assinedPersons', 'tastDueDate', 'taskCategory', 'task-list', 'priority-input'];
 const htmlfields = ['assinedPersons', 'task-list'];
 
 function clearinputs() {
@@ -103,7 +105,8 @@ function addSubTask(event) {
         checkbox.type = 'checkbox';
         checkbox.classList.add('form-check-input', 'mt-0');
         checkbox.setAttribute('aria-label', 'Checkbox for following text input');
-        checkbox.onclick = "updateSubTaskStatus(this)";
+        checkbox.setAttribute('onclick', `updateSubTaskStatus('task-${taskIdCounter}')`);
+        checkbox.id = `task-${taskIdCounter}`;
 
         const taskInputField = document.createElement('input');
         taskInputField.type = 'text';
@@ -128,20 +131,22 @@ function addSubTask(event) {
         taskInput.value = '';
 
         // Store the subtask description and checkbox status in the array
-        subTasks.push({ id: taskItem.id, description: taskText, done: checkbox.checked });
+        subTasks.push({ id: taskItem.id, description: taskText, done: 0 });
 
         // Increment the task ID counter
         taskIdCounter++;
     };
 }
 
-function updateSubTaskStatus(checkbox) {
-    const taskId = checkbox.closest('div').id;
+function updateSubTaskStatus(x) {
+    const taskId = x;
     const task = subTasks.find((task) => task.id === taskId);
-
-    if (task) {
-        task.done = checkbox.checked ? 1 : 0;
-    }
+    console.log(taskId);
+    console.log(task);
+    if (task.done == 0) {
+        task.done = 1;
+    }else(task.done = 0);
+    console.log(subTasks);
 }
 
 

@@ -1,18 +1,19 @@
 .frame-40 {
-    position: absolute;
+    /* position: absolute; */
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1px;
     width: 278px;
     height: 73px;
-    top: 206px;
-    left: 328px;
+    /* top: 206px;
+    left: 328px; */
     gap: 1px;
+    margin-bottom: 64px;
 }
 
 .frame-219 {
-    position: absolute;
+
     display: flex;
     width: 440px;
     flex-direction: column;
@@ -21,13 +22,12 @@
     gap: 16px;
     width: 440px;
     height: 376px;
-    top: 327px;
-    left: 328px;
+    margin-right: 64px;
     gap: 16px;
 }
 
 .frame-39 {
-    position: absolute;
+    
     display: flex;
     width: 440px;
     flex-direction: column;
@@ -35,8 +35,7 @@
     align-items: flex-start;
     gap: 24px;
     height: 416px;
-    top: 327px;
-    left: 864.25px;
+    
 }
 
 .text-t1 {
@@ -50,15 +49,15 @@
 }
 
 .frame-29 {
-    position: absolute;
     display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 16px;
-    width: Hug (309px);
-    height: Hug (56px);
-    bottom: 79px;
-    left: 995.25px;
+    width: 309px;
+    height: 56px;
+    padding-top: 128px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-left: 135px; 
 }
 
 .input-box {
@@ -71,4 +70,48 @@
 
 .delete-button {
     cursor: pointer;
+}
+
+.taskForm {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.floating-add-task-backlog-v-1 {
+    position: absolute;
+    width: 1116px;
+    height: 870px;
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.10);
+    background: #FFF;
+    left: 25%;
+    top: 10%;
+    margin: 64px;
+    padding: 64px;
+}
+
+.addTaskHtml {
+    padding: 64px 264px;
+}
+
+.closeDivTask {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    top: -549px;
+    left: 935px;
+    border-radius: 56;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    transition: background-color 2s;
+}
+
+.closeDivTask:hover {
+    border: 1px solid var(--Style, #acacac);
+    
 }
