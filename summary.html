@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="/css/generalElements.css">
     <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/css/styleguide.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -23,7 +23,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
 
-
     <!-- BOOTSTARP LINKS -->
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -31,92 +30,36 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css"
-        integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous" />
+        integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ"
+        crossorigin="anonymous" />
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+    <!-- Include Draggable Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/draggable/1.0.1/draggable.bundle.legacy.min.js"></script>
+
+
 
     <!-- customize Scripts -->
     <script src="script.js"></script>
     <script src="js/storage.js"></script>
     <script src="js/summary.js"></script>
     <script src="js/add_task.js"></script>
-
-
+    
     <!-- Favivon -->
 
-    <link rel="shortcut icon" href="/assed/svg/join_logo.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="/assed/svg/favicon.svg" type="image/svg+xml">
 </head>
 
 <body onload="initSummary()">
     <div w3-include-html="assed/template/header.html"></div>
     <div w3-include-html="assed/template/sidebar.html"></div>
-    <!--Content DIV-->
-    <div class="summary_content">
-        <!--Div for Join Logo-->
-        <div>
-            <img src="/assed/svg/join_summary_logo.svg" style="width: 625px; height: 73px;padding-left: 243px;" alt="" srcset="">
-        </div>
-        <!--Div for content Tables-->
-        <div class="summary_cards">
-            <div class="flex-row-center">
-                <div class="summary_card frame-65">
-                    <img class="logos-summary" src="/assed/svg/edit.svg" alt="">
-                    <div>
-                        <p class="p-headline" id="totalToDo"></p>
-                        <p class="p-summary">To-do</p>
-                    </div>
-                </div>
-                <div class="summary_card frame-65">
-                    <img class="logos-summary" src="/assed/svg/checkbutton_icon.svg" alt="">
-                    <div>
-                        <p class="p-headline" id="totalDone"></p>
-                        <p class="p-summary">Done</p>
-                    </div>
-                </div>
-            </div>
-            <div class="flex-row-center">
-                <div class="summary_card frame-summary">
-                    <img class="logos-summary" src="/assed/svg/edit.svg" alt="">
-                    <div>
-                        <p class="p-headline">1</p>
-                        <p class="p-summary">To-do</p>
-                    </div>
-                    <img src="/assed/svg/vertical_line.svg" alt="">
-                    <div>
-                        <p class="p-headline">1</p>
-                        <p class="p-summary">To-do</p>
-                    </div>
-                </div>
-            </div>
-            <div class="flex-row-center">
-                <div class="summary_card">
-                    <div class="frame-64">
-                        <p class="p-headline" id="totalTask"></p>
-                        <p class="p-summary">Tasks in Board</p>
-                    </div>
-                </div>
-                <div class="summary_card">
-                    <div class="frame-64">
-                        <p class="p-headline" id="taskInProgress"></p>
-                        <p class="p-summary">Tasks in Progress</p>
-                    </div>
-                </div>
-                <div class="summary_card">
-                    <div class="frame-64">
-                        <p class="p-headline" id="taskFeedback"></p>
-                        <p class="p-summary">Awaiting Feedback</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Div for nice greetings :-)-->
-        <div>
+    <div id="summary-content" w3-include-html="assed/template/summary_content.html"></div>
 
-        </div>
-    </div>
+    <!--Content DIV-->
+
 
     <script>
         includeHTML();

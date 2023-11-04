@@ -12,12 +12,7 @@
   <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <link rel="stylesheet" type="text/css" href="/css/styleguide.css">
-  <link rel="stylesheet" type="text/css" href="/css/draggablecards.css">
-  <link rel="stylesheet" type="text/css" href="/css/board.css">
-  <link rel="stylesheet" type="text/css" href="/css/contactsDefault.css">
-  <link rel="stylesheet" type="text/css" href="/css/addContact.css">
   <link rel="stylesheet" type="text/css" href="/css/addtask.css">
-  <link rel="stylesheet" href="/css/addContactResponsive.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -59,7 +54,10 @@
   <div w3-include-html="assed/template/header.html"></div>
   <div w3-include-html="assed/template/sidebar.html"></div>
   <!-- Input Task Fields -->
-  <div class="addTaskHtml" w3-include-html="assed/template/task_form.html"></div>
+  <div w3-include-html="assed/template/task_form.html"></div>
+  <div class="d-none">
+    <div w3-include-html="assed/template/task_form.html"></div>
+  </div>
 
   <script>
     includeHTML();

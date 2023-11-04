@@ -26,6 +26,7 @@ async function loadAssigned() {
 }
 
 async function addTask() {
+    let taskTopic = document.getElementById('taskTopic');
     let taskTitle = document.getElementById('taskTitle');
     let taskDescription = document.getElementById('taskDescription');
     let taskDueDate = document.getElementById('tastDueDate');
@@ -35,6 +36,7 @@ async function addTask() {
 
 
     allTasks.push({
+        topic: taskTopic.value,
         title: taskTitle.value,
         description: taskDescription.value,
         dueDate: taskDueDate.value,
@@ -49,7 +51,7 @@ async function addTask() {
     loadAllTask();
 }
 
-const inputFileds = ['taskTitle', 'taskDescription', 'taskContact', 'assinedPersons', 'tastDueDate', 'taskCategory', 'task-list', 'priority-input'];
+const inputFileds = ['taskTopic', 'taskTitle', 'taskDescription', 'taskContact', 'assinedPersons', 'tastDueDate', 'taskCategory', 'task-list', 'priority-input'];
 const htmlfields = ['assinedPersons', 'task-list'];
 
 function clearinputs() {
@@ -84,7 +86,8 @@ async function loadAllTask() {
 let taskIdCounter = 0;
 const subTasks = [];
 
-function addSubTask() {
+function addSubTask(event) {
+    event.preventDefault();
     const taskInput = document.getElementById('task-input');
     const taskText = taskInput.value.trim();
 
@@ -102,11 +105,8 @@ function addSubTask() {
         checkbox.type = 'checkbox';
         checkbox.classList.add('form-check-input', 'mt-0');
         checkbox.setAttribute('aria-label', 'Checkbox for following text input');
-
-        checkbox.addEventListener('change', function () {
-            const isChecked = this.checked ? 1 : 0;
-            updateSubTaskStatus(this, isChecked);
-        });
+        checkbox.setAttribute('onclick', `updateSubTaskStatus('task-${taskIdCounter}')`);
+        checkbox.id = `task-${taskIdCounter}`;
 
         const taskInputField = document.createElement('input');
         taskInputField.type = 'text';
@@ -131,12 +131,24 @@ function addSubTask() {
         taskInput.value = '';
 
         // Store the subtask description and checkbox status in the array
-        subTasks.push({ id: taskItem.id, description: taskText, done: checkbox.checked });
+        subTasks.push({ id: taskItem.id, description: taskText, done: 0 });
 
         // Increment the task ID counter
         taskIdCounter++;
-    }
+    };
 }
+
+function updateSubTaskStatus(x) {
+    const taskId = x;
+    const task = subTasks.find((task) => task.id === taskId);
+    console.log(taskId);
+    console.log(task);
+    if (task.done == 0) {
+        task.done = 1;
+    }else(task.done = 0);
+    console.log(subTasks);
+}
+
 
 function removeTask(taskId) {
     const taskList = document.getElementById('task-list');
@@ -157,21 +169,22 @@ function removeTask(taskId) {
 
 var assinedPersons = [];
 
-function addAssigned() {
+function addAssigned(event) {
+    event.preventDefault();
     let assinedPerson = document.getElementById('taskContact').value;
 
     var firstLetter = assinedPerson.charAt(0).toUpperCase(); // Get the first letter of the name
 
     document.getElementById(`assinedPersons`).innerHTML += /*html*/`           
-                <div class="contact-name">
-                <div class="contact-name-circle" id="">
-                    <img class="contact-circle" src="assed/svg/contact-imgs/Ellipse 5.svg" alt="" />
-                    <div class="contact-name-circle-txt" id="" >${firstLetter}</div>
-                </div>                
-            </div>              
-           `;
+    <div class="contact-name-circle" id="nameIcon0">
+                    <img class="contact-circle" src="assed/svg/contact-imgs/Ellipse 5.svg" alt="">
+                    <div class="contact-name-circle-txt" id="nameIcons0">${firstLetter}</div>
+    </div>`;
+
+
     assinedPersons.push(assinedPerson);
-    console.log(assinedPersons);;
+    document.getElementById('taskContact').value = '';
+    console.log(assinedPersons);
 }
 
 async function clearTask(clearID) {
@@ -208,15 +221,14 @@ function selectPriority(buttonId) {
     console.log(selectedPrio);
 }
 
-function updateSubTaskStatus(checkbox, isChecked) {
-    const taskId = checkbox.closest('div').id;
-    const task = subTasks.find((task) => task.id === taskId);
+// function updateSubTaskStatus(checkbox, isChecked) {
+//     const taskId = checkbox.closest('div').id;
+//     const task = subTasks.find((task) => task.id === taskId);
 
-    if (task) {
-        task.done = isChecked;
-    }
-}
-
+//     if (task) {
+//         task.done = isChecked;
+//     }
+// }
 
 
 

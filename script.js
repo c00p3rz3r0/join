@@ -1,6 +1,5 @@
 
 
-
 //On Load function to load HTML Templates
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
@@ -39,5 +38,9 @@ function loadNextSite(name) {
 function actUser(){
   let name = localStorage.getItem('user');
   document.getElementById('actUser').innerHTML = name.charAt(0).toUpperCase();
+}
+
+function loadSubMenu(){
+    document.getElementById('subMenu').classList.remove('d-none');
 }
 

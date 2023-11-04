@@ -19,7 +19,7 @@
 
 .button-wo-icon {
     height: 48px;
-    width: 110px;
+    width: 132px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,7 +34,7 @@
 
 
 .button-wo-icon:hover {
-    background-color: #2a3647c4;
+    background-color: #29ABE2;
     box-shadow: var(--stronger);
 }
 
