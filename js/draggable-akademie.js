@@ -1,5 +1,7 @@
 let currentDraggedElement;
 
+// will read the saved task and create the card at the right coloum
+
 async function updateHTML() {
 
     await loadAllTask(); //denke das muss hier hin, bin mir aber nicht sicher
@@ -18,12 +20,19 @@ async function updateHTML() {
     }
 }
 
-
+// log id of the dragged card
 function drag(id) {
     currentDraggedElement = id;
-    console.log(currentDraggedElement);
 }
 
+// W# default task
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+
+// subfuction for updateHMTL create the HTML elements
 
 function generateTodoHTML(element) {
     const hasAssignedUser = element.assigned && element.assigned.length > 0;
@@ -40,11 +49,11 @@ function generateTodoHTML(element) {
         'lowBtn': '/assed/svg/Prio baja.svg'
     };
 
-    // Get the URL for the priority icon based on the priority value
+// Get the URL for the priority icon based on the priority value
     const priorityIconUrl = priorityIcons[element.prio];
 
     return /*html*/`
-      <div class="kanban-card" draggable="true" ondragstart="drag(${element['createdAt']})" id="">
+    <div class="kanban-card" draggable="true" ondragstart="drag(${element['createdAt']})" id="">
     <div class="cardTopic">
         <p class="labels-board-card-label">${element['topic']}</p>
         <button class="delete-button" onclick="clearTask(${element['createdAt']})">
@@ -71,19 +80,7 @@ function generateTodoHTML(element) {
     `;
 }
 
-
-
-
-
-
-
-
-
-
-
-function allowDrop(ev) {
-    ev.preventDefault();
-}
+// Updated the Task category
 
 async function drop(updatedcat) {
     console.log(updatedcat);
@@ -92,6 +89,8 @@ async function drop(updatedcat) {
     await setItem('task', JSON.stringify(allTasks));
     updateHTML();
 }
+
+// shown/close the add task flyover html
 
 const addTaskPopUpIds = ['taskAddFormInBaord', 'addTaskPopCanclBtn'];
 
