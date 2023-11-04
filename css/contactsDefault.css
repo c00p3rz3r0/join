@@ -450,3 +450,18 @@
 
 
 
+/* add-contact-img-mobile-div */
+.add-contact-img-mobile-div {
+    width: 56px;
+    height: 56px;
+    top: 758px;
+    left: 356px;
+    border-radius: 46px;
+    border: 1px;
+    padding: 12px;
+    gap: 10px;
+}
+
+
+
+
