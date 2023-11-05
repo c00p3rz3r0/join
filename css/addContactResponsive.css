@@ -4,6 +4,8 @@
         width: 396px;
         height: 760px;
         border-radius: 30px;
+        top: 0;
+        position: absolute;
     }
 
     .close-div {

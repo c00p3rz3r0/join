@@ -10,6 +10,42 @@
         border-radius: 30px;
     }
 
+    .contacts {
+        width: 428px;
+        height: 926px;
+        position: absolute;
+        top: 0;
+    }
+
+    .show-contact {
+        display: none;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .generalcontacts-frame97 {
+        width: 428px;
+        height: 926px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .btn-div {
+        display: none;
+    } 
+
+    .mobile-header {
+        background-color: red;
+        width: 428;
+        height: 89px;;
+    }
+
+    .header-figma {
+        display: none;
+    }
 
 
 
@@ -19,5 +55,4 @@
 
 
 
-    
 }
