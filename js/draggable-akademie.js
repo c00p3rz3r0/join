@@ -76,7 +76,7 @@ function generateTodoHTML(element) {
         return `<div class="assigned-circle assigned-circle-txt" ${circleStyle}>${userInitial}</div>`;
     });
 
-// create the HTMLelemts with the save informations
+    // create the HTMLelemts with the save informations
     return /*html*/`    
     <div class="kanban-card" draggable="true" ondragstart="drag(${element['createdAt']})" id="" ondblclick="fullscreen(${element['createdAt']})">
     <div class="cardTopic">
@@ -178,8 +178,8 @@ function generateFullTask(element) {
 
     const percentage = Math.round((finishedSubTasks / totalSubTasks) * 100);
 
-     // Function to generate a random background color
-     function getRandomColor() {
+    // Function to generate a random background color
+    function getRandomColor() {
         const letters = '0123456789ABCDEF';
         let color = '#';
         for (let i = 0; i < 6; i++) {
@@ -191,11 +191,28 @@ function generateFullTask(element) {
     // Check if element.assigned is an array
     const assignedUsers = Array.isArray(element.assigned) ? element.assigned : [];
     console.log(assignedUsers);
-    // Loop through assigned users and create a circle for each with a random background color
-    const assignedCircles = assignedUsers.map(user => {
+    // Create circles with initials and display assigned users in a column
+    const assignedColumn = assignedUsers.map(user => {
         const userInitial = user.charAt(0).toUpperCase();
         const circleStyle = `style="background-color: ${getRandomColor()}"`;
-        return `<div class="assigned-circle assigned-circle-txt" ${circleStyle}>${userInitial}</div>`;
+        return /*html*/`
+        <div class="frame-crc-name">
+            <div class="assigned-circle assigned-circle-txt assigned-circle-fullscreen" ${circleStyle}>${userInitial}</div>
+            <div class="assigned-name task-overlay-v-1-t6">${user}</div>
+            </div>
+        `;
+    });
+
+    // Create a list of subtasks with checkboxes and descriptions
+    const subtaskList = element.subTasks.map(subtask => {
+        return /*html*/`
+            
+                <div class="subtasks-check">
+                <input type="checkbox" ${subtask.done === 1 ? 'checked' : ''} />
+                <span class="task-overlay-v-1-t6">${subtask.description}</span>
+                </div>
+            
+        `;
     });
 
     return /*html*/`    
@@ -213,23 +230,12 @@ function generateFullTask(element) {
     <img src="${priorityIconUrl}" alt="Priority Icon">
 </div>
     <div class="frame-215">
-        <div class="frame-178 task-overlay-v-1-t6">Assigned to:</div>
-        <div class="frame-139">
-            <div class="frame-assigned-circ">
-            ${assignedCircles.join('')} <!-- Join the circles together -->
-            ${assignedUsers.length > 0 ? `<div class="frame-139">Assigned: ${element['assigned'].join(', ')}</div>` : `<div class="frame-139">No user assigned.</div>`}
-            </div>
-            <img src="${priorityIconUrl}" alt="Priority Icon">
+        <div class="task-overlay-v-1-t6">Assigned to:</div>        
+        ${assignedColumn.length > 0 ? assignedColumn.join('') : `<div class="frame-139">No user assigned.</div>`}
         </div>
-        
-    </div>
-    <div class="cardProgress">
-        <div class="progress progress-bar-custom" role="progressbar" aria-label="Example with label" aria-valuenow="${(finishedSubTasks / totalSubTasks * 100)}" aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-bar" style="width: ${(finishedSubTasks / totalSubTasks * 100)}%"
-                >${percentage}%</div>
-        </div>
-        ${hasSubTasks ? `<div class="frame-139">Subtasks: ${finishedSubTasks}/${totalSubTasks}</div>` : `<div
-            class="frame-139">No subtasks.</div>`}
+        <div class="frame-215">
+        <div class="task-overlay-v-1-t6">Subtasks:</div>  
+        ${hasSubTasks ? subtaskList.join('') : '<div class="frame-139">No subtasks.</div>'}
     </div>
     
     
