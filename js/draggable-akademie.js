@@ -25,7 +25,7 @@ function drag(id) {
     currentDraggedElement = id;
 }
 
-// W# default task
+// W3 default task
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -56,32 +56,27 @@ function generateTodoHTML(element) {
 
     const percentage = Math.round((finishedSubTasks / totalSubTasks) * 100);
 
-    // // Function to generate a random background color
-    // function getRandomColor() {
-    //     const letters = '0123456789ABCDEF';
-    //     let color = '#';
-    //     for (let i = 0; i < 6; i++) {
-    //         color += letters[Math.floor(Math.random() * 16)];
-    //     }
-    //     return color;
-    // }
+    // Function to generate a random background color
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
 
-    // // Check if element.assigned is an array
-    // const assignedUser = Array.isArray(element.assigned) ? element.assigned.join(', ') : '';
+    // Check if element.assigned is an array
+    const assignedUsers = Array.isArray(element.assigned) ? element.assigned : [];
+    console.log(assignedUsers);
+    // Loop through assigned users and create a circle for each with a random background color
+    const assignedCircles = assignedUsers.map(user => {
+        const userInitial = user.charAt(0).toUpperCase();
+        const circleStyle = `style="background-color: ${getRandomColor()}"`;
+        return `<div class="assigned-circle assigned-circle-txt" ${circleStyle}>${userInitial}</div>`;
+    });
 
-    // // Extract initials from the joined string
-    // const assignedInitials = assignedUser
-    //     .split(', ')
-    //     .map(name => name[0].toUpperCase())
-    //     .join('');
-
-    // const assignedCircleStyle = assignedUser
-    //     ? `style="background-color: ${getRandomColor()}"`
-    //     : '';
-
-
-    
-
+// create the HTMLelemts with the save informations
     return /*html*/`    
     <div class="kanban-card" draggable="true" ondragstart="drag(${element['createdAt']})" id="" ondblclick="fullscreen(${element['createdAt']})">
     <div class="cardTopic">
@@ -102,8 +97,10 @@ function generateTodoHTML(element) {
     </div>
     <div class="frame-139 d-none">Due Date: ${element['dueDate']}</div>
     <div class="frame-139">
-            
-            ${hasAssignedUser ? `<div class="frame-139">Assigned: ${element['assigned']}</div>` : `<div class="frame-139">No user assigned.</div>`}
+            <div class="frame-assigned-circ">
+            ${assignedCircles.join('')} <!-- Join the circles together -->
+            <!-- ${assignedUsers.length > 0 ? `<div class="frame-139">Assigned: ${element['assigned'].join(', ')}</div>` : `<div class="frame-139">No user assigned.</div>`} -->
+            </div>
             <img src="${priorityIconUrl}" alt="Priority Icon">
         </div>
 </div>
@@ -181,6 +178,26 @@ function generateFullTask(element) {
 
     const percentage = Math.round((finishedSubTasks / totalSubTasks) * 100);
 
+     // Function to generate a random background color
+     function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    // Check if element.assigned is an array
+    const assignedUsers = Array.isArray(element.assigned) ? element.assigned : [];
+    console.log(assignedUsers);
+    // Loop through assigned users and create a circle for each with a random background color
+    const assignedCircles = assignedUsers.map(user => {
+        const userInitial = user.charAt(0).toUpperCase();
+        const circleStyle = `style="background-color: ${getRandomColor()}"`;
+        return `<div class="assigned-circle assigned-circle-txt" ${circleStyle}>${userInitial}</div>`;
+    });
+
     return /*html*/`    
     <div class="task-overlay-v-1">
     <div class="cardTopic">
@@ -197,8 +214,13 @@ function generateFullTask(element) {
 </div>
     <div class="frame-215">
         <div class="frame-178 task-overlay-v-1-t6">Assigned to:</div>
-        ${hasAssignedUser ? `<div class="frame-139">${element['assigned']}</div>` : `<div
-            class="frame-139">No user assigned.</div>`}
+        <div class="frame-139">
+            <div class="frame-assigned-circ">
+            ${assignedCircles.join('')} <!-- Join the circles together -->
+            ${assignedUsers.length > 0 ? `<div class="frame-139">Assigned: ${element['assigned'].join(', ')}</div>` : `<div class="frame-139">No user assigned.</div>`}
+            </div>
+            <img src="${priorityIconUrl}" alt="Priority Icon">
+        </div>
         
     </div>
     <div class="cardProgress">
@@ -215,7 +237,7 @@ function generateFullTask(element) {
     `;
 }
 
-function closeFullTask(){
+function closeFullTask() {
     let closeFullTask = document.getElementById('fullTask');
     closeFullTask.classList.add('d-none');
 }
