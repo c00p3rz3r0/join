@@ -12,7 +12,7 @@
                         </span>
 
                     </div>
-                    <button class="add-new-task-btn" onclick="addTaskPopUp(id)">
+                    <button class="add-new-task-btn" onclick="addTaskPopUp(id), loadAssigned()">
                         <p class="add-new-task-text-div">Add Task</p>
                         <img src="/assed/svg/add.svg" alt="">
                     </button>
@@ -24,7 +24,7 @@
             <div class="kanban-column" id="todo-column" ondrop="drop('To Do')" ondragover="allowDrop(event)">
                 <div class="frame-136 column-title-text ">
                     <p>To Do</p>
-                    <div class="plus-button"><img src="/assed/svg/capa-1.svg" alt="" onclick="addTaskPopUp(id)"></div>
+                    <div class="plus-button"><img src="/assed/svg/capa-1.svg" alt="" onclick="addTaskPopUp(id), loadAssigned(), alert(0)"></div>
                 </div>
                 <div style="all: unset;" id="todo-tasks">
                 </div>
@@ -33,7 +33,7 @@
                 ondragover="allowDrop(event)">
                 <div class="frame-136 column-title-text ">
                     <p>In Progress</p>
-                    <div class="plus-button"><img src="/assed/svg/capa-1.svg" alt="" onclick="addTaskPopUp(id)"></div>
+                    <div class="plus-button"><img src="/assed/svg/capa-1.svg" alt="" onclick="addTaskPopUp(id), loadAssigned()"></div>
                 </div>
                 <div style="all: unset;" id="inprogress-tasks">
                 </div>
@@ -42,7 +42,7 @@
                 ondragover="allowDrop(event)">
                 <div class="frame-136 column-title-text ">
                     <p>Awaiting Feedback</p>
-                    <div class="plus-button"><img src="/assed/svg/capa-1.svg" alt="" onclick="addTaskPopUp(id)"></div>
+                    <div class="plus-button"><img src="/assed/svg/capa-1.svg" alt="" onclick="addTaskPopUp(id), loadAssigned()"></div>
                 </div>
                 <dir style="all: unset;" id="Feedback-tasks"></dir>
             </div>

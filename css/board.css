@@ -161,3 +161,80 @@
     color: #ffffff;
     margin: 0;
 }
+
+/* for FullTaskFrame */
+
+.fullTaskCard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    background: #77889978;
+}
+
+.floatingTask {
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    height: 100vh;
+}
+
+/* taskOverLay Classes */
+
+.task-overlay-v-1{
+    display: flex;
+    width: 525px;
+    padding: 48px 40px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);
+    background: #FFF;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 24px;
+}
+
+.task-overlay-v-1-Title {
+    align-self: stretch;
+    color: var(--black, #000);
+    font-family: Inter;
+    font-size: 61px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+.task-overlay-v-1-t6 {
+    align-self: stretch;
+    color: var(--black, #000);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.frame-178 {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    align-self: stretch;
+}
+
+.frame-215 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.frame-204 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    align-self: stretch;
+}
+
+

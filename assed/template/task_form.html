@@ -8,21 +8,16 @@
   <div class="frame-219">
     <div class="" style="width: 100%;">
       <label for="exampleDataList" class="form-label">Topic</label>
-      <div class="input-group mb-3">
-        <input class="form-control selectpicker" list="topicListOptions" id="taskTopic" placeholder="Type to search...">
-        <datalist id="topicListOptions">
-          <option value="User Storys"></option>
-          <option value="Technical Support"></option>
-          <option value="Coding"></option>
-        </datalist>
-        <!-- <div class="input-group-append">
-          <button class="btn btn-primary" form="taskForm" onclick="addAssigned(event)">Add</button>
-        </div> -->
-      </div>
+      <input class="form-control selectpicker" list="topicListOptions" id="taskTopic" placeholder="Type to search...">
+      <datalist id="topicListOptions">
+        <option value="User Storys"></option>
+        <option value="Technical Support"></option>
+        <option value="Coding"></option>
+      </datalist>
     </div>
     <div class="input-box">
       <label for="taskTitle">Title*</label>
-      <input required id="taskTitle" class="form-control border-0" />
+      <input required id="taskTitle" class="form-control" />
     </div>
     <div class="input-box">
       <label for="taskDescription" class="form-label">Description</label>
@@ -50,7 +45,7 @@
   <div class="frame-39">
     <div class="input-box">
       <label for="tastDueDate">due Date</label>
-      <input required type="date" class="form-control border-0" name="" id="tastDueDate" placeholder="dd/mm/yyyy" />
+      <input required type="date" class="form-control" name="" id="tastDueDate" placeholder="dd/mm/yyyy" />
     </div>
 
     <div class="input-box">
@@ -104,5 +99,5 @@
     </div>
   </div>
 
-  
+
 </form>
