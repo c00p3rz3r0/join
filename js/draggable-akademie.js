@@ -80,6 +80,8 @@ function generateTodoHTML(element) {
     //     : '';
 
 
+    
+
     return /*html*/`    
     <div class="kanban-card" draggable="true" ondragstart="drag(${element['createdAt']})" id="" ondblclick="fullscreen(${element['createdAt']})">
     <div class="cardTopic">
