@@ -9,10 +9,10 @@
 
 .kanban-column {
     flex: 1;
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    /* border: 1px solid #ddd;
+    border-radius: 5px; */
     margin: 10px;
     min-height: 50dvh;
     gap: 16px;
@@ -54,6 +54,15 @@
 
     border-radius: 8px;
     background: #0038FF;
+    color: #FFF;
+
+    /* Version 2/body */
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    /* 19.2px */
 }
 
 .frame-114 {
@@ -98,10 +107,10 @@
     flex-direction: row;
     align-items: flex-start;
     width: 100%;
-    
+
 }
 
-.cardTitle{
+.cardTitle {
     align-self: stretch;
     color: var(--version-2-main-color, #2A3647);
     font-family: Inter;
@@ -126,4 +135,40 @@
     padding: 0px 8px 2px 0px;
     align-items: center;
     gap: 11px;
+}
+
+.frame-delete {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.frame-delete-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.no-task {
+    display: flex;
+    height: 48px;
+    border-radius: 10px;
+    border: 1px dashed var(--icon, #A8A8A8);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);
+    background: #E7E7E7;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+    align-self: stretch;
+    color: var(--icon, #A8A8A8);
+    font-family: Open Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+
 }

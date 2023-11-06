@@ -4,7 +4,7 @@ let currentDraggedElement;
 
 async function updateHTML() {
 
-    await loadAllTask(); //denke das muss hier hin, bin mir aber nicht sicher
+    await loadAllTask(); //load all backend tasks
 
     const column = ['todo-tasks', 'inprogress-tasks', 'Feedback-tasks', 'done-tasks'];
     const category = ['To Do', 'In progress', 'Await feedback', 'Done'];
@@ -13,35 +13,40 @@ async function updateHTML() {
         let tasks = allTasks.filter(t => t['category'] == category[i]);
         document.getElementById(column[i]).innerHTML = '';
 
-        for (let index = 0; index < tasks.length; index++) {
-            const element = tasks[index];
-            document.getElementById(column[i]).innerHTML += generateTodoHTML(element);
+        if (tasks.length === 0) {
+            document.getElementById(column[i]).innerHTML = `<div class="no-task">No task ${column[i]}</div>`;
+        } else {
+            for (let index = 0; index < tasks.length; index++) {
+                const element = tasks[index];
+                document.getElementById(column[i]).innerHTML += generateTodoHTML(element);
+            }
         }
     }
 }
 
-// log id of the dragged card
-function drag(id) {
-    currentDraggedElement = id;
-}
-
-// W3 default task
-
-function allowDrop(ev) {
-    ev.preventDefault();
-}
-
-
 // subfuction for updateHMTL create the HTML elements
 
 function generateTodoHTML(element) {
-    const hasAssignedUser = element.assigned && element.assigned.length > 0;
+    
+    // const hasAssignedUser = element.assigned && element.assigned.length > 0;
     const hasSubTasks = element.subTasks && element.subTasks.length > 0;
 
     // Count finished and total subtasks
     const totalSubTasks = element.subTasks.length;
     const finishedSubTasks = element.subTasks.filter(subtask => subtask.done === 1).length;
 
+    
+    // Map priority names to their corresponding SVG URLs
+    const topicColor = {
+        'User Storys': '#008bff',
+        'Technical Support': '#b400ff',
+        'Coding': '#ffc107'
+    };
+
+    // Get the color code for the topic
+    
+    const toipcColorCode = topicColor[element.topic]
+    
     // Map priority names to their corresponding SVG URLs
     const priorityIcons = {
         'urgentBtn': '/assed/svg/Prio alta.svg',
@@ -80,7 +85,7 @@ function generateTodoHTML(element) {
     return /*html*/`    
     <div class="kanban-card" draggable="true" ondragstart="drag(${element['createdAt']})" id="" ondblclick="fullscreen(${element['createdAt']})">
     <div class="cardTopic">
-        <p class="labels-board-card-label">${element['topic']}</p>
+        <p class="labels-board-card-label" style="background-color: ${toipcColorCode}">${element['topic']}</p>
         <button class="delete-button" onclick="clearTask(${element['createdAt']})">
             <img src="assed/svg/contact-imgs/close.svg" alt="" class="close-img" />
         </button>
@@ -102,10 +107,22 @@ function generateTodoHTML(element) {
             <!-- ${assignedUsers.length > 0 ? `<div class="frame-139">Assigned: ${element['assigned'].join(', ')}</div>` : `<div class="frame-139">No user assigned.</div>`} -->
             </div>
             <img src="${priorityIconUrl}" alt="Priority Icon">
-        </div>
+        </div>  
+    
 </div>
     `
         ;
+}
+
+// log id of the dragged card
+function drag(id) {
+    currentDraggedElement = id;
+}
+
+// W3 default task
+
+function allowDrop(ev) {
+    ev.preventDefault();
 }
 
 // Updated the Task category
@@ -153,10 +170,6 @@ function generateFullTask(element) {
     const hasAssignedUser = element.assigned && element.assigned.length > 0;
     const hasSubTasks = element.subTasks && element.subTasks.length > 0;
 
-    // Count finished and total subtasks
-    const totalSubTasks = element.subTasks.length;
-    const finishedSubTasks = element.subTasks.filter(subtask => subtask.done === 1).length;
-
     // Map priority names to their corresponding SVG URLs
     const priorityIcons = {
         'urgentBtn': '/assed/svg/Prio alta.svg',
@@ -173,10 +186,6 @@ function generateFullTask(element) {
     // Get the URL for the priority icon based on the priority value
     const priorityIconUrl = priorityIcons[element.prio];
     const priorityNameTxt = priorityName[element.prio];
-
-    // create an only nominal progress %
-
-    const percentage = Math.round((finishedSubTasks / totalSubTasks) * 100);
 
     // Function to generate a random background color
     function getRandomColor() {
@@ -237,7 +246,18 @@ function generateFullTask(element) {
         <div class="task-overlay-v-1-t6">Subtasks:</div>  
         ${hasSubTasks ? subtaskList.join('') : '<div class="frame-139">No subtasks.</div>'}
     </div>
-    
+    <div class="frame-delete">
+    <div class="edit-name">
+        <div onclick="" id="edit-name-sub" class="edit-name-sub">
+        <img src="assed/svg/contact-imgs/edit.svg" alt="" class="edit-pen-img" />
+        <div class="edit-txt">Edit</div>
+        </div>
+        <div onclick="" class="delete-container">
+        <img src="assed/svg/contact-imgs/delete.svg" alt="" class="delete-img" />
+        <div class="delete-txt">Delete</div>
+        </div>
+    </div>
+    </div>
     
 </div>
     `;

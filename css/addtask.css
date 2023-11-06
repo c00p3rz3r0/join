@@ -1,13 +1,12 @@
 .frame-40 {
-    /* position: absolute; */
+
     display: inline-flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     gap: 1px;
-    width: 278px;
+    width: 100%;
     height: 73px;
-    /* top: 206px;
-    left: 328px; */
+    justify-content: space-between;
     gap: 1px;
     margin-bottom: 64px;
 }
@@ -20,22 +19,20 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 16px;
-    width: 440px;
-    height: 376px;
     margin-right: 64px;
     gap: 16px;
 }
 
 .frame-39 {
-    
+
     display: flex;
     width: 440px;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 24px;
-    height: 416px;
-    
+    gap: 16px;
+
+
 }
 
 .text-t1 {
@@ -49,15 +46,15 @@
 }
 
 .frame-29 {
+    position: relative;
+    bottom: 0;
     display: inline-flex;
     align-items: flex-start;
     gap: 16px;
-    width: 309px;
-    height: 56px;
-    padding-top: 128px;
+    width: 100%;
+    padding-top: 8px;
     flex-direction: row;
-    justify-content: space-evenly;
-    margin-left: 135px; 
+    justify-content: flex-end;
 }
 
 .input-box {
@@ -65,7 +62,13 @@
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+}
+
+.input-box-select {
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    padding: 12px 16px;
 }
 
 .delete-button {
@@ -81,8 +84,6 @@
 
 .floating-add-task-backlog-v-1 {
     position: absolute;
-    width: 1116px;
-    height: 870px;
     overflow: hidden;
     border-radius: 30px;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.10);
@@ -98,12 +99,8 @@
 }
 
 .closeDivTask {
-    position: relative;
     width: 32px;
     height: 32px;
-    top: -549px;
-    left: 935px;
-    border-radius: 56;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,5 +110,15 @@
 
 .closeDivTask:hover {
     border: 1px solid var(--Style, #acacac);
-    
+
+}
+
+.label-in-txt {
+    align-self: stretch;
+    color: var(--version-2-main-color, #2A3647);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
 }
