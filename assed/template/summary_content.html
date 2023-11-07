@@ -6,48 +6,49 @@
     <!--Div for content Tables-->
     <div class="summary_cards">
         <div class="flex-row-center">
-            <div class="summary_card frame-65">
-                <img class="logos-summary" src="/assed/svg/edit.svg" alt="">
+            <div onclick="loadNextSite('board')" onmouseover="changeImage(1)" onmouseout="restoreImage(1)" class="summary_card frame-65">
+                <img id="image1" class="logos-summary" src="/assed/svg/edit.svg" alt="">
                 <div>
                     <p class="p-headline" id="totalToDo"></p>
                     <p class="p-summary">To-do</p>
                 </div>
             </div>
-            <div class="summary_card frame-65">
-                <img class="logos-summary" src="/assed/svg/checkbutton_icon.svg" alt="">
+            <div onclick="loadNextSite('board')" onmouseover="changeImage(2)" onmouseout="restoreImage(2)" class="summary_card frame-65">
+                <img id="image2" class="logos-summary" src="/assed/svg/checkbutton_icon.svg" alt="">
                 <div>
                     <p class="p-headline" id="totalDone"></p>
                     <p class="p-summary">Done</p>
                 </div>
             </div>
         </div>
-        <div class="flex-row-center">
-            <div class="summary_card frame-summary">
-                <img class="logos-summary" src="/assed/svg/edit.svg" alt="">
+        <div onclick="loadNextSite('board')" class="flex-row-center">
+            <div class="summary_card summary_card_big frame-summary">
+                <img class="logos-summary" src="/assed/svg/urgent_arrow.svg" alt="">
                 <div>
                     <p class="p-headline" id="totalUrgent">1</p>
                     <p class="p-summary">To-do</p>
                 </div>
                 <img src="/assed/svg/vertical_line.svg" alt="">
                 <div>
-                    <p class="p-headline" id="urgentDate"></p>
+                    <p class="p-urgentdate" id="urgentDate"></p>
+                    <p class="p-urgentdate-text">Upcoming Deadline</p>
                 </div>
             </div>
         </div>
         <div class="flex-row-center">
-            <div class="summary_card">
+            <div onclick="loadNextSite('board')" class="summary_card">
                 <div class="frame-64">
                     <p class="p-headline" id="totalTask"></p>
                     <p class="p-summary">Tasks in Board</p>
                 </div>
             </div>
-            <div class="summary_card">
+            <div onclick="loadNextSite('board')" class="summary_card">
                 <div class="frame-64">
                     <p class="p-headline" id="taskInProgress"></p>
                     <p class="p-summary">Tasks in Progress</p>
                 </div>
             </div>
-            <div class="summary_card">
+            <div onclick="loadNextSite('board')" class="summary_card">
                 <div class="frame-64">
                     <p class="p-headline" id="taskFeedback"></p>
                     <p class="p-summary">Awaiting Feedback</p>

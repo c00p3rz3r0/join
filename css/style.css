@@ -252,11 +252,17 @@ text {
 
 .summary_card {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     border-radius: 30px;
     background-color: #FFFFFF;
     box-shadow: 0px 0px 4px 0px #0000001A;
+}
+.summary_card:hover{
+    background-color:#2a3647 ;
+    color: #ffffff;
+    transform: scale(1.1);
+
 }
 
 .frame-65 {
@@ -290,6 +296,14 @@ text {
 
 .p-summary {
     font-size: 20px;
+}
+.p-urgentdate{
+    font-size: 21px;
+    font-weight: 700;
+}
+.p-urgentdate-text{
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .logos-summary {

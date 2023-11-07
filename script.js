@@ -41,6 +41,10 @@ function actUser(){
 }
 
 function loadSubMenu(){
-    document.getElementById('subMenu').classList.remove('d-none');
+  let subMenu = document.getElementById('subMenu');
+    if (subMenu.classList.contains('d-none')) {
+      document.getElementById('subMenu').classList.remove('d-none');
+    }else
+    document.getElementById('subMenu').classList.add('d-none');
 }
 
