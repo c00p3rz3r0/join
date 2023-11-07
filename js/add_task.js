@@ -3,6 +3,7 @@ let allAssigned = [];
 
 async function initnewTask() {
     await loadContacts();
+    actUser();
     loadAssigned();
     await loadAllTask();
 }
