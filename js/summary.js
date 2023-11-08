@@ -47,3 +47,23 @@ function urgentDates(){
     return new Date(dueDateNext[0]).toLocaleDateString('en-US', options);
 }
 
+
+function changeImage(i) {
+    var element = document.getElementById('image'+i);
+    if (i==1) {
+        element.src = '/assed/svg/pen_white.svg';
+    }else{
+        element.src = '/assed/svg/checkbutton_white.svg';
+    }
+    
+  }
+  
+  function restoreImage(i) {
+    var element =  document.getElementById('image'+i);
+    if (i==1) {
+        element.src = '/assed/svg/edit.svg';
+    }else{
+        element.src = '/assed/svg/checkbutton_icon.svg';
+    }
+    
+  }

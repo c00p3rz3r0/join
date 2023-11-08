@@ -5,6 +5,7 @@ let currentDraggedElement;
 async function updateHTML() {
 
     await loadAllTask(); //load all backend tasks
+    actUser();
 
     const column = ['todo-tasks', 'inprogress-tasks', 'Feedback-tasks', 'done-tasks'];
     const category = ['To Do', 'In progress', 'Await feedback', 'Done'];

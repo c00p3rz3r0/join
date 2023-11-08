@@ -1,7 +1,3 @@
-
-
-
-
 @media (max-width: 700px) {
 
     .overlay-add-contact {
@@ -35,12 +31,23 @@
 
     .btn-div {
         display: none;
-    } 
+    }
 
     .mobile-header {
-        background-color: red;
-        width: 428;
-        height: 89px;;
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        width: 428px;
+        height: 89px;
+        box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.1);  /* shadow on the bottom of the box */
+        background-color: #FFFFFF;
+        /* Padding20px, 16px, 20px, 16px*/
+    }
+
+    .logo-img-mobile-header {
+        width: 32px;
+        height: 39.02px;
     }
 
     .header-figma {

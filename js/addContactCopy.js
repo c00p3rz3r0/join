@@ -19,6 +19,7 @@ function closeAddContactOverlay() {
 }
 
 async function initContact(){
+    actUser();
     await loadAllContacts();
     loadgeneralContacts();
     loadDetail(0);
