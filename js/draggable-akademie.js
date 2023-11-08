@@ -145,6 +145,11 @@ function addTaskPopUp(id) {
         let param = document.getElementById(element)
         param.classList.remove('d-none');
     });
+    let addUpdateHTML = document.getElementById('task-Submitbutton');
+    addUpdateHTML.onclick = function() {
+        addTask();
+        updateHTML();
+    };
 }
 
 function addTaskPopUpCls(id) {
