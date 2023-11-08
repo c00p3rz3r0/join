@@ -452,14 +452,17 @@
 
 /* add-contact-img-mobile-div */
 .add-contact-img-mobile-div {
+    display: none;
+    position: absolute;
     width: 56px;
     height: 56px;
-    top: 758px;
+    top: 678px;
+    /*top: 758px;*/
     left: 356px;
     border-radius: 46px;
     border: 1px;
-    padding: 12px;
-    gap: 10px;
+    /*padding: 12px;
+    gap: 10px;*/
 }
 
 

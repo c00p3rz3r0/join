@@ -23,15 +23,25 @@
 
     .generalcontacts-frame97 {
         width: 428px;
-        height: 926px;
+        height: 766px;
         position: absolute;
-        top: 0;
+        top: 80px;
         left: 0;
     }
 
     .btn-div {
         display: none;
     }
+
+    .add-contact-img-mobile-div {
+        display: block !important;
+    }
+
+
+
+
+
+
 
     .mobile-header {
         position: absolute;
@@ -40,7 +50,8 @@
         justify-content: space-between;
         width: 428px;
         height: 89px;
-        box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.1);  /* shadow on the bottom of the box */
+        box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.1);
+        /* shadow on the bottom of the box */
         background-color: #FFFFFF;
         /* Padding20px, 16px, 20px, 16px*/
     }
