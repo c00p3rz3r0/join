@@ -33,6 +33,9 @@
 
 .circle-txt-div {
     position: absolute;
+    width: 20.68px;
+    /*height: 10.54px;*/
+    color: #29ABE2;
 }
 
 .header-figma {

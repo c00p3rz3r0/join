@@ -1,0 +1,47 @@
+
+
+.sidebar-responsive {
+    display: flex;
+    height: 80px;
+    width: 428px;
+    position: absolute;
+    top: 846px; 
+    /*bottom: 0;*/
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.10);
+    background-color: #2A3D59;
+    gap: 15px; 
+}
+
+.prop-1-default-responsive {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 428px;
+}
+
+.sideMenu-responsive {
+    height: 76px;
+    width: 76px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+    /* Padding15px, 0px, 15px, 0px;
+    gap: 4px;*/
+    background-color: green;
+}
+
+.siedeMenu-img-responsive {
+    height: 24px;
+    width: 24px;
+}
+
+.sideMenu-txt-responsive {
+    font-family: Open Sans;
+    font-weight: 400; 
+    font-size: 14px;
+    line-height: 16.8px;
+    color: #CDCDCD;
+}
