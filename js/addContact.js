@@ -33,9 +33,9 @@ function initAddContact() {
     let generalContacts = document.getElementById('generalcontacts');
     /*let allContactDiv = document.getElementById('allContact');*/
     contactDiv.classList.remove('d-none');
-    headerTemplate.classList.add('d-none');
+    /*headerTemplate.classList.add('d-none');
     sidebarTemplate.classList.add('d-none');
-    generalContacts.classList.add('d-none');
+    generalContacts.classList.add('d-none');*/
     /*allContactDiv.classList.add('d-none');*/
 }
 
