@@ -1,11 +1,18 @@
 @media (max-width: 700px) {
 
+    .overlay-add-contact-outer-div {
+        width: 428px;
+        height: 926px;
+        position: absolute;
+        z-index: 1;
+    }
+
     .overlay-add-contact {
         width: 396px;
         height: 760px;
         border-radius: 30px;
-        top: 0;
-        position: absolute;
+        /*top: 0;
+        position: absolute;*/
     }
 
     .close-div {

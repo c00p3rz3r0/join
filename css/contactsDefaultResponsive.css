@@ -1,16 +1,20 @@
 @media (max-width: 700px) {
 
-    .overlay-add-contact {
+    /*.overlay-add-contact {
         width: 396px;
         height: 760px;
         border-radius: 30px;
-    }
+    }*/
 
     .contacts {
-        width: 428px;
-        height: 926px;
+        width: 400px;
+        height: 766px;
         position: absolute;
-        top: 0;
+        /*top: 80px;*/
+        left: 14px;
+        align-items: center;
+        flex-direction: column;
+        display: flex;
     }
 
     .show-contact {
@@ -27,6 +31,7 @@
         position: absolute;
         top: 80px;
         left: 0;
+        background-color: white;
     }
 
     .btn-div {

@@ -52,7 +52,7 @@
 
     <div id="overlay-add-contact" class="overlay-add-contact-outer-div d-none">
         <div class="overlay-add-contact">
-            <div onclick=" emptyInputfields(),closeAddContactOverlay(), showCreateContactBtns()" class="close-div">
+            <div onclick=" emptyInputfields(),closeAddContactOverlay(), showCreateContactBtns(), displayNone('add-contact-img-mobile-div', 'remove'), displayNone('contacts', 'remove')" class="close-div">
                 <img src="assed/svg/contact-imgs/close.svg" alt="" class="close-img">
             </div>
 
@@ -66,7 +66,7 @@
                     <img src="assed/svg/contact-imgs/close.svg" alt="" class="cancel-btn-img">
                 </button>
 
-                <button onclick="addContact(), closeAddContactOverlay()" class="create-contact-btn">
+                <button onclick="addContact(), closeAddContactOverlay(), displayNone('add-contact-img-mobile-div', 'remove'), displayNone('contacts', 'remove')" class="create-contact-btn">
                     <div class="create-contact-txt">Create contact</div>
                     <div class="create-contact-bounding-box-img">
                         <img src="assed/svg/contact-imgs/check.svg" alt="" class="create-contact-img">

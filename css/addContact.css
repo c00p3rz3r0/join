@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;;
+    background-color: rgb(0, 0, 0, 0.4);
 }
 
 .overlay-add-contact {
@@ -220,6 +220,11 @@ body {
     gap:8px;
     border-radius: 10px;
     border: 1px solid #D1D1D1;
+    transition: outline 100ms;
+}
+
+.inputfield-1-around:active, .inputfield-1-around:hover {
+    outline: 1.6px solid #29ABE2;
 }
 
 .inputfield-1 {
