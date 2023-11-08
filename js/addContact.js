@@ -162,6 +162,10 @@ function loadNames() {
 }
 
 function loadDetail(index) {
+    if (window.innerWidth < 700) {
+        displayNone('contacts', 'add');
+        displayNone('show-contact', 'remove');
+    }
     console.log(index);
     element = allContacts[index];
     document.getElementById('nameContact').innerHTML = `${element['firstname']}`;

@@ -48,6 +48,43 @@
 
 
 
+    /* show selected contact */
+    .contacts-header-frame40 {
+        width: 213px;
+        height: 104px;
+        position: absolute;
+        top: 128px;
+        left: 16px;
+        gap: 16px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contacts-header-txt-bold {
+        font-size: 47px;
+        line-height: 56.4px;
+        position: absolute;
+        left: 0;
+    }
+
+    .contacts-header-txt-small {
+        font-size: 20px;
+        line-height: 24px;
+        position: absolute;
+        left: 0;
+        top: 50px;
+    }
+
+    .contacts-header-img {
+        rotate: -90;
+    }
+
+
+
+
+
+
+
     .mobile-header {
         position: absolute;
         top: 0;
