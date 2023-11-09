@@ -76,8 +76,71 @@
     }
 
     .contacts-header-img {
-        rotate: -90;
+        transform: rotate(90deg);
+        margin-top: 50px;
+        margin-left: -150px;
     }
+
+
+    /* show selected contact */
+
+    .view-contact-div {
+        height: 274px;
+        width: 330px;
+        position: absolute;
+        top: 280px;
+        left: 16px;
+        gap: 21px;
+    }
+
+    .show-name {
+        width: 326px;
+        height: 80px;
+    }
+
+    .show-name-close {
+        width: 226px;
+        height: 43px;
+        gap: 13px;
+    }
+
+    .edit-name {
+        display: none;
+    }
+
+    .show-name-circle {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .show-name-circle-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .show-name-circle-txt {
+        width: 53.33px;
+        height: 19.05px;
+        position: absolute;
+        top: 30.48px;
+        /*left: 13.33px;*/
+        font-weight: 400;
+        font-size: 27px;
+        line-height: 32.4px;
+        text-align: center;
+    }
+
+    .contact-information {
+        width: 330px;
+        height: 24px;
+        gap: 30px;
+    }
+
+
+
 
 
 
