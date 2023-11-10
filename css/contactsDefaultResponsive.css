@@ -18,7 +18,7 @@
     }
 
     .show-contact {
-        display: none;
+        /*display: none;*/
     }
 
     .sidebar {
@@ -85,6 +85,8 @@
     /* show selected contact */
 
     .view-contact-div {
+        display: flex;
+        flex-direction: column;
         height: 274px;
         width: 330px;
         position: absolute;
@@ -133,12 +135,42 @@
         text-align: center;
     }
 
+    .name-container-frame81 {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 43.2px;
+        height: 43px;
+    }
+
     .contact-information {
         width: 330px;
         height: 24px;
         gap: 30px;
     }
 
+
+    /* Arrow left for responsive only */
+    .arrow-left-for-responsive {
+        position: absolute;
+        top: 128px;
+        left: 380px;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .arrow-left-for-responsive-img {
+        width: 24.6px;
+        height: 23.92px;
+    }
+
+
+    /* */
+    .menu-contact-options-responsive {
+        top: 760px !important;
+    }
 
 
 

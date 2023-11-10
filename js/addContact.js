@@ -165,6 +165,7 @@ function loadDetail(index) {
     if (window.innerWidth < 700) {
         displayNone('contacts', 'add');
         displayNone('show-contact', 'remove');
+        displayNone('add-contact-img-mobile-div', 'add'); // remove the add contact btn
     }
     console.log(index);
     element = allContacts[index];
