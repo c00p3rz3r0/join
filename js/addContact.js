@@ -164,9 +164,11 @@ function loadNames() {
 function loadDetail(index) {
     if (window.innerWidth < 700) {
         displayNone('contacts', 'add');
-        displayNone('show-contact', 'remove');
-        displayNone('add-contact-img-mobile-div', 'add'); // remove the add contact btn
+        //displayNone('show-contact', 'remove');
+        document.getElementById('show-contact').classList.add('display-flex');
     }
+    displayNone('add-contact-img-mobile-div', 'add'); // remove the add contact btn
+    
     console.log(index);
     element = allContacts[index];
     document.getElementById('nameContact').innerHTML = `${element['firstname']}`;

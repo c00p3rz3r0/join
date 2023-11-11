@@ -5,7 +5,7 @@ function displayNone(param1, param2) {
 }
 
 function adjustAddContactOverlayForEditContacts() {
-    displayNone('cancel-create-contact', 'add');
+    displayNone('cancel-create-contact ', 'add');
     displayNone('edit-contact', 'remove');
     displayNone('contact-sidebar-txt-add', 'add');
     displayNone('contact-sidebar-txt-edit', 'remove')

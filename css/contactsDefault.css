@@ -1,3 +1,8 @@
+
+.d-none {
+    display: none;
+}
+
 .contacts {
     left: 260px;
     position: absolute;

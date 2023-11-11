@@ -17,8 +17,12 @@
         display: flex;
     }
 
+    .display-flex {
+        display: flex !important;
+    }
+
     .show-contact {
-        /*display: none;*/
+        display: none;
     }
 
     .sidebar {
