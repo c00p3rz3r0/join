@@ -79,12 +79,12 @@
 
             <!-- Buttons for edit contact option -->
             <div id="edit-contact" class="edit-contact display-none">
-                <button onclick="emptyInputfields() ,closeAddContactOverlay(), removeContact()" class="delete-btn">
+                <button onclick="emptyInputfields() ,closeAddContactOverlay(), displayNone('edit-contact', 'add'), displayNone('cancel-create-contact', 'remove'), removeContact()" class="delete-btn">
                     <div class="cancel-btn-txt">Delete</div>
                     <img src="assed/svg/contact-imgs/close.svg" alt="" class="cancel-btn-img">
                 </button>
 
-                <button onclick="removeContact(), addContact(), closeAddContactOverlay()"
+                <button onclick="removeContact(), addContact(), displayNone('edit-contact', 'add'), displayNone('cancel-create-contact', 'remove'), closeAddContactOverlay()"
                     class="save-edits-contact-btn">
                     <div class="create-contact-txt">Save</div>
                     <div class="create-contact-bounding-box-img">
