@@ -20,11 +20,22 @@ function closeAddContactOverlay() {
 }
 
 async function initContact() {
+    //testWindowWidth();
     actUser();
     await loadAllContacts();
     loadgeneralContacts();
     loadDetail(0);
 }
+
+function testWindowWidth() {
+    if (window.innerWidth < 700) {
+        displayNone('show-contact', 'add');
+        console.log('ejksdghilsaerugdsrilthgtrhj');
+        //displayNone('show-contact', 'remove');
+        /*document.getElementById('show-contact').classList.add('display-flex');*/
+    } 
+}
+
 
 function initAddContact() {
     let contactDiv = document.getElementById('overlay-add-contact');
@@ -165,9 +176,11 @@ function loadDetail(index) {
     if (window.innerWidth < 700) {
         displayNone('contacts', 'add');
         //displayNone('show-contact', 'remove');
-        document.getElementById('show-contact').classList.add('display-flex');
+        //displayNone('show-contact', 'remove');
+        /*document.getElementById('show-contact').classList.add('display-flex');*/
     }
     displayNone('add-contact-img-mobile-div', 'add'); // remove the add contact btn
+    document.getElementById('show-contact').classList.add('display-flex');
     
     console.log(index);
     element = allContacts[index];

@@ -4,6 +4,10 @@ function displayNone(param1, param2) {
     document.getElementById(param1).classList[param2]('display-none');
 }
 
+function displayFlex(param1, param2) {
+    document.getElementById(param1).classList[param2]('display-flex');
+}
+
 function adjustAddContactOverlayForEditContacts() {
     displayNone('cancel-create-contact ', 'add');
     displayNone('edit-contact', 'remove');

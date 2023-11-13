@@ -43,7 +43,7 @@
     </div>
   </div>
 
-  <div id="show-contact" class="show-contact">
+  <div onload="testWindowWidth()" id="show-contact" class="show-contact">
     <div class="contacts-header-frame40">
       <div class="contacts-header-txt-bold">Contacts</div>
       <img class="contacts-header-img" src="assed/svg/contact-imgs/Vector 5.svg" alt="" />
@@ -90,7 +90,7 @@
 
 
     <!-- Arrow-left (only for responsive) -->
-    <div onclick="displayNone('show-contact', 'add'),displayNone('contacts', 'remove'), displayNone('add-contact-img-mobile-div', 'remove');" class="arrow-left-for-responsive">
+    <div onclick="displayNone('show-contact', 'add'),displayNone('contacts', 'remove'), displayNone('add-contact-img-mobile-div', 'remove'), displayFlex('show-contact', 'remove')" class="arrow-left-for-responsive">
       <img class="arrow-left-for-responsive-img" src="assed/svg/contact-imgs/arrow-left-line.svg" alt="">
     </div>
 
