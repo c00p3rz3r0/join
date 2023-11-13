@@ -1,7 +1,7 @@
 
 
 function displayNone(param1, param2) {
-    document.getElementById(param1).classList[param2]('d-none');
+    document.getElementById(param1).classList[param2]('display-none');
 }
 
 function adjustAddContactOverlayForEditContacts() {

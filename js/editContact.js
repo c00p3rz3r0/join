@@ -7,9 +7,12 @@ let currentPhone;
 function initEditContact(globalIndexVariable) {
     console.log(globalIndexVariable);
 
-    initAddContact();  // open AddContact-Overlay 
+    //initAddContact();  // open AddContact-Overlay 
+    displayNone('overlay-add-contact', 'remove');
+    displayNone('cancel-create-contact', 'add');
+    displayNone('edit-contact', 'remove');
 
-    adjustAddContactOverlayForEditContacts();
+    //adjustAddContactOverlayForEditContacts();
     getCurrentNameMailPhone();
     insertNameMailPhoneIntoInputfields();
 }

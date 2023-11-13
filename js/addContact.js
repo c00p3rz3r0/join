@@ -12,7 +12,7 @@ function closeAddContactOverlay() {
     let sidebarTemplate = document.getElementById('sidebar');
     let generalContacts = document.getElementById('generalcontacts');
     /*let allContactDiv = document.getElementById('allContact');*/
-    contactDiv.classList.add('d-none');
+    contactDiv.classList.add('display-none');
     headerTemplate.classList.remove('d-none');
     sidebarTemplate.classList.remove('d-none');
     generalContacts.classList.remove('d-none');
@@ -32,7 +32,7 @@ function initAddContact() {
     let sidebarTemplate = document.getElementById('sidebar');
     let generalContacts = document.getElementById('generalcontacts');
     /*let allContactDiv = document.getElementById('allContact');*/
-    contactDiv.classList.remove('d-none');
+    contactDiv.classList.remove('display-none');
     /*headerTemplate.classList.add('d-none');
     sidebarTemplate.classList.add('d-none');
     generalContacts.classList.add('d-none');*/

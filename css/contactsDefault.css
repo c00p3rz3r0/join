@@ -6,6 +6,7 @@
 .contacts {
     left: 260px;
     position: absolute;
+    height: calc(100vh - 197px);
 }
 
 .generalcontacts-frame97 {
@@ -90,7 +91,7 @@
     /*width: 437px*/
     height: 101px;
     z-index: 1;
-    position: fixed;
+    position: static;
     background-color: #F6F7F8;
 }
 
@@ -292,7 +293,8 @@
 }
 
 .name-container-frame81 {
-    width: 287px;
+    /*width: 287px;*/
+    width:500px;
     height: 56px;
     gap: 5px;
     font-family: inter;

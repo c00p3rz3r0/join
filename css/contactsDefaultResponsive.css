@@ -8,13 +8,15 @@
 
     .contacts {
         width: 400px;
-        height: 766px;
+        /*height: 766px !important;*/
+        height: 726px !important;
         position: absolute;
         /*top: 80px;*/
         left: 14px;
         align-items: center;
         flex-direction: column;
         display: flex;
+        overflow-y: scroll;
     }
 
     .display-flex {
