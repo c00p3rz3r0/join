@@ -39,7 +39,7 @@
 }
 
 .header-figma {
-    display: none;
+    display: none !important;
 }
 
 

@@ -432,7 +432,28 @@ input {
 }
 
 .sub-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 150px;
     height: 158px;
     background-color: #2a3647;
+    position: fixed;
+    top: 97px;
+    border-radius: 20px 0px 20px 20px;
+-webkit-border-radius: 20px 0px 20px 20px;
+-moz-border-radius: 20px 0px 20px 20px;
+}
+a{
+    text-decoration: none !important;
+    color: #CDCDCD !important;
+    font-weight: normal;
+    font-size: 16px !important;   
+}
+.sub-link{
+    width: 130px;
+    height: 46px;
+    display: flex;
+    align-items: center;
 }
