@@ -7,6 +7,7 @@
     left: 260px;
     position: absolute;
     height: calc(100vh - 197px);
+    overflow-y: scroll;
 }
 
 .generalcontacts-frame97 {
@@ -475,8 +476,8 @@
     z-index: 400;
     width: 56px;
     height: 56px;
-    top: 678px;
-    /*top: 758px;*/
+    /*top: 678px;*/
+    top: 760px;
     left: 356px;
     border-radius: 46px;
     border: 1px;

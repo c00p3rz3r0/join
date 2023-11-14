@@ -180,7 +180,7 @@ function loadDetail(index) {
     if (window.innerWidth < 700) {
         displayNone('contacts', 'add');
         //displayNone('show-contact', 'remove');
-        //displayNone('show-contact', 'remove');
+        displayNone('edit-contact-img-mobile-div', 'remove');
         /*document.getElementById('show-contact').classList.add('display-flex');*/
     }
     displayNone('add-contact-img-mobile-div', 'add'); // remove the add contact btn
