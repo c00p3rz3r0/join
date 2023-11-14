@@ -24,7 +24,7 @@ async function initContact() {
     actUser();
     await loadAllContacts();
     loadgeneralContacts();
-    loadDetail(0);
+    //loadDetail(0);
 }
 
 /* function testWindowWidth() {
