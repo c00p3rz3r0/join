@@ -3,8 +3,8 @@
 .sidebar-responsive {
     display: none;
     height: 80px;
-    width: 428px;
-    position: absolute;
+    width: 100%;
+    position: fixed;
     top: 846px; 
     /*bottom: 0;*/
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.10);
@@ -16,7 +16,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 428px;
+    width: 100%;
 }
 
 .sideMenu-responsive {
