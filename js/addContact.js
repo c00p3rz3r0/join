@@ -27,6 +27,7 @@ async function initContact() {
     if (window.innerWidth > 700) {  // prüft, ob die Funktion "LoadDetail" ausgeführt werden muss (sie muss nur ausgeführt werden, wenn die Dektop-Ansicht vorliegt)
         loadDetail(0);
     }
+    testWindowWidth();
    
 }
 

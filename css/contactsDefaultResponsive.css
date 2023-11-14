@@ -44,9 +44,9 @@
         display: none;
     }
 
-    .add-contact-img-mobile-div {
+    /*.add-contact-img-mobile-div {
         display: block !important;
-    }
+    }*/
 
 
 
@@ -179,7 +179,7 @@
     }
 
 
-    * add-contact-img-mobile-div */
+    /* add-contact-img-mobile-div */
 .add-contact-img-mobile-div {
     display: flex !important;
 }

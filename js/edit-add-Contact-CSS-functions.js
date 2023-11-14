@@ -8,6 +8,12 @@ function displayFlex(param1, param2) {
     document.getElementById(param1).classList[param2]('display-flex');
 }
 
+function testWindowWidth() {
+    if (window.innerWidth < 700) {
+        displayNone('add-contact-img-mobile-div', 'remove');  // anzeigen des mobilen addContact icons
+    }
+}
+
 function adjustAddContactOverlayForEditContacts() {
     displayNone('cancel-create-contact ', 'add');
     displayNone('edit-contact', 'remove');
