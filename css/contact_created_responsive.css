@@ -1,0 +1,17 @@
+
+
+
+.contact-successfully-created-btn {
+    width: 326px;
+    height: 74px;
+    border-radius: 20px;
+    background-color: #2A3647;
+    position: absolute;
+}
+
+.contact-successfully-created-txt {
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}

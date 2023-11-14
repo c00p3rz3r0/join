@@ -1,5 +1,5 @@
 <div id="generalcontacts" class="">
-  <div class="generalcontacts-frame97">
+  <div id="generalcontacts-frame97" class="generalcontacts-frame97">
     <!--
     <div class="bar">
         <div class="vector-13"> 
@@ -21,17 +21,22 @@
 
     </div>
 
-     <!-- add contatact img mobile -->
-  <div id="add-contact-img-mobile-div" onclick="displayNone('contacts', 'add'), displayNone('overlay-add-contact', 'remove'), displayNone('add-contact-img-mobile-div', 'add')" class="add-contact-img-mobile-div">
+
+
+  </div>
+
+
+  <!-- add contatact img mobile -->
+  <div id="add-contact-img-mobile-div"
+    onclick="displayNone('contacts', 'add'), displayNone('overlay-add-contact', 'remove'), displayNone('add-contact-img-mobile-div', 'add')"
+    class="add-contact-img-mobile-div display-none">
     <img src="assed/svg/contact-imgs/Secondary mobile contact V1.svg" alt="">
   </div>
 
-</div>
 
 
-
-    <div id="contacts" class="contacts">
-      <!--<div class="contact-name-circle">
+  <div id="contacts" class="contacts">
+    <!--<div class="contact-name-circle">
       <img src="assed/svg/contact-imgs/Ellipse 5.svg" alt="" />
       <div class="contact-name-circle-txt">AM</div>
     </div>
@@ -40,67 +45,68 @@
       <div class="contact-name-txt">Anton Mayer</div>
       <div class="contact-email">antom@gmail.com</div>
     </div>-->
-    </div>
+  </div>
+</div>
+
+<div onload="testWindowWidth()" id="show-contact" class="show-contact">
+  <div class="contacts-header-frame40">
+    <div class="contacts-header-txt-bold">Contacts</div>
+    <img class="contacts-header-img" src="assed/svg/contact-imgs/Vector 5.svg" alt="" />
+    <div class="contacts-header-txt-small">Better with a team</div>
   </div>
 
-  <div onload="testWindowWidth()" id="show-contact" class="show-contact">
-    <div class="contacts-header-frame40">
-      <div class="contacts-header-txt-bold">Contacts</div>
-      <img class="contacts-header-img" src="assed/svg/contact-imgs/Vector 5.svg" alt="" />
-      <div class="contacts-header-txt-small">Better with a team</div>
-    </div>
+  <!--View Contact-->
+  <div id="view-contact-div" class="view-contact-div">
+    <div class="show-name">
+      <div class="show-name-circle">
+        <img src="assed/svg/contact-imgs/Ellipse 5.svg" alt="" class="show-name-circle-img" />
+        <div class="show-name-circle-txt" id="iconDetail">AM</div>
+      </div>
 
-    <!--View Contact-->
-    <div id="view-contact-div" class="view-contact-div">
-      <div class="show-name">
-        <div class="show-name-circle">
-          <img src="assed/svg/contact-imgs/Ellipse 5.svg" alt="" class="show-name-circle-img" />
-          <div class="show-name-circle-txt" id="iconDetail">AM</div>
-        </div>
-
-        <div class="show-name-close">
-          <div class="name-container-frame81" id="nameContact">Anton Mayer</div>
-          <div class="edit-name">
-            <div onclick="initEditContact(`${globalIndexVariable}`)" id="edit-name-sub" class="edit-name-sub">
-              <img src="assed/svg/contact-imgs/edit.svg" alt="" class="edit-pen-img" />
-              <div class="edit-txt">Edit</div>
-            </div>
-            <div onclick="removeContact()" class="delete-container">
-              <img src="assed/svg/contact-imgs/delete.svg" alt="" class="delete-img" />
-              <div class="delete-txt">Delete</div>
-            </div>
+      <div class="show-name-close">
+        <div class="name-container-frame81" id="nameContact">Anton Mayer</div>
+        <div class="edit-name">
+          <div onclick="initEditContact(`${globalIndexVariable}`)" id="edit-name-sub" class="edit-name-sub">
+            <img src="assed/svg/contact-imgs/edit.svg" alt="" class="edit-pen-img" />
+            <div class="edit-txt">Edit</div>
+          </div>
+          <div onclick="removeContact()" class="delete-container">
+            <img src="assed/svg/contact-imgs/delete.svg" alt="" class="delete-img" />
+            <div class="delete-txt">Delete</div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="contact-information">Contact Information</div>
-      <div id="contactNumber"></div>
+    <div class="contact-information">Contact Information</div>
+    <div id="contactNumber"></div>
 
-      <div class="information-mail-phone-div">
-        <div class="mail-div">
-          <div class="email-txt">Email</div>
-          <div class="actual-email" id="emailContact">antom@gmail.com</div>
-        </div>
-        <div class="phone-div">
-          <div class="phone-txt">Phone</div>
-          <div class="actual-phone-number" id="phoneNumer">+49 7345 5324</div>
-        </div>
+    <div class="information-mail-phone-div">
+      <div class="mail-div">
+        <div class="email-txt">Email</div>
+        <div class="actual-email" id="emailContact">antom@gmail.com</div>
+      </div>
+      <div class="phone-div">
+        <div class="phone-txt">Phone</div>
+        <div class="actual-phone-number" id="phoneNumer">+49 7345 5324</div>
       </div>
     </div>
-
-
-    <!-- Arrow-left (only for responsive) -->
-    <div onclick="displayNone('show-contact', 'add'),displayNone('contacts', 'remove'), displayNone('add-contact-img-mobile-div', 'remove'), displayFlex('show-contact', 'remove')" class="arrow-left-for-responsive">
-      <img class="arrow-left-for-responsive-img" src="assed/svg/contact-imgs/arrow-left-line.svg" alt="">
-    </div>
-
-    <!-- Menu contact options (only for responsive) -->
-    <div onclick="displayNone('overlay-add-contact', 'remove'), displayNone('edit-contact-img-mobile-div', 'add'), displayNone('cancel-create-contact', 'add'), displayNone('edit-contact', 'remove')" id="edit-contact-img-mobile-div" class="add-contact-img-mobile-div menu-contact-options-responsive">
-      <img src="assed/svg/contact-imgs/Menu Contact options.svg" alt="">
-    </div>
-
-
   </div>
 
 
- 
+  <!-- Arrow-left (only for responsive) -->
+  <div
+    onclick="displayNone('show-contact', 'add'),displayNone('contacts', 'remove'), displayNone('add-contact-img-mobile-div', 'remove'), displayFlex('show-contact', 'remove')"
+    class="arrow-left-for-responsive">
+    <img class="arrow-left-for-responsive-img" src="assed/svg/contact-imgs/arrow-left-line.svg" alt="">
+  </div>
+
+  <!-- Menu contact options (only for responsive) -->
+  <div
+    onclick="displayNone('overlay-add-contact', 'remove'), displayNone('edit-contact-img-mobile-div', 'add'), displayNone('cancel-create-contact', 'add'), displayNone('edit-contact', 'remove')"
+    id="edit-contact-img-mobile-div" class="add-contact-img-mobile-div menu-contact-options-responsive">
+    <img src="assed/svg/contact-imgs/Menu Contact options.svg" alt="">
+  </div>
+
+
+</div>

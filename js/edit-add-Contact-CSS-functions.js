@@ -27,3 +27,9 @@ function emptyInputfields() {
     document.getElementById('mailInputField').value = ``;
     document.getElementById('phoneInputField').value = ``;
 }
+
+/*function showContactCreatedOverlay() {
+    if (window.innerWidth < 700) {
+        displayNone('contact-successfully-created-overlay', 'remove')
+    }
+}*/

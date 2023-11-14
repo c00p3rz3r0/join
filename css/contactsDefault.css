@@ -470,7 +470,7 @@
 
 /* add-contact-img-mobile-div */
 .add-contact-img-mobile-div {
-    display: none;
+    /*display: none;*/
     position: absolute;
     z-index: 400;
     width: 56px;

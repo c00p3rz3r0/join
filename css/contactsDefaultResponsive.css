@@ -179,6 +179,12 @@
     }
 
 
+    * add-contact-img-mobile-div */
+.add-contact-img-mobile-div {
+    display: flex !important;
+}
+
+
 
 
 
