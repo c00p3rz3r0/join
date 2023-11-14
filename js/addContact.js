@@ -27,14 +27,14 @@ async function initContact() {
     loadDetail(0);
 }
 
-function testWindowWidth() {
+/* function testWindowWidth() {
     if (window.innerWidth < 700) {
         displayNone('show-contact', 'add');
         console.log('ejksdghilsaerugdsrilthgtrhj');
         //displayNone('show-contact', 'remove');
-        /*document.getElementById('show-contact').classList.add('display-flex');*/
+        //document.getElementById('show-contact').classList.add('display-flex');
     } 
-}
+} */
 
 
 function initAddContact() {
@@ -157,7 +157,7 @@ function loadNames() {
 
         // Append the name to the corresponding 'namedivs' element
         document.getElementById(`namedivs${letterIndex}`).innerHTML += /*html*/`
-            <div onClick="loadDetail(${index})" class="contact-name">
+            <div onclick="loadDetail(${index}), displayFlex('show-contact', 'add')" class="contact-name">
                 <div class="contact-name-circle" id="nameIcon${index}">
                     <img class="contact-circle" src="assed/svg/contact-imgs/Ellipse 5.svg" alt="" />
                     <div class="contact-name-circle-txt" id="nameIcons${index}" >${nameIcon}</div>
@@ -180,7 +180,7 @@ function loadDetail(index) {
         /*document.getElementById('show-contact').classList.add('display-flex');*/
     }
     displayNone('add-contact-img-mobile-div', 'add'); // remove the add contact btn
-    document.getElementById('show-contact').classList.add('display-flex');
+    //document.getElementById('show-contact').classList.add('display-flex');
     
     console.log(index);
     element = allContacts[index];
