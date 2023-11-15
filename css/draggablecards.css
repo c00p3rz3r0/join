@@ -1,6 +1,6 @@
 .kanban-board {
     display: flex;
-    height: 688px;
+    min-height: 64px;
     padding: 0px 64px;
     align-items: flex-start;
     gap: 26px;
@@ -20,6 +20,13 @@
     min-width: 280px;
 }
 
+.kanban-card-display{
+    display: flex;
+    padding-bottom: 50px;
+    flex-direction: column;
+    scroll-behavior: smooth;
+}
+
 .kanban-card {
     display: flex;
     width: 280px;
@@ -32,8 +39,12 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    /* cursor: grab; */
+    cursor: grab;
     /* Hinzufügen eines Zeigers für das Ziehen */
+}
+
+.kanban-card:active{
+    transform: rotate(5deg);
 }
 
 .frame-119 {

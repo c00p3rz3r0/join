@@ -26,7 +26,7 @@
                     <p>To Do</p>
                     <div class="plus-button"><img src="/assed/svg/capa-1.svg" alt="" onclick="addTaskPopUp(id), loadAssigned(), alert(0)"></div>
                 </div>
-                <div style="all: unset;" id="todo-tasks">
+                <div class="kanban-card-display" id="todo-tasks">
                 </div>
             </div>
             <div class="kanban-column" id="inprogress-column" ondrop="drop('In progress')"
@@ -35,7 +35,7 @@
                     <p>In Progress</p>
                     <div class="plus-button"><img src="/assed/svg/capa-1.svg" alt="" onclick="addTaskPopUp(id), loadAssigned()"></div>
                 </div>
-                <div style="all: unset;" id="inprogress-tasks">
+                <div class="kanban-card-display" id="inprogress-tasks">
                 </div>
             </div>
             <div class="kanban-column" id="feedback-column" ondrop="drop('Await feedback')"
@@ -44,14 +44,14 @@
                     <p>Awaiting Feedback</p>
                     <div class="plus-button"><img src="/assed/svg/capa-1.svg" alt="" onclick="addTaskPopUp(id), loadAssigned()"></div>
                 </div>
-                <dir style="all: unset;" id="Feedback-tasks"></dir>
+                <div class="kanban-card-display" id="Feedback-tasks"></div>
             </div>
             <div class="kanban-column" id="done-column" ondrop="drop('Done')" ondragover="allowDrop(event)">
                 <div class="frame-136 column-title-text ">
                     <p>Done</p>
 
                 </div>
-                <div style="all: unset;" id="done-tasks">
+                <div class="kanban-card-display" id="done-tasks">
                 </div>
             </div>
         </div>
