@@ -38,13 +38,14 @@ function loadNextSite(name) {
 function actUser(){
   let name = localStorage.getItem('user');
   document.getElementById('actUser').innerHTML = name.charAt(0).toUpperCase();
+  document.getElementById('actUser1').innerHTML = name.charAt(0).toUpperCase();
 }
 
-function loadSubMenu(){
-  let subMenu = document.getElementById('subMenu');
+function loadSubMenu(i){
+  let subMenu = document.getElementById('subMenu'+i);
     if (subMenu.classList.contains('d-none')) {
-      document.getElementById('subMenu').classList.remove('d-none');
+      document.getElementById('subMenu'+i).classList.remove('d-none');
     }else
-    document.getElementById('subMenu').classList.add('d-none');
+    document.getElementById('subMenu'+i).classList.add('d-none');
 }
 

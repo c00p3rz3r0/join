@@ -326,6 +326,7 @@ text {
     width: 598px;
     height: 630px;
     position: absolute;
+    top: 30%;
     border-radius: 30px;
     padding: 48px 88px;
     gap: 32px;
@@ -456,4 +457,25 @@ a{
     height: 46px;
     display: flex;
     align-items: center;
+}
+
+
+
+@media (max-width: 700px){
+    .summary_cards{
+        position: fixed;
+        top: 10%;
+        left: 5%;
+        gap: 15px;
+    }
+    .flex-row-center{
+        flex-direction: column;
+    }
+    .frame-65{
+        width: auto;
+    }
+    .sub-menu{
+        top: 90px;
+        right: 0;
+    }
 }

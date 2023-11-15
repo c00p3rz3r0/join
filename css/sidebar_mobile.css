@@ -5,8 +5,7 @@
     height: 80px;
     width: 100%;
     position: fixed;
-    top: 846px; 
-    /*bottom: 0;*/
+    bottom: 0;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.10);
     background-color: #2A3D59;
     gap: 15px; 
