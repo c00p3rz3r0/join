@@ -32,7 +32,7 @@ async function register() {
 
 }
 function resetForm() {
-    window.location.href='Summary.html';
+    window.location.href='summary.html';
 }
 function loginUser(){
     let useremail = document.getElementById('userEmail');
@@ -40,7 +40,7 @@ function loginUser(){
     let user = users.find(u => u.email == useremail.value && u.password == userpassword.value)
     if(user){
         localStorage.setItem('user', useremail.value);
-        window.location.href='Summary.html'
+        window.location.href='summary.html'
     }else{
         alert('Bitte registrieren');
     }

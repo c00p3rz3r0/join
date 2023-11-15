@@ -38,7 +38,6 @@ function loadNextSite(name) {
 function actUser(){
   let name = localStorage.getItem('user');
   document.getElementById('actUser').innerHTML = name.charAt(0).toUpperCase();
-  document.getElementById('actUser1').innerHTML = name.charAt(0).toUpperCase();
 }
 
 function loadSubMenu(i){

@@ -5,7 +5,7 @@ let currentDraggedElement;
 async function updateHTML() {
 
     await loadAllTask(); //load all backend tasks
-    actUser();
+
 
     const column = ['todo-tasks', 'inprogress-tasks', 'Feedback-tasks', 'done-tasks'];
     const category = ['To Do', 'In progress', 'Await feedback', 'Done'];
@@ -23,6 +23,7 @@ async function updateHTML() {
             }
         }
     }
+    actUser();
 }
 
 // subfuction for updateHMTL create the HTML elements
@@ -50,9 +51,9 @@ function generateTodoHTML(element) {
     
     // Map priority names to their corresponding SVG URLs
     const priorityIcons = {
-        'urgentBtn': '/assed/svg/Prio alta.svg',
-        'mediumBtn': '/assed/svg/Prio media.svg',
-        'lowBtn': '/assed/svg/Prio baja.svg'
+        'urgentBtn': './assed/svg/Prio alta.svg',
+        'mediumBtn': './assed/svg/Prio media.svg',
+        'lowBtn': './assed/svg/Prio baja.svg'
     };
 
     // Get the URL for the priority icon based on the priority value
@@ -88,7 +89,7 @@ function generateTodoHTML(element) {
     <div class="cardTopic">
         <p class="labels-board-card-label" style="background-color: ${toipcColorCode}">${element['topic']}</p>
         <button class="delete-button" onclick="clearTask(${element['createdAt']})">
-            <img src="assed/svg/contact-imgs/close.svg" alt="" class="close-img" />
+            <img src=".assed/svg/contact-imgs/close.svg" alt="" class="close-img" />
         </button>
     </div>
     <label class="cardTitle" for="taskDescription">${element['title']}</label>
@@ -178,9 +179,9 @@ function generateFullTask(element) {
 
     // Map priority names to their corresponding SVG URLs
     const priorityIcons = {
-        'urgentBtn': '/assed/svg/Prio alta.svg',
-        'mediumBtn': '/assed/svg/Prio media.svg',
-        'lowBtn': '/assed/svg/Prio baja.svg'
+        'urgentBtn': './assed/svg/Prio alta.svg',
+        'mediumBtn': './assed/svg/Prio media.svg',
+        'lowBtn': './assed/svg/Prio baja.svg'
     };
 
     const priorityName = {
@@ -235,7 +236,7 @@ function generateFullTask(element) {
     <div class="cardTopic">
         <p class="labels-board-card-label">${element['topic']}</p>
         <button class="delete-button" onclick="closeFullTask()">
-            <img src="assed/svg/contact-imgs/close.svg" alt="" class="close-img" />
+            <img src=".assed/svg/contact-imgs/close.svg" alt="" class="close-img" />
         </button>
     </div>
     <label class="task-overlay-v-1-Title" for="taskDescription">${element['title']}</label>
@@ -255,11 +256,11 @@ function generateFullTask(element) {
     <div class="frame-delete">
     <div class="edit-name">
         <div onclick="" id="edit-name-sub" class="edit-name-sub">
-        <img src="assed/svg/contact-imgs/edit.svg" alt="" class="edit-pen-img" />
+        <img src=".assed/svg/contact-imgs/edit.svg" alt="" class="edit-pen-img" />
         <div class="edit-txt">Edit</div>
         </div>
         <div onclick="" class="delete-container">
-        <img src="assed/svg/contact-imgs/delete.svg" alt="" class="delete-img" />
+        <img src=".assed/svg/contact-imgs/delete.svg" alt="" class="delete-img" />
         <div class="delete-txt">Delete</div>
         </div>
     </div>

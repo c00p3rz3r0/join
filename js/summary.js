@@ -1,7 +1,7 @@
 let dueDateNext = [];
 
 async function initSummary(){
-    actUser();
+    //actUser();
     await loadAllTask();
     let todo = loadSum('To Do'); //ToDo
     let done = loadSum('Done');//Done
@@ -51,9 +51,9 @@ function urgentDates(){
 function changeImage(i) {
     var element = document.getElementById('image'+i);
     if (i==1) {
-        element.src = '/assed/svg/pen_white.svg';
+        element.src = './assed/svg/pen_white.svg';
     }else{
-        element.src = '/assed/svg/checkbutton_white.svg';
+        element.src = './assed/svg/checkbutton_white.svg';
     }
     
   }
@@ -61,9 +61,9 @@ function changeImage(i) {
   function restoreImage(i) {
     var element =  document.getElementById('image'+i);
     if (i==1) {
-        element.src = '/assed/svg/edit.svg';
+        element.src = './assed/svg/edit.svg';
     }else{
-        element.src = '/assed/svg/checkbutton_icon.svg';
+        element.src = './assed/svg/checkbutton_icon.svg';
     }
     
   }
