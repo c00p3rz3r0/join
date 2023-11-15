@@ -7,7 +7,7 @@
     }*/
 
     .contacts {
-        width: 400px;
+        width: 100%;
         /*height: 766px !important;*/
         height: 726px !important;
         position: absolute;
@@ -32,8 +32,7 @@
     }
 
     .generalcontacts-frame97 {
-        width: 428px;
-        height: 766px;
+        width: 100%;
         position: absolute;
         top: 80px;
         left: 0;

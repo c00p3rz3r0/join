@@ -476,9 +476,8 @@
     z-index: 400;
     width: 56px;
     height: 56px;
+    bottom: 80px;
     /*top: 678px;*/
-    top: 760px;
-    left: 356px;
     border-radius: 46px;
     border: 1px;
     /*padding: 12px;
