@@ -174,7 +174,8 @@
 
     /* */
     .menu-contact-options-responsive {
-        top: 760px !important;
+        /* top: 760px !important; */
+        top: 560px !important;
     }
 
 
