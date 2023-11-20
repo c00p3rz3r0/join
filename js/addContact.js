@@ -161,7 +161,7 @@ function loadNames() {
 
         // Append the name to the corresponding 'namedivs' element
         document.getElementById(`namedivs${letterIndex}`).innerHTML += /*html*/`
-            <div onclick="loadDetail(${index}), displayFlex('show-contact', 'add'), displayNone('edit-contact-img-mobile-div', 'remove')" class="contact-name">
+            <div onclick="loadDetail(${index}), displayFlex('show-contact', 'add'), displayNone('edit-contact-img-mobile-div', 'remove'), highlight(${index})" id="contact-name${index}" class="contact-name">
                 <div class="contact-name-circle" id="nameIcon${index}">
                     <img class="contact-circle" src="assed/svg/contact-imgs/Ellipse 5.svg" alt="" />
                     <div class="contact-name-circle-txt" id="nameIcons${index}" >${nameIcon}</div>

@@ -8,3 +8,9 @@
 .display-flex {
     display: flex !important;
 }
+
+.highlight {
+    background-color: #091931;
+    color: white;
+    cursor: pointer;
+}
