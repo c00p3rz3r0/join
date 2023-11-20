@@ -45,6 +45,12 @@ function emptyInputfields() {
     document.getElementById('phoneInputField').value = ``;
 }
 
+function displayNoneEditContactImg() {
+    if (window.innerWidth < 700) {
+        displayNone('edit-contact-img-mobile-div', 'remove');  // anzeigen des mobilen editContact icons
+    }
+} 
+
 /*function showContactCreatedOverlay() {
     if (window.innerWidth < 700) {
         displayNone('contact-successfully-created-overlay', 'remove')
