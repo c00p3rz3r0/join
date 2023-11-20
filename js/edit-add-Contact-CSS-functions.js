@@ -14,6 +14,17 @@ function testWindowWidth() {
     }
 }
 
+function highlight(index) {
+    console.log('highlight');
+    // remove highlight from prevoiusly highlighted divs/names
+    for (let index = 0; index < allContacts.length; index++) {
+        const element = allContacts[index];
+        document.getElementById(`contact-name${index}`).classList.remove('highlight');
+    }
+    // highlight current div/name
+    document.getElementById(`contact-name${index}`).classList.add('highlight');
+}
+
 function adjustAddContactOverlayForEditContacts() {
     displayNone('cancel-create-contact ', 'add');
     displayNone('edit-contact', 'remove');
@@ -33,6 +44,12 @@ function emptyInputfields() {
     document.getElementById('mailInputField').value = ``;
     document.getElementById('phoneInputField').value = ``;
 }
+
+function displayNoneEditContactImg() {
+    if (window.innerWidth < 700) {
+        displayNone('edit-contact-img-mobile-div', 'remove');  // anzeigen des mobilen editContact icons
+    }
+} 
 
 /*function showContactCreatedOverlay() {
     if (window.innerWidth < 700) {
