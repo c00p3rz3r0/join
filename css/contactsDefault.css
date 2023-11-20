@@ -4,9 +4,11 @@
 }
 
 .contacts {
-    left: 260px;
+    /*left: 260px;*/
+    left: 282px;
+    width: 408px;
     position: absolute;
-    height: calc(100vh - 197px);
+    height: calc(100vh - 217px);
     overflow-y: scroll;
 }
 
@@ -14,8 +16,9 @@
     position: absolute;
     width: 456px;
     /*height: 628px;*/
-    height: calc(100vh - 96px);
-    top: 96px;
+    height: calc(100vh - 104px);
+    /*top: 96px;*/
+    top: 104px;
     left: 232px;
     /*overflow:scroll;*/
     display: flex;
