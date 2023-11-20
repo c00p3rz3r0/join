@@ -23,8 +23,20 @@ async function loadAssigned() {
         const element = allAssigned[index];
         let firstName = element['firstname'];
         assigned.innerHTML += `<option>${firstName}</option>`;
-    }
+    };
 }
+
+function validateAndAddTask() {
+    var form = document.getElementById('taskForm');
+
+    if (form.checkValidity()) {
+        // The form is valid, you can now proceed to add the task
+        addTask();
+    } else {
+        // The form is not valid, and the browser will display validation messages
+    };
+}
+
 
 async function addTask() {
     let taskTopic = document.getElementById('taskTopic');
@@ -33,8 +45,6 @@ async function addTask() {
     let taskDueDate = document.getElementById('tastDueDate');
     let taskCategory = document.getElementById('taskCategory');
     let taskPrio = document.getElementById('priority-input');
-
-
 
     allTasks.push({
         topic: taskTopic.value,
@@ -52,7 +62,7 @@ async function addTask() {
     loadAllTask();
 }
 
-const inputFileds = ['taskTopic', 'taskTitle', 'taskDescription', 'taskContact', 'assinedPersons', 'tastDueDate', 'taskCategory', 'task-list', 'priority-input'];
+const inputFileds = ['taskTopic', 'taskTitle', 'taskDescription', 'taskContact', 'assinedPersons', 'tastDueDate', 'taskCategory', 'task-list', 'priority-input', 'task-input'];
 const htmlfields = ['assinedPersons', 'task-list'];
 
 function clearinputs() {
@@ -88,6 +98,7 @@ let taskIdCounter = 0;
 const subTasks = [];
 
 function addSubTask(event) {
+
     event.preventDefault();
     const taskInput = document.getElementById('task-input');
     const taskText = taskInput.value.trim();
@@ -136,7 +147,7 @@ function addSubTask(event) {
 
         // Increment the task ID counter
         taskIdCounter++;
-    };
+    } else (alert('please give Subtask a name'));
 }
 
 function updateSubTaskStatus(x) {
@@ -146,7 +157,7 @@ function updateSubTaskStatus(x) {
     console.log(task);
     if (task.done == 0) {
         task.done = 1;
-    }else(task.done = 0);
+    } else (task.done = 0);
     console.log(subTasks);
 }
 
@@ -172,20 +183,38 @@ var assinedPersons = [];
 
 function addAssigned(event) {
     event.preventDefault();
-    let assinedPerson = document.getElementById('taskContact').value;
 
-    var firstLetter = assinedPerson.charAt(0).toUpperCase(); // Get the first letter of the name
+    const inputField = document.getElementById('taskContact');
+    const assignedPerson = inputField.value.trim();
 
-    document.getElementById(`assinedPersons`).innerHTML += /*html*/`           
-    <div class="contact-name-circle" id="nameIcon0">
-                    <img class="contact-circle" src="assed/svg/contact-imgs/Ellipse 5.svg" alt="">
-                    <div class="contact-name-circle-txt" id="nameIcons0">${firstLetter}</div>
-    </div>`;
+    if (assignedPerson !== '') {
+        const firstLetter = assignedPerson.charAt(0).toUpperCase();
+        const randomColor = getRandomColor();
 
+        const assignedCircle = document.createElement('div');
+        assignedCircle.className = 'assigned-circle assigned-circle-txt';
+        assignedCircle.style.backgroundColor = randomColor;
+        assignedCircle.textContent = firstLetter;
 
-    assinedPersons.push(assinedPerson);
-    document.getElementById('taskContact').value = '';
-    console.log(assinedPersons);
+        const assignedPersonsContainer = document.getElementById('assinedPersons');
+        assignedPersonsContainer.appendChild(assignedCircle);
+
+        // Clear the input field
+        inputField.value = '';
+
+        console.log(`Assigned Persons: ${assignedPerson}`);
+    } else {
+        alert('Please enter a user name');
+    }
+}
+
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }
 
 async function clearTask(clearID) {

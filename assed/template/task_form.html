@@ -7,7 +7,7 @@
 
 
 
-<div class="taskForm" id="taskForm">
+<form class="taskForm" id="taskForm">
   <div class="frame-219">
     <div class="" style="width: 100%;">
       <label for="topicListOptions" class="form-label label-in-txt">Topic</label>
@@ -98,12 +98,12 @@
       </div>
     
 
-    <div id="task-list">
+    <div id="task-list" style="width: 100%">
       <!-- Existing tasks will go here -->
     </div>
     <div class="frame-29">
-      <button class="button-secondary-wo-icon text-sm-btn">Clear</button>
-      <button class="button-wo-icon text-sm-btn" name="submitTask" onclick="addTask()" id="task-Submitbutton">Add Task</button>
+      <button class="button-secondary-wo-icon text-sm-btn" onclick="clearinputs()">Clear</button>
+      <button class="button-wo-icon text-sm-btn" name="submitTask" onclick="validateAndAddTask()" id="task-Submitbutton">Add Task</button>
     </div>
   </div>
-</div>
+</form>

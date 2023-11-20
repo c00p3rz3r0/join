@@ -89,7 +89,7 @@ function generateTodoHTML(element) {
     <div class="cardTopic">
         <p class="labels-board-card-label" style="background-color: ${toipcColorCode}">${element['topic']}</p>
         <button class="delete-button" onclick="clearTask(${element['createdAt']})">
-            <img src=".assed/svg/contact-imgs/close.svg" alt="" class="close-img" />
+            <img src="assed/svg/contact-imgs/close.svg" alt="" class="close-img" />
         </button>
     </div>
     <label class="cardTitle" for="taskDescription">${element['title']}</label>
