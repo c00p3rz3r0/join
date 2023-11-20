@@ -110,6 +110,7 @@ function loadgeneralContacts() {
 function getFirstLetters() {
     for (let i = 0; i < allContacts.length; i++) {
         const firstLetter = allContacts[i].firstname.charAt(0).toUpperCase();
+        
         alphabet.push(firstLetter);
     }
     // Remove duplicates from the 'alphabet' array
@@ -202,9 +203,26 @@ function loadDetail(index) {
 function getShortIcon(index) {
     element = allContacts[index];
     let firstName = element['firstname'];
-    //et lastname = element['lastname'];
-    let nameIcon = `${firstName.at(0)}`;
+
+
+
+    let seperatedStrings = firstName.split(" ");  // das Leerzeichen zwischen den Anführungszeichen sorgt dasfür, dass die Wörter an der Stelle, an der sich das Leerzeichen befindet, getrennt werden. Entfernt man das Leerzeichen zwischen den Anführungszeichen, wird jeder Buchstabe einzeln separiert!
+    
+    const firstNameFirstLetter = seperatedStrings[0].charAt(0).toUpperCase();
+
+    let lastNameFirstLetter;
+
+    if (seperatedStrings[1]) {  // das if-Statement prüft, ob an "seperatedStrings[1]" (also beim Nachnamen) überhaupt etwas vorhanden ist, da wenn dort nichts vorhanden ist, es zu einem Fehler käme
+        lastNameFirstLetter = seperatedStrings[1].charAt(0).toUpperCase();
+        let nameLetters = firstNameFirstLetter + lastNameFirstLetter;
+        let nameIcon = `${nameLetters}`;
     return nameIcon;
+    } else {
+        let nameIcon = `${firstNameFirstLetter}`;
+        return nameIcon;
+    }
+
+    //let lastname = element['lastname'];
 }
 
 /*${lastname.at(0)}*/
