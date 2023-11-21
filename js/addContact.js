@@ -4,6 +4,18 @@ let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
 
 let globalIndexVariable;  // Variable, um global auf den aktuellen Index zugreigen zu können. ie wird in der Funktion "loadDetail()" aktualisiert
 
+let colors = ['#FF7A00', '#FF5EB3', '#6E52FF', '#9327FF', '#00BEE8', '#1FD7C1', '#FF745E', '#FFA35E', '#FC71FF', '#FFC701', '#0038FF', '#C3FF2B', '#FFE62B', '#FF4646', '#FFBB2B'];
+let currentColor;
+
+// ramdom Colors
+function createRandomColors() {
+    currentColor = colors[Math.floor(Math.random() * colors.length)];
+    console.log(currentColor);
+}
+
+
+
+
 
 // Close addContactsOverlay and show contact-window
 function closeAddContactOverlay() {
@@ -64,6 +76,7 @@ async function addContact() {
         /*lastname: lastName.value,*/
         mail: email.value,
         phone: phone.value,
+        color: currentColor,
     })
     await setItem('contact', JSON.stringify(allContacts));
     /*cancleNewContact();*/
@@ -165,7 +178,8 @@ function loadNames() {
         document.getElementById(`namedivs${letterIndex}`).innerHTML += /*html*/`
             <div onclick="loadDetail(${index}), displayFlex('show-contact', 'add'), displayNoneEditContactImg(), highlight(${index})" id="contact-name${index}" class="contact-name">
                 <div class="contact-name-circle" id="nameIcon${index}">
-                    <img class="contact-circle" src="assed/svg/contact-imgs/Ellipse 5.svg" alt="" />
+                <div id="contact-circle-div${index}" class="contact-circle-div"></div>
+                    <!-- <img class="contact-circle" src="assed/svg/contact-imgs/Ellipse 5.svg" alt="" /> -->
                     <div class="contact-name-circle-txt" id="nameIcons${index}" >${nameIcon}</div>
                 </div>
                 <div class="name-mail-div-frame81">
@@ -175,7 +189,19 @@ function loadNames() {
             </div>
         `;
         document.getElementById(`div${letterIndex}`).classList.remove('d-none');
+        addBackgroundColorToIntials(index);
     }
+}
+
+function addBackgroundColorToIntials(index) {
+    console.log(allContacts[index]['color']);
+    let currentColor = allContacts[index]['color'];
+
+    let circleDiv = document.getElementById(`contact-circle-div${index}`);
+
+    circleDiv.style.backgroundColor = currentColor;
+    console.log(currentColor);
+
 }
 
 function loadDetail(index) {

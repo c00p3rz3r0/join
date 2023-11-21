@@ -178,6 +178,12 @@
     position: relative;
 }
 
+.contact-circle-div {
+    width: 42px;
+    height: 42px;
+    border-radius: 45px;
+}
+
 .contact-name-circle-txt {
     position: absolute;
     top: 50%;
