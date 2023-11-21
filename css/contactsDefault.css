@@ -278,8 +278,10 @@
     gap: 10px;
 }
 
-.show-name-circle-img {
+.show-name-circle-div {
     width: 120px;
+    height: 120px;
+    border-radius: 145px;
 }
 
 .show-name-circle-txt {

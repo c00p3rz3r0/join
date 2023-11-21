@@ -39,6 +39,7 @@ async function initContact() {
     if (window.innerWidth > 700) {  // prüft, ob die Funktion "LoadDetail" ausgeführt werden muss (sie muss nur ausgeführt werden, wenn die Dektop-Ansicht vorliegt)
         loadDetail(0);
     }
+    addBackgroundcolorToSelectedContact(0);
     testWindowWidth();
    
 }
@@ -176,7 +177,7 @@ function loadNames() {
 
         // Append the name to the corresponding 'namedivs' element
         document.getElementById(`namedivs${letterIndex}`).innerHTML += /*html*/`
-            <div onclick="loadDetail(${index}), displayFlex('show-contact', 'add'), displayNoneEditContactImg(), highlight(${index})" id="contact-name${index}" class="contact-name">
+            <div onclick="loadDetail(${index}), addBackgroundcolorToSelectedContact(${index}), displayFlex('show-contact', 'add'), displayNoneEditContactImg(), highlight(${index})" id="contact-name${index}" class="contact-name">
                 <div class="contact-name-circle" id="nameIcon${index}">
                 <div id="contact-circle-div${index}" class="contact-circle-div"></div>
                     <!-- <img class="contact-circle" src="assed/svg/contact-imgs/Ellipse 5.svg" alt="" /> -->
@@ -193,6 +194,7 @@ function loadNames() {
     }
 }
 
+// Background color to circles of contact-list
 function addBackgroundColorToIntials(index) {
     console.log(allContacts[index]['color']);
     let currentColor = allContacts[index]['color'];
@@ -201,7 +203,13 @@ function addBackgroundColorToIntials(index) {
 
     circleDiv.style.backgroundColor = currentColor;
     console.log(currentColor);
+}
 
+// Background-color to circle of selectes contact
+function addBackgroundcolorToSelectedContact(index) {
+    let currentColor = allContacts[index]['color'];
+    let circleDiv = document.getElementById('show-name-circle-div');
+    circleDiv.style.backgroundColor = currentColor;
 }
 
 function loadDetail(index) {
