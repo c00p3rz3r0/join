@@ -17,8 +17,8 @@ function testWindowWidth() {
 function highlight(index) {
     console.log('highlight');
     // remove highlight from prevoiusly highlighted divs/names
-    for (let index = 0; index < allContacts.length; index++) {
-        const element = allContacts[index];
+    for (let index = 0; index < allContactsNew.length; index++) {
+        const element = allContactsNew[index];
         document.getElementById(`contact-name${index}`).classList.remove('highlight');
     }
     // highlight current div/name

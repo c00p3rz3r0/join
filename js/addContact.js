@@ -109,6 +109,7 @@ function loadgeneralContacts() {
 
 function getFirstLetters() {
     for (let i = 0; i < allContacts.length; i++) {
+        //console.log(firstName);
         const firstLetter = allContacts[i].firstname.charAt(0).toUpperCase();
         
         alphabet.push(firstLetter);
@@ -215,9 +216,15 @@ function getShortIcon(index) {
     if (seperatedStrings[1]) {  // das if-Statement prüft, ob an "seperatedStrings[1]" (also beim Nachnamen) überhaupt etwas vorhanden ist, da wenn dort nichts vorhanden ist, es zu einem Fehler käme
         lastNameFirstLetter = seperatedStrings[1].charAt(0).toUpperCase();
         let nameLetters = firstNameFirstLetter + lastNameFirstLetter;
+        /*allContacts.push({
+            initials: nameLetters,
+        });*/
         let nameIcon = `${nameLetters}`;
     return nameIcon;
     } else {
+        /*allContacts.push({
+            initials: firstNameFirstLetter,
+        });*/
         let nameIcon = `${firstNameFirstLetter}`;
         return nameIcon;
     }
