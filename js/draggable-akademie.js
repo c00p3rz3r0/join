@@ -5,7 +5,7 @@ let currentDraggedElement;
 async function updateHTML() {
 
     await loadAllTask(); //load all backend tasks
-
+    await loadContacts();
 
     const column = ['todo-tasks', 'inprogress-tasks', 'Feedback-tasks', 'done-tasks'];
     const category = ['To Do', 'In progress', 'Await feedback', 'Done'];
@@ -26,10 +26,18 @@ async function updateHTML() {
     actUser();
 }
 
+async function loadContacts() {
+    try {
+        allAssigned = JSON.parse(await getItem('contact'));
+    } catch (e) {
+        console.error('Loading error: ', e);
+    }
+}
+
 // subfuction for updateHMTL create the HTML elements
 
 function generateTodoHTML(element) {
-    
+
     // const hasAssignedUser = element.assigned && element.assigned.length > 0;
     const hasSubTasks = element.subTasks && element.subTasks.length > 0;
 
@@ -37,7 +45,7 @@ function generateTodoHTML(element) {
     const totalSubTasks = element.subTasks.length;
     const finishedSubTasks = element.subTasks.filter(subtask => subtask.done === 1).length;
 
-    
+
     // Map priority names to their corresponding SVG URLs
     const topicColor = {
         'User Storys': '#008bff',
@@ -46,9 +54,9 @@ function generateTodoHTML(element) {
     };
 
     // Get the color code for the topic
-    
+
     const toipcColorCode = topicColor[element.topic]
-    
+
     // Map priority names to their corresponding SVG URLs
     const priorityIcons = {
         'urgentBtn': './assed/svg/Prio alta.svg',
@@ -63,23 +71,25 @@ function generateTodoHTML(element) {
 
     const percentage = Math.round((finishedSubTasks / totalSubTasks) * 100);
 
-    // Function to generate a random background color
-    function getRandomColor() {
-        const letters = '0123456789ABCDEF';
-        let color = '#';
-        for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
-    }
+    // // Function to generate a random background color
+    // function getRandomColor() {
+    //     const letters = '0123456789ABCDEF';
+    //     let color = '#';
+    //     for (let i = 0; i < 6; i++) {
+    //         color += letters[Math.floor(Math.random() * 16)];
+    //     }
+    //     return color;
+    // }
 
     // Check if element.assigned is an array
     const assignedUsers = Array.isArray(element.assigned) ? element.assigned : [];
-    console.log(assignedUsers);
-    // Loop through assigned users and create a circle for each with a random background color
-    const assignedCircles = assignedUsers.map(user => {
-        const userInitial = user.charAt(0).toUpperCase();
-        const circleStyle = `style="background-color: ${getRandomColor()}"`;
+
+    // Loop through assigned users and create a circle for each with the assigned color and initials
+    const assignedCircles = assignedUsers.map(assigned => {
+        const userInitial = assigned.initial.toUpperCase();
+        const assignedColor = assigned.color;
+        const circleStyle = `style="background-color: ${assignedColor}"`;
+
         return `<div class="assigned-circle assigned-circle-txt" ${circleStyle}>${userInitial}</div>`;
     });
 
@@ -89,7 +99,7 @@ function generateTodoHTML(element) {
     <div class="cardTopic">
         <p class="labels-board-card-label" style="background-color: ${toipcColorCode}">${element['topic']}</p>
         <button class="delete-button" onclick="clearTask(${element['createdAt']})">
-            <img src="assed/svg/contact-imgs/close.svg" alt="" class="close-img" />
+            <img src="assed/svg/contact-imgs/delete.svg" alt="" class="delete-img" />
         </button>
     </div>
     <label class="cardTitle" for="taskDescription">${element['title']}</label>
@@ -147,7 +157,7 @@ function addTaskPopUp(id) {
         param.classList.remove('d-none');
     });
     let addUpdateHTML = document.getElementById('task-Submitbutton');
-    addUpdateHTML.onclick = function() {
+    addUpdateHTML.onclick = function () {
         addTask();
         updateHTML();
     };
@@ -206,15 +216,17 @@ function generateFullTask(element) {
 
     // Check if element.assigned is an array
     const assignedUsers = Array.isArray(element.assigned) ? element.assigned : [];
-    console.log(assignedUsers);
-    // Create circles with initials and display assigned users in a column
-    const assignedColumn = assignedUsers.map(user => {
-        const userInitial = user.charAt(0).toUpperCase();
-        const circleStyle = `style="background-color: ${getRandomColor()}"`;
+
+    // Create a list of assigned users with circles, initials, and names
+    const assignedList = assignedUsers.map(user => {
+        const userInitial = user.initial.toUpperCase();
+        const assignedColor = user.color;
+        const circleStyle = `style="background-color: ${assignedColor}"`;
+
         return /*html*/`
-        <div class="frame-crc-name">
-            <div class="assigned-circle assigned-circle-txt assigned-circle-fullscreen" ${circleStyle}>${userInitial}</div>
-            <div class="assigned-name task-overlay-v-1-t6">${user}</div>
+            <div class="frame-crc-name">
+                <div class="assigned-circle assigned-circle-txt assigned-circle-fullscreen" ${circleStyle}>${userInitial}</div>
+                <div class="assigned-name task-overlay-v-1-t6">${user.firstname}</div>
             </div>
         `;
     });
@@ -236,7 +248,7 @@ function generateFullTask(element) {
     <div class="cardTopic">
         <p class="labels-board-card-label">${element['topic']}</p>
         <button class="delete-button" onclick="closeFullTask()">
-            <img src=".assed/svg/contact-imgs/close.svg" alt="" class="close-img" />
+            <img src="assed/svg/contact-imgs/close.svg" alt="" class="close-img" />
         </button>
     </div>
     <label class="task-overlay-v-1-Title" for="taskDescription">${element['title']}</label>
@@ -246,8 +258,9 @@ function generateFullTask(element) {
     <img src="${priorityIconUrl}" alt="Priority Icon">
 </div>
     <div class="frame-215">
-        <div class="task-overlay-v-1-t6">Assigned to:</div>        
-        ${assignedColumn.length > 0 ? assignedColumn.join('') : `<div class="frame-139">No user assigned.</div>`}
+    <div class="frame-215">
+        <div class="task-overlay-v-1-t6">Assigned to:</div>
+        ${assignedList.length > 0 ? assignedList.join('') : '<div class="frame-139">No user assigned.</div>'}
         </div>
         <div class="frame-215">
         <div class="task-overlay-v-1-t6">Subtasks:</div>  
@@ -256,11 +269,11 @@ function generateFullTask(element) {
     <div class="frame-delete">
     <div class="edit-name">
         <div onclick="" id="edit-name-sub" class="edit-name-sub">
-        <img src=".assed/svg/contact-imgs/edit.svg" alt="" class="edit-pen-img" />
+        <img src="assed/svg/contact-imgs/edit.svg" alt="" class="edit-pen-img" />
         <div class="edit-txt">Edit</div>
         </div>
-        <div onclick="" class="delete-container">
-        <img src=".assed/svg/contact-imgs/delete.svg" alt="" class="delete-img" />
+        <div onclick="clearTask(${element['createdAt']}), closeFullTask()" class="delete-container">
+        <img src="assed/svg/contact-imgs/delete.svg" alt="" class="delete-img" />
         <div class="delete-txt">Delete</div>
         </div>
     </div>

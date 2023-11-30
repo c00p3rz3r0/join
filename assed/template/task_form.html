@@ -2,12 +2,12 @@
   <h2 class="text-t1">Add Task</h2>
   <div class="closeDivTask d-none" id="addTaskPopCanclBtn" onclick="addTaskPopUpCls(id)">
     <img src="assed/svg/contact-imgs/close.svg" alt="" class="close-img" />
+  </div>
 </div>
-</div>
 
 
 
-<form class="taskForm" id="taskForm">
+<form class="taskForm" id="taskForm" onsubmit="validateAndAddTask(); return false;">
   <div class="frame-219">
     <div class="" style="width: 100%;">
       <label for="topicListOptions" class="form-label label-in-txt">Topic</label>
@@ -24,7 +24,7 @@
     </div>
     <div class="input-box">
       <label for="taskDescription" class="form-label label-in-txt">Description</label>
-      <textarea required type="text" class="form-control" style="width: 100%;" rows="3" id="taskDescription"
+      <textarea type="text" class="form-control" style="width: 100%;" rows="3" id="taskDescription"
         placeholder="Enter a Description"></textarea>
     </div>
     <div class="mt-4" style="width: 100%;">
@@ -38,7 +38,7 @@
           <option value="Jean"></option>
         </datalist>
         <div class="input-group-append">
-          <button class="btn btn-primary" form="taskForm" onclick="addAssigned(event)">Add</button>
+          <button class="btn btn-primary" onclick="addAssigned(event)">Add</button>
         </div>
       </div>
     </div>
@@ -77,7 +77,7 @@
 
     <div class="input-box">
       <label for="taskCategory" class="form-label label-in-txt">Category</label>
-      <select required class="input-box form-select task-overlay-v-1-t6" required name="" id="taskCategory">
+      <select required class="input-box form-select task-overlay-v-1-t6" name="" id="taskCategory">
         <option value="select Category">select Category</option>
         <option value="To Do">To Do</option>
         <option value="In progress">In progress</option>
@@ -85,25 +85,27 @@
       </select>
     </div>
 
-    
-      <div class="mt-4" style="width: 100%;">
-        <label for="task-input" class="form-label label-in-txt">Subtasks</label>
-        <div class="input-group mb-3">
-          
-          <input required type="text" id="task-input" class="form-control" placeholder="Add a subtask">
-          <div class="input-group-append">
-            <button class="btn btn-primary" form="subTask" onclick="addSubTask(event)">Add</button>
-          </div>
+
+    <div class="mt-4" style="width: 100%;">
+      <label for="task-input" class="form-label label-in-txt">Subtasks</label>
+      <div class="input-group mb-3">
+
+        <input type="text" id="task-input" class="form-control" placeholder="Add a subtask">
+        <div class="input-group-append">
+          <button class="btn btn-primary" form="subTask" onclick="addSubTask(event)">Add</button>
         </div>
       </div>
-    
+    </div>
+
 
     <div id="task-list" style="width: 100%">
       <!-- Existing tasks will go here -->
     </div>
     <div class="frame-29">
       <button class="button-secondary-wo-icon text-sm-btn" onclick="clearinputs()">Clear</button>
-      <button class="button-wo-icon text-sm-btn" name="submitTask" onclick="validateAndAddTask()" id="task-Submitbutton">Add Task</button>
+      <button class="button-wo-icon text-sm-btn" name="submitTask" onclick="validateAndAddTask()" id="task-Submitbutton"
+        type="button">Add Task</button>
+
     </div>
   </div>
 </form>

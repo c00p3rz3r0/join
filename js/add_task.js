@@ -26,19 +26,26 @@ async function loadAssigned() {
     };
 }
 
-function validateAndAddTask() {
+async function validateAndAddTask() {
+    console.log('Validation started');
+
     var form = document.getElementById('taskForm');
+    console.log('Form:', form);
 
     if (form.checkValidity()) {
         // The form is valid, you can now proceed to add the task
-        addTask();
+        await addTask();
+        console.log('Task added successfully');
     } else {
         // The form is not valid, and the browser will display validation messages
-    };
+        console.warn('Form validation failed');
+    }
+    console.log('Validation completed');
 }
 
 
 async function addTask() {
+    console.log('add Task:', assinedPersons);
     let taskTopic = document.getElementById('taskTopic');
     let taskTitle = document.getElementById('taskTitle');
     let taskDescription = document.getElementById('taskDescription');
@@ -58,6 +65,7 @@ async function addTask() {
         createdAt: new Date().getTime(),
     });
     await setItem('task', JSON.stringify(allTasks));
+    console.log(allTasks);
     clearinputs();
     loadAllTask();
 }
@@ -185,24 +193,31 @@ function addAssigned(event) {
     event.preventDefault();
 
     const inputField = document.getElementById('taskContact');
-    const assignedPerson = inputField.value.trim();
+    const assignedPersonName = inputField.value;
+    console.log('addAssigned', assignedPersonName);
+    if (assignedPersonName !== '') {
+        // Find the person in the allAssigned array based on their name
+        const assignedPerson = allAssigned.find(person => person.firstname === assignedPersonName);
+        console.log('addAssigned', assignedPerson);
+        if (assignedPerson) {
+            // Use the initial and color from the found person
+            const initial = assignedPerson.initial.toUpperCase();
+            const assignedColor = assignedPerson.color;
 
-    if (assignedPerson !== '') {
-        const firstLetter = assignedPerson.charAt(0).toUpperCase();
-        const randomColor = getRandomColor();
+            const assignedCircle = document.createElement('div');
+            assignedCircle.className = 'assigned-circle assigned-circle-txt';
+            assignedCircle.style.backgroundColor = assignedColor;
+            assignedCircle.textContent = initial;
 
-        const assignedCircle = document.createElement('div');
-        assignedCircle.className = 'assigned-circle assigned-circle-txt';
-        assignedCircle.style.backgroundColor = randomColor;
-        assignedCircle.textContent = firstLetter;
-
-        const assignedPersonsContainer = document.getElementById('assinedPersons');
-        assignedPersonsContainer.appendChild(assignedCircle);
-
-        // Clear the input field
-        inputField.value = '';
-
-        console.log(`Assigned Persons: ${assignedPerson}`);
+            const assignedPersonsContainer = document.getElementById('assinedPersons');
+            assignedPersonsContainer.appendChild(assignedCircle);
+            assinedPersons.push(assignedPerson);
+            // Clear the input field
+            inputField.value = '';
+            console.log('add Persons:', assinedPersons);            
+        } else {
+            alert('Invalid user name. Please create user in contacts.');
+        }
     } else {
         alert('Please enter a user name');
     }

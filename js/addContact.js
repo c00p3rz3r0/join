@@ -41,7 +41,7 @@ async function initContact() {
     }
     addBackgroundcolorToSelectedContact(0);
     testWindowWidth();
-   
+
 }
 
 /* function testWindowWidth() {
@@ -68,13 +68,16 @@ function initAddContact() {
 }
 
 async function addContact() {
+
+    let nameIcon = getInitalLeters();
+
     let firstName = document.getElementById('nameInputField');
     /*let lastName = document.getElementById('lastnameInputField');*/
     let email = document.getElementById('mailInputField');
     let phone = document.getElementById('phoneInputField');
     allContacts.push({
         firstname: firstName.value,
-        /*lastname: lastName.value,*/
+        initial: nameIcon,
         mail: email.value,
         phone: phone.value,
         color: currentColor,
@@ -85,6 +88,38 @@ async function addContact() {
     deleteInputFields(firstName, email, phone);
     console.log(allContacts);
 }
+
+
+function getInitalLeters() {
+    
+    let name = document.getElementById('nameInputField').value;
+
+    let seperatedStrings = name.split(" ");  // das Leerzeichen zwischen den Anführungszeichen sorgt dasfür, dass die Wörter an der Stelle, an der sich das Leerzeichen befindet, getrennt werden. Entfernt man das Leerzeichen zwischen den Anführungszeichen, wird jeder Buchstabe einzeln separiert!
+
+    const firstNameFirstLetter = seperatedStrings[0].charAt(0).toUpperCase();
+
+    let lastNameFirstLetter;
+
+    if (seperatedStrings[1]) {  // das if-Statement prüft, ob an "seperatedStrings[1]" (also beim Nachnamen) überhaupt etwas vorhanden ist, da wenn dort nichts vorhanden ist, es zu einem Fehler käme
+        lastNameFirstLetter = seperatedStrings[1].charAt(0).toUpperCase();
+        let nameLetters = firstNameFirstLetter + lastNameFirstLetter;
+        /*allContacts.push({
+            initials: nameLetters,
+        });*/
+        let nameIcon = `${nameLetters}`;
+        return nameIcon;
+    } else {
+        /*allContacts.push({
+            initials: firstNameFirstLetter,
+        });*/
+        let nameIcon = `${firstNameFirstLetter}`;
+        return nameIcon;
+    }
+
+    //let lastname = element['lastname'];
+}
+
+
 
 
 function deleteInputFields(firstName, email, phone) {
@@ -125,7 +160,7 @@ function getFirstLetters() {
     for (let i = 0; i < allContacts.length; i++) {
         //console.log(firstName);
         const firstLetter = allContacts[i].firstname.charAt(0).toUpperCase();
-        
+
         alphabet.push(firstLetter);
     }
     // Remove duplicates from the 'alphabet' array
@@ -139,7 +174,7 @@ function createLetterDivs() {
     contactsDiv.innerHTML = ``;
     for (let letterIndex = 0; letterIndex < alphabet.length; letterIndex++) {
         const letter = alphabet[letterIndex];
-
+        console.log(letter);
         document.getElementById('contacts').innerHTML += /*html*/`
             <div id="div${letterIndex}" class="d-none">
             <div class="contact-letter-frame-119"> ${letter} </div>
@@ -167,7 +202,7 @@ function loadNames() {
         const element = allContacts[index];
         const name = element['firstname'];
         const mail = element['mail'];
-        let nameIcon = getShortIcon(index);
+        let nameIcon = element['initial'];
 
         const firstLetter = name.charAt(0).toUpperCase(); // Get the first letter of the name
 
@@ -221,13 +256,13 @@ function loadDetail(index) {
     }
     displayNone('add-contact-img-mobile-div', 'add'); // remove the add contact btn
     //document.getElementById('show-contact').classList.add('display-flex');
-    
+
     console.log(index);
     element = allContacts[index];
     document.getElementById('nameContact').innerHTML = `${element['firstname']}`;
     document.getElementById('emailContact').innerHTML = element['mail'];
     document.getElementById('phoneNumer').innerHTML = element['phone'];
-    document.getElementById('iconDetail').innerHTML = getShortIcon(index);
+    document.getElementById('iconDetail').innerHTML = element['initial'];
     document.getElementById('contactNumber').innerHTML = index;
     globalIndexVariable = index;
     /*let deleteDiv = document.getElementById('edit-name-sub');
@@ -235,36 +270,36 @@ function loadDetail(index) {
     deleteDiv.textContent = deleteVariable;*/
 }
 
-function getShortIcon(index) {
-    element = allContacts[index];
-    let firstName = element['firstname'];
+// function getShortIcon(index) {
+//     element = allContacts[index];
+//     let firstName = element['firstname'];
 
 
 
-    let seperatedStrings = firstName.split(" ");  // das Leerzeichen zwischen den Anführungszeichen sorgt dasfür, dass die Wörter an der Stelle, an der sich das Leerzeichen befindet, getrennt werden. Entfernt man das Leerzeichen zwischen den Anführungszeichen, wird jeder Buchstabe einzeln separiert!
-    
-    const firstNameFirstLetter = seperatedStrings[0].charAt(0).toUpperCase();
+//     let seperatedStrings = firstName.split(" ");  // das Leerzeichen zwischen den Anführungszeichen sorgt dasfür, dass die Wörter an der Stelle, an der sich das Leerzeichen befindet, getrennt werden. Entfernt man das Leerzeichen zwischen den Anführungszeichen, wird jeder Buchstabe einzeln separiert!
 
-    let lastNameFirstLetter;
+//     const firstNameFirstLetter = seperatedStrings[0].charAt(0).toUpperCase();
 
-    if (seperatedStrings[1]) {  // das if-Statement prüft, ob an "seperatedStrings[1]" (also beim Nachnamen) überhaupt etwas vorhanden ist, da wenn dort nichts vorhanden ist, es zu einem Fehler käme
-        lastNameFirstLetter = seperatedStrings[1].charAt(0).toUpperCase();
-        let nameLetters = firstNameFirstLetter + lastNameFirstLetter;
-        /*allContacts.push({
-            initials: nameLetters,
-        });*/
-        let nameIcon = `${nameLetters}`;
-    return nameIcon;
-    } else {
-        /*allContacts.push({
-            initials: firstNameFirstLetter,
-        });*/
-        let nameIcon = `${firstNameFirstLetter}`;
-        return nameIcon;
-    }
+//     let lastNameFirstLetter;
 
-    //let lastname = element['lastname'];
-}
+//     if (seperatedStrings[1]) {  // das if-Statement prüft, ob an "seperatedStrings[1]" (also beim Nachnamen) überhaupt etwas vorhanden ist, da wenn dort nichts vorhanden ist, es zu einem Fehler käme
+//         lastNameFirstLetter = seperatedStrings[1].charAt(0).toUpperCase();
+//         let nameLetters = firstNameFirstLetter + lastNameFirstLetter;
+//         /*allContacts.push({
+//             initials: nameLetters,
+//         });*/
+//         let nameIcon = `${nameLetters}`;
+//         return nameIcon;
+//     } else {
+//         /*allContacts.push({
+//             initials: firstNameFirstLetter,
+//         });*/
+//         let nameIcon = `${firstNameFirstLetter}`;
+//         return nameIcon;
+//     }
+
+//     //let lastname = element['lastname'];
+// }
 
 /*${lastname.at(0)}*/
 
