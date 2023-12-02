@@ -1,9 +1,12 @@
+.addTaskContainer{
+    padding-left: 262px;
+}
+
 .frame-40 {
 
     display: inline-flex;
     flex-direction: row;
     align-items: flex-start;
-    gap: 1px;
     width: 100%;
     height: 73px;
     justify-content: space-between;
@@ -14,12 +17,10 @@
 .frame-219 {
 
     display: flex;
-    max-width: 26vw;
-    min-width: 15vw;
+    width: 440px;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 16px;
     margin-right: 64px;
     gap: 16px;
 }
@@ -27,14 +28,11 @@
 .frame-39 {
 
     display: flex;
-    max-width: 26vw;
-    min-width: 15vw;
+    width: 440px;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 16px;
-
-
 }
 
 .text-t1 {
@@ -96,10 +94,6 @@
     padding: 64px;
 }
 
-.addTaskHtml {
-    padding-left: 286px;
-}
-
 .closeDivTask {
     width: 32px;
     height: 32px;
@@ -125,12 +119,46 @@
     line-height: 120%;
 }
 
-@media (max-width: 700px){
-    .addTaskHtml{
-        position: fixed;
-        top: 10%;
-        left: 5%;
-        gap: 15px;
-        padding-left: 0;
-    }
+@media (max-width: 700px) {
+    
+.taskForm {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.frame-219 {
+    display: flex;
+    width: 330px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+.frame-39 {
+    display: flex;
+    width: 330px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+
+}
+
+.addTaskContainer {
+    padding: 80px 0;
+}
+
+.frame-40 {
+    justify-content: center;
+    margin-top: 16px;
+    margin-bottom: 32px;
+}
+
 }

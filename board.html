@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="css/contactsDefault.css">
     <link rel="stylesheet" type="text/css" href="css/addContact.css">
     <link rel="stylesheet" type="text/css" href="css/addtask.css">
+    <link rel="stylesheet" type="text/css" href="css/responViewgen.css">
     <link rel="stylesheet" href="css/addContactResponsive.css">
 
     <!-- customize Font -->
@@ -55,7 +56,7 @@
     <script src="js/add_task.js"></script>
     <script src="js/storage.js"></script>
     <script src="js/draggable-akademie.js"></script>
-    
+
     <!-- Favivon -->
 
     <link rel="shortcut icon" href="assed/svg/favicon.svg" type="image/svg+xml">
@@ -64,15 +65,27 @@
 </head>
 
 <body onload="updateHTML()">
-    <div w3-include-html="assed/template/header.html"></div>
-    <div w3-include-html="assed/template/sidebar.html"></div>
-    <div w3-include-html="assed/template/header_mobile.html"></div>
-    <div w3-include-html="assed/template/sidebar_mobile.html"></div>
-    <div w3-include-html="assed/template/draggablecards.html"></div>
-    <div class="floating-add-task-backlog-v-1 d-none" id="taskAddFormInBaord">
-        <div style="all: unset;" w3-include-html="assed/template/task_form.html"></div>
-    </div>
-    <div id="fullTask" class="floatingTask d-none" w3-include-html="assed/template/fullTask.html"></div>
+
+    <header>
+        <div w3-include-html="assed/template/header.html"></div>
+        <div w3-include-html="assed/template/header_mobile.html"></div>
+    </header>
+
+    <main>
+        <div w3-include-html="assed/template/draggablecards.html"></div>
+        <div class="floating-add-task-backlog-v-1 d-none" id="taskAddFormInBaord">
+            <div style="all: unset;" w3-include-html="assed/template/task_form.html"></div>
+        </div>
+        <div id="fullTask" class="floatingTask d-none" w3-include-html="assed/template/fullTask.html"></div>
+
+    </main>
+
+    <footer>
+        <div w3-include-html="assed/template/sidebar.html"></div>
+        <div w3-include-html="assed/template/sidebar_mobile.html"></div>
+    </footer>
+
+
 
 
     <div></div>

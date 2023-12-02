@@ -1,6 +1,8 @@
 let allTasks = [];
 let allAssigned = [];
 
+// Inital loading from backend
+
 async function initnewTask() {
     await loadContacts();
     actUser();
@@ -26,6 +28,16 @@ async function loadAssigned() {
     };
 }
 
+async function loadAllTask() {
+    try {
+        allTasks = JSON.parse(await getItem('task'));
+    } catch (e) {
+        console.error('Loading error:', e);
+    }
+}
+
+// HTML 5 validation of the input fields
+
 async function validateAndAddTask() {
     console.log('Validation started');
 
@@ -43,6 +55,7 @@ async function validateAndAddTask() {
     console.log('Validation completed');
 }
 
+//  push the new task to the backend
 
 async function addTask() {
     console.log('add Task:', assinedPersons);
@@ -70,6 +83,9 @@ async function addTask() {
     loadAllTask();
 }
 
+
+// clears all inputfields
+
 const inputFileds = ['taskTopic', 'taskTitle', 'taskDescription', 'taskContact', 'assinedPersons', 'tastDueDate', 'taskCategory', 'task-list', 'priority-input', 'task-input'];
 const htmlfields = ['assinedPersons', 'task-list'];
 
@@ -91,22 +107,14 @@ function clearinputs() {
     });
 }
 
-// getItem()
 
-async function loadAllTask() {
-    try {
-        allTasks = JSON.parse(await getItem('task'));
-    } catch (e) {
-        console.error('Loading error:', e);
-    }
-}
 
+//  subtask functions
 
 let taskIdCounter = 0;
 const subTasks = [];
 
 function addSubTask(event) {
-
     event.preventDefault();
     const taskInput = document.getElementById('task-input');
     const taskText = taskInput.value.trim();
@@ -133,7 +141,14 @@ function addSubTask(event) {
         taskInputField.classList.add('form-control');
         taskInputField.setAttribute('aria-label', 'Text input with checkbox');
         taskInputField.value = taskText;
-        taskInputField.readOnly = true; // Set input field to read-only
+
+        // Set input field to editable
+        taskInputField.readOnly = false;
+
+        // Add event listener to update the array when the input field loses focus
+        taskInputField.addEventListener('blur', () => {
+            updateSubTaskDescription(taskItem.id, taskInputField.value);
+        });
 
         const deleteButton = document.createElement('span');
         deleteButton.textContent = '❌';
@@ -155,7 +170,20 @@ function addSubTask(event) {
 
         // Increment the task ID counter
         taskIdCounter++;
-    } else (alert('please give Subtask a name'));
+    } else {
+        alert('Please give Subtask a name');
+    }
+}
+
+function updateSubTaskDescription(taskId, newDescription) {
+    // Find the index of the subtask in the array
+    const index = subTasks.findIndex((task) => task.id === taskId);
+
+    // Update the description in the array
+    if (index !== -1) {
+        subTasks[index].description = newDescription;
+    }
+    
 }
 
 function updateSubTaskStatus(x) {
@@ -187,6 +215,8 @@ function removeTask(taskId) {
     }
 }
 
+// load and add the assined persons
+
 var assinedPersons = [];
 
 function addAssigned(event) {
@@ -214,7 +244,7 @@ function addAssigned(event) {
             assinedPersons.push(assignedPerson);
             // Clear the input field
             inputField.value = '';
-            console.log('add Persons:', assinedPersons);            
+            console.log('add Persons:', assinedPersons);
         } else {
             alert('Invalid user name. Please create user in contacts.');
         }
@@ -266,14 +296,7 @@ function selectPriority(buttonId) {
     console.log(selectedPrio);
 }
 
-// function updateSubTaskStatus(checkbox, isChecked) {
-//     const taskId = checkbox.closest('div').id;
-//     const task = subTasks.find((task) => task.id === taskId);
 
-//     if (task) {
-//         task.done = isChecked;
-//     }
-// }
 
 
 

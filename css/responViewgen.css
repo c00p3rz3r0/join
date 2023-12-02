@@ -1,0 +1,34 @@
+@media (max-width: 700px) {
+
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        position: relative;
+        /* Set the body as a positioning context */
+    }
+
+    header {
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+    }
+
+    main {
+        flex: 1;
+        overflow-y: auto;
+        z-index: 0;
+    }
+
+    footer {
+        background-color: #333;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 2;
+    }
+}

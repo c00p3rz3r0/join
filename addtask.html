@@ -19,6 +19,7 @@
   <link rel="stylesheet" type="text/css" href="css/contactsDefault.css">
   <link rel="stylesheet" type="text/css" href="css/addContact.css">
   <link rel="stylesheet" type="text/css" href="css/addtask.css">
+  <link rel="stylesheet" type="text/css" href="css/responViewgen.css">
   <link rel="stylesheet" href="css/addContactResponsive.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,16 +56,26 @@
 
   <link rel="shortcut icon" href="assed/svg/favicon.svg" type="image/svg+xml">
 
-
 </head>
 
 <body onload="initnewTask()">
-  <div w3-include-html="assed/template/header.html"></div>
-  <div w3-include-html="assed/template/sidebar.html"></div>
-  <div w3-include-html="assed/template/header_mobile.html"></div>
-  <div w3-include-html="assed/template/sidebar_mobile.html"></div>
-  <!-- Input Task Fields -->
-  <div class="addTaskHtml" w3-include-html="assed/template/task_form.html"></div>
+  <header>
+    <!-- Your header content goes here -->
+    <div class="W3TemplateDiv" w3-include-html="assed/template/header.html"></div>
+    <div class="W3TemplateDiv" w3-include-html="assed/template/header_mobile.html"></div>
+  </header>
+
+  <main>
+    <!-- Your main content goes here -->
+    <div class="W3TemplateDiv" w3-include-html="assed/template/sidebar.html"></div>
+    <!-- Input Task Fields -->
+    <div class="W3TemplateDiv" w3-include-html="assed/template/task_form.html"></div>
+  </main>
+
+  <footer>
+    <!-- Your footer content goes here -->
+    <div class="W3TemplateDiv" w3-include-html="assed/template/sidebar_mobile.html"></div>
+  </footer>
 
   <script>
     includeHTML();
