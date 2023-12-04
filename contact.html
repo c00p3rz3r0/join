@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/addContact.css">
     <link rel="stylesheet" href="css/contact_created_responsive.css">
     <link rel="stylesheet" href="css/contactsDefaultResponsive.css">
+    <link rel="stylesheet" type="text/css" href="css/responViewgen.css">
 
     <!-- customize Font -->
 
@@ -67,15 +68,27 @@
 </head>
 
 <body onload="initContact()">
-    <div w3-include-html="assed/template/header.html"></div>
-    <div w3-include-html="assed/template/contact_site.html"></div>
-    <div w3-include-html="assed/template/sidebar.html"></div>
-    <!-- <div id="allContact" w3-include-html="assed/template/contact_site.html"></div> -->
-    <!-- <div w3-include-html="assed/template/add_new_contact.html"></div> -->
-    <div w3-include-html="addContact.html"></div>
-    <div w3-include-html="assed/template/header_mobile.html"></div>
-    <div w3-include-html="assed/template/sidebar_mobile.html"></div>
-    <div w3-include-html="assed/template/contact_created_responsive"></div>
+
+    <header>
+        <div w3-include-html="assed/template/header.html"></div>
+        <div w3-include-html="assed/template/header_mobile.html"></div>
+    </header>
+
+    <main>
+        <div w3-include-html="assed/template/contact_site.html"></div>
+        <div w3-include-html="addContact.html"></div>
+        <div w3-include-html="assed/template/contact_created_responsive"></div>
+        <div w3-include-html="addContact.html"></div>
+    </main>
+
+    <footer>
+        <div w3-include-html="assed/template/sidebar.html"></div>
+        <div w3-include-html="assed/template/sidebar_mobile.html"></div>
+    </footer>
+
+
+
+
 
 
 

@@ -10,9 +10,17 @@
     <link rel="stylesheet" type="text/css" href="css/chatgtp.css">
     <link rel="stylesheet" type="text/css" href="css/generalElements.css">
     <link rel="stylesheet" type="text/css" href="css/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="css/header_mobile.css">
+    <link rel="stylesheet" type="text/css" href="css/sidebar_mobile.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="css/header_mobile.css">
-    <link rel="stylesheet" href="css/sidebar_mobile.css">
+    <link rel="stylesheet" type="text/css" href="css/styleguide.css">
+    <link rel="stylesheet" type="text/css" href="css/draggablecards.css">
+    <link rel="stylesheet" type="text/css" href="css/board.css">
+    <link rel="stylesheet" type="text/css" href="css/contactsDefault.css">
+    <link rel="stylesheet" type="text/css" href="css/addContact.css">
+    <link rel="stylesheet" type="text/css" href="css/addtask.css">
+    <link rel="stylesheet" type="text/css" href="css/responViewgen.css">
+    <link rel="stylesheet" href="css/addContactResponsive.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,8 +40,7 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css"
-        integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ"
-        crossorigin="anonymous" />
+        integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous" />
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -49,18 +56,29 @@
     <script src="js/storage.js"></script>
     <script src="js/summary.js"></script>
     <script src="js/add_task.js"></script>
-    
+
     <!-- Favivon -->
 
     <link rel="shortcut icon" href="assed/svg/favicon.svg" type="image/svg+xml">
 </head>
 
 <body onload="initSummary()">
-    <div w3-include-html="assed/template/header.html"></div>
-    <div w3-include-html="assed/template/sidebar.html"></div>
-    <div id="summary-content" w3-include-html="assed/template/summary_content.html"></div>
-    <div w3-include-html="assed/template/header_mobile.html"></div>
-    <div w3-include-html="assed/template/sidebar_mobile.html"></div>
+
+    <header>
+        <div w3-include-html="assed/template/header.html"></div>
+        <div w3-include-html="assed/template/header_mobile.html"></div>
+    </header>
+
+    <main>
+        <div id="summary-content" w3-include-html="assed/template/summary_content.html"></div>
+    </main>
+
+    <footer>
+        <div w3-include-html="assed/template/sidebar.html"></div>
+        <div w3-include-html="assed/template/sidebar_mobile.html"></div>
+    </footer>
+
+
 
     <!--Content DIV-->
 

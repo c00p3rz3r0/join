@@ -186,7 +186,7 @@
     .kanban-board {
         display: flex;
         min-height: 64px;
-        padding: 0px 64px;
+        padding: 0px 8px 80px 8px;
         align-items: flex-start;
         gap: 6px;
         flex-shrink: 0;

@@ -234,7 +234,7 @@ text {
 .summary_content {
     display: flex;
     flex-direction: column;
-    align-items: lef;
+    align-items: flex-start;
     flex-wrap: wrap;
 }
 
@@ -468,11 +468,39 @@ a {
 
 @media (max-width: 700px) {
     .summary_cards {
-        position: fixed;
-        top: 10%;
-        left: 5%;
+        position: unset;
+        /* top: 10%; */
+        /* left: 5%; */
         gap: 15px;
+        width: unset;
+        padding: 16px 8px 11px 8px;
+        height: 100%;
     }
+
+    .summaryCardsText {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 24px;
+    }
+
+    .frame-64 {        
+        flex-direction: row;        
+    }
+
+    .summary_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 75px 0;
+        align-content: center;
+        justify-content: space-around;
+        height: 100%;
+        padding: 94px 8px;
+    }
+
 
     .flex-row-center {
         flex-direction: column;
@@ -485,6 +513,11 @@ a {
     .sub-menu {
         top: 90px;
         right: 0;
+    }
+
+    .frame-summary {
+        width: auto;
+        height: 168px;
     }
 }
 
